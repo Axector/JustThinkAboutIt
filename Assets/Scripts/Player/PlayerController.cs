@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer pSpriteRenderer;
     private Transform pTransform;
 
+    private CameraController cameraController;
+
     private void Start()
     {
         player = playerGameObject.GetComponent<Player>();
@@ -28,6 +30,8 @@ public class PlayerController : MonoBehaviour
 
         movementSpeed = player.PlayerSpeed;
         jumpForce = player.JumpForce;
+
+        cameraController = FindObjectOfType<CameraController>();
     }
 
     private void Update()
@@ -43,6 +47,11 @@ public class PlayerController : MonoBehaviour
         {
             pRigidBody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
+
+        //if (Input.GetKeyDown(KeyCode.F))
+        //{
+        //    cameraController.selectNextCamera();
+        //}
     }
 
     private void FixedUpdate()
