@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -8,7 +6,7 @@ public class CameraController : MonoBehaviour
 
     private static int selectedCamera;
 
-    void Start()
+    private void Start()
     {
         // Set state from the beginning, because it's static
         selectedCamera = 0;
@@ -19,7 +17,7 @@ public class CameraController : MonoBehaviour
         cameras[selectedCamera].SetActive(true);
     }
 
-    void disableAllCameras()
+    private void disableAllCameras()
     {
         foreach (GameObject camera in cameras) {
             camera.SetActive(false);

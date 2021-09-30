@@ -56,8 +56,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Movement to left and right
-        Movement();
+        // Movement to left and right while player is alive
+        if (player.IsAlive) {
+            Movement();
+        }
     }
 
     private void setIsGrounded()
@@ -83,7 +85,7 @@ public class PlayerController : MonoBehaviour
         isGrounded = leftHit.Length > 0 || rightHit.Length > 0;
     }
 
-    void Movement()
+    private void Movement()
     {
         pTransform.position += new Vector3(velocityX * movementSpeed * Time.deltaTime, 0, 0);
 
