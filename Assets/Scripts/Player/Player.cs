@@ -1,3 +1,5 @@
+using UnityEngine.SceneManagement;
+using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -10,23 +12,47 @@ public class Player : MonoBehaviour
     private int maxHealth = 100;
     [SerializeField]
     private int money = 0;
+    [SerializeField]
+    private float delayToRestart = 3f;
 
     private int health;
     private bool isAlive = true;
+    private PlayerController playerController;
+    private Animator animator;
 
     public float PlayerSpeed { get => playerSpeed; }
     public float JumpForce { get => jumpForce; }
+    public int MaxHealth { get => maxHealth; }
     public int Health { get => health; }
     public bool IsAlive { get => isAlive; }
 
     private void Start()
     {
+        // Get needed components
+        playerController = FindObjectOfType<PlayerController>();
+        animator = GetComponent<Animator>();
+
+        // Set basic stats for player
         health = maxHealth;
+        animator.SetBool("isAlive", isAlive);
+
+        // Make health visible from the beginning
+        playerController.showHealth();
     }
 
     private void Update()
     {
-        Debug.Log(health);
+        if (!isAlive) {
+            animator.SetBool("isAlive", isAlive);
+            StartCoroutine(restartGame());
+        }
+    }
+
+    private IEnumerator restartGame()
+    {
+        yield return new WaitForSeconds(delayToRestart);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void setHealth(int hp)
@@ -34,13 +60,16 @@ public class Player : MonoBehaviour
         health += hp;
 
         // If player is dead
-        if (health < 0) {
+        if (health <= 0) {
+            health = 0;
             isAlive = false;
         }
         // Player cannot have more then max health
         else if (health > maxHealth) {
             health = maxHealth;
         }
+
+        playerController.showHealth();
     }
 
     public bool setMoney(int amount)

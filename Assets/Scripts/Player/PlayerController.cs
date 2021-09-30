@@ -1,8 +1,10 @@
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     public GameObject playerGameObject;
+    public Text healthPointsText;
 
     [SerializeField]
     private float rayDistance = 1f;
@@ -18,19 +20,24 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D pRigidBody2D;   // prefix p means player
     private SpriteRenderer pSpriteRenderer;
     private Transform pTransform;
+    private Animator pAnimator;
 
     private CameraController cameraController;
 
     private void Start()
     {
+        // Get different components of a player
         player = playerGameObject.GetComponent<Player>();
         pRigidBody2D = playerGameObject.GetComponent<Rigidbody2D>();
         pSpriteRenderer = playerGameObject.GetComponent<SpriteRenderer>();
         pTransform = playerGameObject.GetComponent<Transform>();
+        pAnimator = playerGameObject.GetComponent<Animator>();
 
+        // Set basic stats for player movement
         movementSpeed = player.PlayerSpeed;
         jumpForce = player.JumpForce;
 
+        // Get camera controller
         cameraController = FindObjectOfType<CameraController>();
     }
 
@@ -42,8 +49,8 @@ public class PlayerController : MonoBehaviour
         // Checks if player is grounded
         setIsGrounded();
 
-        // Jump when Space button is pressed
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        // Jump when Space button is pressed and the player is grounded and alive
+        if (Input.GetButtonDown("Jump") && isGrounded && player.IsAlive)
         {
             pRigidBody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
@@ -59,6 +66,9 @@ public class PlayerController : MonoBehaviour
         // Movement to left and right while player is alive
         if (player.IsAlive) {
             Movement();
+
+            // Set parameter for animator to animate running
+            pAnimator.SetFloat("velocity", Mathf.Abs(velocityX));
         }
     }
 
@@ -83,11 +93,14 @@ public class PlayerController : MonoBehaviour
         
         // Change isGrounded value if ray hit any Floor
         isGrounded = leftHit.Length > 0 || rightHit.Length > 0;
+
+        // Set parameter for animator to animate jumping
+        pAnimator.SetBool("isGrounded", isGrounded);
     }
 
     private void Movement()
     {
-        pTransform.position += new Vector3(velocityX * movementSpeed * Time.deltaTime, 0, 0);
+        pTransform.position += new Vector3(velocityX * movementSpeed * Time.fixedDeltaTime, 0, 0);
 
         // Player sprite rotation (left/right)
         // When velocity == 0, should stay in last rotation
@@ -96,6 +109,28 @@ public class PlayerController : MonoBehaviour
         }
         else if (velocityX > 0) {
             pSpriteRenderer.flipX = false;
+        }
+    }
+
+    public void showHealth()
+    {
+        int playerHealth = player.Health;
+
+        // Set health points text
+        healthPointsText.text = playerHealth.ToString();
+
+        // Get health percentage
+        float healthPercentage = (float)playerHealth / player.MaxHealth;
+
+        // Change color of the helth points depending on percentage
+        if (healthPercentage >= .66f) {
+            healthPointsText.color = Color.green;
+        }
+        else if (healthPercentage >= .33f) {
+            healthPointsText.color = Color.yellow;
+        }
+        else {
+            healthPointsText.color = Color.red;
         }
     }
 }
