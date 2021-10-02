@@ -3,24 +3,25 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public GameObject playerGameObject;
-    public Text healthPointsText;
-
+    [SerializeField]
+    private GameObject playerGameObject;
+    [SerializeField]
+    private Text healthPointsText;
     [SerializeField]
     private float rayDistance = 1f;
     [SerializeField]
     private float rayOffsetX = 1f;
-
-    private float velocityX = 0;
-    private float movementSpeed;
-    private float jumpForce;
-    private bool isGrounded = false;
 
     private Player player;
     private Rigidbody2D pRigidBody2D;   // prefix p means player
     private SpriteRenderer pSpriteRenderer;
     private Transform pTransform;
     private Animator pAnimator;
+
+    private float velocityX = 0;
+    private float movementSpeed;
+    private float jumpForce;
+    private bool isGrounded = false;
 
     private CameraController cameraController;
 

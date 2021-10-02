@@ -9,7 +9,7 @@ public class Collectable : MonoBehaviour
             if (gameObject.tag == "Coin") {
                 GetComponent<Money>().earn();
             }
-            
+
             Destroy(gameObject);
         }
     }

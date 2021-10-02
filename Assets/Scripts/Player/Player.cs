@@ -42,9 +42,15 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        // If player is dead animation should be started and after some seconds game restarts
         if (!isAlive) {
             animator.SetBool("isAlive", isAlive);
             StartCoroutine(restartGame());
+        }
+
+        // If player fell down the platform
+        if (transform.position.y < -4f) {
+            isAlive = false;
         }
     }
 

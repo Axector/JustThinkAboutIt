@@ -1,24 +1,24 @@
-using System.Collections;
 using UnityEngine;
 
-public class SimpleEnemy : MonoBehaviour
+public class SimpleEnemy : AEnemy
 {
     [SerializeField]
-    private int damage = 40;
+    private float speed = 2f;
+    [SerializeField]
+    private float maxSpeed = 5f;
+    [SerializeField]
+    private float slowDownSpeed = 0.1f;
     [SerializeField]
     private float attackForce = 4f;
     [SerializeField]
-    private float attackDelay = 1f;
-    [SerializeField]
     private float agressionDistance = 1f;
 
-    private Player player;
-    private bool canAttack = true;
+    private Rigidbody2D rigidBody2D;
 
-    private void Awake()
+    protected override void Awake()
     {
-        // Get the player when the enemy has spawned
-        player = FindObjectOfType<Player>();
+        base.Awake();
+        rigidBody2D = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
@@ -29,10 +29,11 @@ public class SimpleEnemy : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay2D(Collision2D other)
+    protected override void OnCollisionStay2D(Collision2D other)
     {
-        // Checks if an enemy can attack then attack
-        if (canAttack) {
+        // Checks if an enemy can attack then attacks
+        if (other.gameObject.tag == "Player" && canAttack)
+        {
             doDamage();
             canAttack = false;
             StartCoroutine(delayBeforeAttack());
@@ -44,13 +45,10 @@ public class SimpleEnemy : MonoBehaviour
 
             // Push the player after attack
             other.gameObject.GetComponent<Rigidbody2D>().AddForce(-transform.right * attackForce, ForceMode2D.Impulse);
-        }
-    }
 
-    private IEnumerator delayBeforeAttack()
-    {
-        yield return new WaitForSeconds(attackDelay);
-        canAttack = true;
+            // Slow down after attack
+            rigidBody2D.velocity /= 2;
+        }
     }
 
     private void moveToPlayer()
@@ -60,13 +58,82 @@ public class SimpleEnemy : MonoBehaviour
 
         // Move to player when it is near the enemy
         if (distanceToPlayer <= agressionDistance) {
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, 1f * Time.fixedDeltaTime);
+            Vector2 direction = (player.transform.position - transform.position).normalized;
+            rigidBody2D.velocity += direction * speed * Time.fixedDeltaTime;
+
+            setMaxSpeed();
+        }
+        else {
+            lowerSpeedX();
+            lowerSpeedY();
         }
     }
 
-    private void doDamage()
+    private void setMaxSpeed()
     {
-        // Deal damage to the player
-        player.setHealth(-damage);
+        Vector2 newVelocity = rigidBody2D.velocity;
+
+        // If horizontal movement speed is maximal
+        if (Mathf.Abs(newVelocity.x) >= maxSpeed) {
+            newVelocity = new Vector2((newVelocity.x > 0 ? maxSpeed : -maxSpeed), newVelocity.y);
+        }
+
+        // If vertical movement speed is maximal
+        if (Mathf.Abs(newVelocity.y) >= maxSpeed) {
+            newVelocity = new Vector2(newVelocity.x, (newVelocity.y > 0 ? maxSpeed : -maxSpeed));
+        }
+
+        setVelocity(newVelocity);
+    }
+
+    private void lowerSpeedX() 
+    {
+        // Lower horizontal movement speed
+        if (rigidBody2D.velocity.x > 0) {
+            setVelocity(new Vector2(-slowDownSpeed, 0), true);
+        }
+        else if (rigidBody2D.velocity.x < 0) {
+            setVelocity(new Vector2(slowDownSpeed, 0), true);
+        }
+
+        // If horizontal movement speed is nearly 0, set it to 0
+        if (
+            rigidBody2D.velocity.x != 0 &&
+            rigidBody2D.velocity.x > -0.5 &&
+            rigidBody2D.velocity.x < 0.5
+        ) {
+            setVelocity(new Vector2(0, rigidBody2D.velocity.y));
+        }
+    }
+
+    private void lowerSpeedY() 
+    {
+        // Lower vertical movement speed
+        if (rigidBody2D.velocity.y > 0) {
+            setVelocity(new Vector2(0, -slowDownSpeed), true);
+        }
+        else if (rigidBody2D.velocity.y < 0) {
+            setVelocity(new Vector2(0, slowDownSpeed), true);
+        }
+
+        // If vertical movement speed is nearly 0, set it to 0
+        if (
+            rigidBody2D.velocity.y != 0 &&
+            rigidBody2D.velocity.y > -0.5 &&
+            rigidBody2D.velocity.y < 0.5
+        ) {
+            setVelocity(new Vector2(rigidBody2D.velocity.x, 0));
+        }
+    }
+
+    private void setVelocity(Vector2 value, bool toIncrease = false)
+    {
+        // If is needed to increase or to set the velocity
+        if (toIncrease) {
+            rigidBody2D.velocity += value;
+        }
+        else {
+            rigidBody2D.velocity = value;
+        }
     }
 }
