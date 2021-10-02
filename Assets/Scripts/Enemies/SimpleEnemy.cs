@@ -57,7 +57,7 @@ public class SimpleEnemy : AEnemy
         float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
         // Move to player when it is near the enemy
-        if (distanceToPlayer <= agressionDistance) {
+        if (distanceToPlayer <= agressionDistance && player.IsAlive) {
             Vector2 direction = (player.transform.position - transform.position).normalized;
             rigidBody2D.velocity += direction * speed * Time.fixedDeltaTime;
 
