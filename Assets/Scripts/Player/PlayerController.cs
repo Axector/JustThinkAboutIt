@@ -10,7 +10,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float rayDistance = 1f;
     [SerializeField]
-    private float rayOffsetX = 1f;
+    private float rayOffsetRight = 1f;
+    [SerializeField]
+    private float rayOffsetLeft = 1f;
 
     private Player player;
     private Rigidbody2D pRigidBody2D;   // prefix p means player
@@ -78,15 +80,21 @@ public class PlayerController : MonoBehaviour
         // Get Floor layer
         LayerMask mask = LayerMask.GetMask("Floor");
 
+        BoxCollider2D boxCollider2D = playerGameObject.GetComponent<BoxCollider2D>();
+
+        // DEBUG
+        Debug.DrawRay(new Vector2(pTransform.position.x + rayOffsetRight, pTransform.position.y), Vector2.down * rayDistance, Color.red);
+        Debug.DrawRay(new Vector2(pTransform.position.x - rayOffsetLeft, pTransform.position.y), Vector2.down * rayDistance, Color.red);
+
         // Cast two rays down to check if the player is on the ground
         RaycastHit2D[] rightHit = Physics2D.RaycastAll(
-                new Vector2(pTransform.position.x + rayOffsetX, pTransform.position.y), 
+                new Vector2(pTransform.position.x + rayOffsetRight, pTransform.position.y), 
                 Vector2.down, 
                 rayDistance, 
                 mask
             );
         RaycastHit2D[] leftHit = Physics2D.RaycastAll(
-                new Vector2(pTransform.position.x - rayOffsetX, pTransform.position.y), 
+                new Vector2(pTransform.position.x - rayOffsetLeft, pTransform.position.y), 
                 Vector2.down, 
                 rayDistance, 
                 mask

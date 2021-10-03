@@ -23,7 +23,7 @@ public abstract class AEnemy : MonoBehaviour
     protected virtual void OnCollisionStay2D(Collision2D other)
     {
         // Checks if an enemy can attack then attacks
-        if (other.gameObject.tag == "Player" && canAttack)
+        if (other.gameObject.tag == "Player" && canAttack && player.IsAlive)
         {
             doDamage();
             canAttack = false;
@@ -42,7 +42,7 @@ public abstract class AEnemy : MonoBehaviour
         // Deal damage to the player
         player.setHealth(-damage);
 
-        // Show text popup
-        textPopup.showPopup(damage.ToString());
+        // Show damage popup on player
+        textPopup.showPopup(damage.ToString(), player.transform);
     }
 }

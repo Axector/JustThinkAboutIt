@@ -12,49 +12,68 @@ public class CameraController : MonoBehaviour
     private float upEdge;
     [SerializeField]
     private float downEdge;
-
-    private static int selectedCamera;
+    [SerializeField]
+    private float maxSize = 9f;
+    [SerializeField]
+    private float minSize = 5f;
+    [SerializeField]
+    private float cameraSizeChangeSpeed = 0.1f;
 
     private Player player;
-    private CameraController cameraController;
     private Camera activeCamera;
 
+    private int selectedCamera = 0;
     private bool left;
     private bool right;
     private bool up;
     private bool down;
+    private bool upCameraSize;
+    private bool downCameraSize;
 
     private void Start()
     {
-        player = FindObjectOfType<Player>();
-        cameraController = FindObjectOfType<CameraController>();
-        activeCamera = cameraController.getActiveCamera();
-
-        // Set state from the beginning, because it's static
-        selectedCamera = 0;
-
         disableAllCameras();
 
         // Enable the first camera
         cameras[selectedCamera].SetActive(true);
+
+        // Get player and active camera
+        player = FindObjectOfType<Player>();
+        activeCamera = getActiveCamera();
+
+        // Set default size to camera
+        activeCamera.orthographicSize = Settings.getCameraOrthographicSize();
     }
 
     private void Update()
     {
-        // Check player position on the screen
+        // Check player position on the viewport
         Vector2 playerPosition = activeCamera.WorldToViewportPoint(player.transform.position);
 
-        Debug.Log(playerPosition);
-
+        // Check if camera must move and the direction of that movement
         right = playerPosition.x > rightEdge;
         left = playerPosition.x < leftEdge;
         up = playerPosition.y > upEdge;
         down = playerPosition.y < downEdge;
+
+        // Check to change camera size or not
+        upCameraSize = (Input.GetKey(KeyCode.Plus) || Input.GetKey(KeyCode.Equals));
+        downCameraSize = Input.GetKey(KeyCode.Minus);
     }
 
     private void FixedUpdate()
     {
-        // Camera movement if player is near the edge of screen
+        checkMoveCamera();
+
+        // If any of resize buttons is pressed
+        if (upCameraSize || downCameraSize) { 
+            changeCameraSize();
+        }
+    }
+
+    private void checkMoveCamera()
+    {
+        // Camera movement if player is near the edge of specific area
         if (right) {
             MoveCamera(Vector3.right);
         }
@@ -87,6 +106,26 @@ public class CameraController : MonoBehaviour
         }
     }
 
+    private void changeCameraSize()
+    {
+        // Get current camera size
+        float size = activeCamera.orthographicSize;
+
+        // Increase camera size
+        if (upCameraSize && size <= maxSize) {
+            size += cameraSizeChangeSpeed;
+        }
+
+        // Reduce camera size
+        if (downCameraSize && size >= minSize) {
+            size -= cameraSizeChangeSpeed;
+        }
+
+        // Set camera size and save value
+        activeCamera.orthographicSize = size;
+        Settings.setCameraOrthographicSize(size);
+    }
+
     public void selectNextCamera()
     {
         // If an array with cameras is not empty
@@ -105,6 +144,7 @@ public class CameraController : MonoBehaviour
 
             // Enable next camera in an array
             cameras[selectedCamera].SetActive(true);
+            activeCamera = getActiveCamera();
         }
     }
 

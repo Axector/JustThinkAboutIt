@@ -19,11 +19,14 @@ public class Popup : MonoBehaviour
         cameraController = FindObjectOfType<CameraController>();
     }
 
-    public void showPopup(string text)
+    public void showPopup(string text, Transform objTransform = null)
     {
+        if (!objTransform) {
+            objTransform = transform;
+        }
 
         // Get position in viewport
-        Vector2 newPosition = cameraController.getActiveCamera().WorldToViewportPoint(transform.position);
+        Vector2 newPosition = cameraController.getActiveCamera().WorldToViewportPoint(objTransform.position);
 
         // Translate coordinates to the screen
         newPosition = new Vector2(newPosition.x * Screen.width, newPosition.y * Screen.height);

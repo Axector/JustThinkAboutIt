@@ -32,16 +32,11 @@ public class SimpleEnemy : AEnemy
     protected override void OnCollisionStay2D(Collision2D other)
     {
         // Checks if an enemy can attack then attacks
-        if (other.gameObject.tag == "Player" && canAttack)
+        if (other.gameObject.tag == "Player" && canAttack && player.IsAlive)
         {
             doDamage();
             canAttack = false;
             StartCoroutine(delayBeforeAttack());
-
-            // Rotate an enemy to the player
-            Vector3 direction = gameObject.transform.position - player.gameObject.transform.position;
-            float rotationAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.AngleAxis(rotationAngle, Vector3.forward);
 
             // Push the player after attack
             other.gameObject.GetComponent<Rigidbody2D>().AddForce(-transform.right * attackForce, ForceMode2D.Impulse);
@@ -56,12 +51,25 @@ public class SimpleEnemy : AEnemy
         // Get distance from enemy to player
         float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
+        // DEBUG
+        Debug.DrawRay(transform.position, player.transform.position - transform.position, (distanceToPlayer <= agressionDistance) ? Color.red : Color.green);
+
+        bool playerIsAlive = player.IsAlive;
+
         // Move to player when it is near the enemy
-        if (distanceToPlayer <= agressionDistance && player.IsAlive) {
+        if (distanceToPlayer <= agressionDistance && playerIsAlive) {
             Vector2 direction = (player.transform.position - transform.position).normalized;
-            rigidBody2D.velocity += direction * speed * Time.fixedDeltaTime;
+
+            // Set enemy rotation to face the player
+            float rotationAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(rotationAngle, Vector3.forward);
+
+            setVelocity(direction * speed * Time.fixedDeltaTime, true);
 
             setMaxSpeed();
+        }
+        else if (!playerIsAlive) {
+            setVelocity(Vector2.zero);
         }
         else {
             lowerSpeedX();
