@@ -26,18 +26,15 @@ public class Player : MonoBehaviour
     public int Health { get => health; }
     public bool IsAlive { get => isAlive; }
 
-    private void Start()
+    private void Awake()
     {
         // Get needed components
         playerController = FindObjectOfType<PlayerController>();
         animator = GetComponent<Animator>();
 
         // Set basic stats for player
-        health = maxHealth;
+        setHealth(maxHealth);
         animator.SetBool("isAlive", isAlive);
-
-        // Make health visible from the beginning
-        playerController.showHealth();
     }
 
     private void Update()
@@ -51,6 +48,8 @@ public class Player : MonoBehaviour
         // If player fell down the platform
         if (transform.position.y < -4f) {
             isAlive = false;
+            health = 0;
+            playerController.showHealth();
         }
     }
 
@@ -75,7 +74,7 @@ public class Player : MonoBehaviour
             health = maxHealth;
         }
 
-        playerController.showHealth();
+        playerController.showHealth(this);
     }
 
     public bool setMoney(int amount)

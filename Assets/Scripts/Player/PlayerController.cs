@@ -121,8 +121,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void showHealth()
+    public void showHealth(Player player = null)
     {
+        // If an object was not passed
+        if (!player) {
+            player = this.player;
+        }
+
+        // Get player health value
         int playerHealth = player.Health;
 
         // Set health points text
