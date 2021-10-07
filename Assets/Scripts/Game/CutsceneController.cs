@@ -14,6 +14,8 @@ public class CutsceneController : MonoBehaviour
     [SerializeField]
     private CutscenePlayer player;
     [SerializeField]
+    private Camera cam;
+    [SerializeField]
     private Direction moveDirection = Direction.right;
     [SerializeField]
     private float targetPositionX = -16.63f;
@@ -52,6 +54,7 @@ public class CutsceneController : MonoBehaviour
         // Set basic stats
         movementSpeed = player.PlayerSpeed;
         fadeScreenImage.color = Color.black;
+        cam.orthographicSize = 14f;
 
         StartCoroutine(startCutScene());
     }
@@ -79,6 +82,13 @@ public class CutsceneController : MonoBehaviour
             Color color = fadeScreenImage.color;
             color.a -= fadeOutSpeed;
             fadeScreenImage.color = color;
+
+            if (cam.orthographicSize > 7f) {
+                cam.orthographicSize -= fadeOutSpeed * 10;
+            }
+            else {
+                cam.orthographicSize = 7f;
+            }
 
             if (color.a <= 0) {
                 startFading = false;

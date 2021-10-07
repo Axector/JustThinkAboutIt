@@ -25,8 +25,6 @@ public class PlayerController : MonoBehaviour
     private float jumpForce;
     private bool isGrounded = false;
 
-    private CameraController cameraController;
-
     private void Start()
     {
         // Get different components of a player
@@ -39,9 +37,6 @@ public class PlayerController : MonoBehaviour
         // Set basic stats for player movement
         movementSpeed = player.PlayerSpeed;
         jumpForce = player.JumpForce;
-
-        // Get camera controller
-        cameraController = FindObjectOfType<CameraController>();
     }
 
     private void Update()
@@ -53,15 +48,9 @@ public class PlayerController : MonoBehaviour
         setIsGrounded();
 
         // Jump when Space button is pressed and the player is grounded and alive
-        if (Input.GetButtonDown("Jump") && isGrounded && player.IsAlive)
-        {
+        if (Input.GetButtonDown("Jump") && isGrounded && player.IsAlive) {
             pRigidBody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
-
-        //if (Input.GetKeyDown(KeyCode.F))
-        //{
-        //    cameraController.selectNextCamera();
-        //}
     }
 
     private void FixedUpdate()
