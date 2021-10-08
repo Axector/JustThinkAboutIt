@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5703385143092571151}
   - component: {fileID: 8635122323639678226}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -239,4 +239,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyEarnedText: {fileID: 6936950582075386107, guid: d7b8ce873516f33409ea10a0b99f56bd, type: 3}
   beforeText: '-'
-  color: {r: 0.3490566, g: 0, b: 0, a: 1}
+  color: {r: 0.6320754, g: 0, b: 0, a: 1}
