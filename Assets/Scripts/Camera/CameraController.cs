@@ -32,17 +32,17 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
-        disableAllCameras();
+        DisableAllCameras();
 
         // Enable the first camera
         cameras[selectedCamera].SetActive(true);
 
         // Get player and active camera
         player = FindObjectOfType<Player>();
-        activeCamera = getActiveCamera();
+        activeCamera = GetActiveCamera();
 
         // Set default size to camera
-        activeCamera.orthographicSize = Settings.getCameraOrthographicSize();
+        activeCamera.orthographicSize = Settings.GetCameraOrthographicSize();
     }
 
     private void Update()
@@ -67,7 +67,7 @@ public class CameraController : MonoBehaviour
 
         // If any of resize buttons is pressed
         if (upCameraSize || downCameraSize) { 
-            changeCameraSize();
+            ChangeCameraSize();
         }
     }
 
@@ -99,14 +99,14 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    private void disableAllCameras()
+    private void DisableAllCameras()
     {
         foreach (GameObject camera in cameras) {
             camera.SetActive(false);
         }
     }
 
-    private void changeCameraSize()
+    private void ChangeCameraSize()
     {
         // Get current camera size
         float size = activeCamera.orthographicSize;
@@ -123,10 +123,10 @@ public class CameraController : MonoBehaviour
 
         // Set camera size and save value
         activeCamera.orthographicSize = size;
-        Settings.setCameraOrthographicSize(size);
+        Settings.SetCameraOrthographicSize(size);
     }
 
-    public void selectNextCamera()
+    public void SelectNextCamera()
     {
         // If an array with cameras is not empty
         if(cameras.Length > 0)
@@ -144,11 +144,11 @@ public class CameraController : MonoBehaviour
 
             // Enable next camera in an array
             cameras[selectedCamera].SetActive(true);
-            activeCamera = getActiveCamera();
+            activeCamera = GetActiveCamera();
         }
     }
 
-    public Camera getActiveCamera()
+    public Camera GetActiveCamera()
     {
         return cameras[selectedCamera].GetComponent<Camera>();
     }

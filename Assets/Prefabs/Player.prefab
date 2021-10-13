@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3676dd51731c0de41861ced459ecafc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 5
+  playerSpeed: 7
   jumpForce: 10
   maxHealth: 100
   money: 0

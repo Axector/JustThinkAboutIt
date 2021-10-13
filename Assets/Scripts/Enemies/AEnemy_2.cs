@@ -1,26 +1,31 @@
 using System.Collections;
 using UnityEngine;
 
-public abstract class AEnemy : MonoBehaviour
+public class AEnemy_2 : MonoBehaviour
 {
     [SerializeField]
-    protected int damage = 40;
+    protected int damage;
     [SerializeField]
-    protected float attackDelay = 1f;
+    protected int health;
+    [SerializeField]
+    protected float speed;
+    [SerializeField]
+    protected float speedIncrease;
+    [SerializeField]
+    protected SpriteRenderer spriteRenderer;
+    [SerializeField]
+    protected float delayBeforeAttack = 0.5f;
 
     protected Player player;
     protected Popup textPopup;
     protected Rigidbody2D rigidBody2D;
-    protected Collider2D enemyCollider2D;
     protected bool canAttack = true;
 
     protected virtual void Awake()
     {
-        // Get the player when the enemy has spawned
         player = FindObjectOfType<Player>();
         textPopup = GetComponent<Popup>();
         rigidBody2D = GetComponent<Rigidbody2D>();
-        enemyCollider2D = GetComponent<Collider2D>();
     }
 
     protected virtual void OnCollisionStay2D(Collision2D other)
@@ -35,19 +40,8 @@ public abstract class AEnemy : MonoBehaviour
 
     protected IEnumerator DelayBeforeAttack()
     {
-        yield return new WaitForSeconds(attackDelay);
+        yield return new WaitForSeconds(delayBeforeAttack);
         canAttack = true;
-    }
-
-    protected void SetVelocity(Vector2 value, bool toIncrease = false)
-    {
-        // If is needed to increase or to set the velocity
-        if (toIncrease) {
-            rigidBody2D.velocity += value;
-        }
-        else {
-            rigidBody2D.velocity = value;
-        }
     }
 
     protected void DoDamage()

@@ -7,7 +7,7 @@ public class Collectable : MonoBehaviour
         // Destroy this object when player collects it
         if (other.gameObject.tag == "Player") {
             if (gameObject.tag == "Coin") {
-                GetComponent<Money>().earn();
+                GetComponent<Money>().Earn();
             }
 
             Destroy(gameObject);

@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
         velocityX = Input.GetAxis("Horizontal");
 
         // Checks if player is grounded
-        setIsGrounded();
+        SetIsGrounded();
 
         // Jump when Space button is pressed and the player is grounded and alive
         if (Input.GetButtonDown("Jump") && isGrounded && player.IsAlive) {
@@ -64,12 +64,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void setIsGrounded()
+    private void SetIsGrounded()
     {
         // Get Floor layer
         LayerMask mask = LayerMask.GetMask("Floor");
-
-        BoxCollider2D boxCollider2D = playerGameObject.GetComponent<BoxCollider2D>();
 
         // DEBUG
         Debug.DrawRay(new Vector2(pTransform.position.x + rayOffsetRight, pTransform.position.y), Vector2.down * rayDistance, Color.red);
@@ -110,7 +108,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void showHealth(Player player = null)
+    public void ShowHealth(Player player = null)
     {
         // If an object was not passed
         if (!player) {

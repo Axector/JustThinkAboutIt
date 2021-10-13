@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelBuilder : MonoBehaviour
@@ -13,24 +11,29 @@ public class LevelBuilder : MonoBehaviour
 
     private void Awake()
     {
+        // Store last block's index for blocks to not repeat
         int lastIndex = 10;
 
+        // Put random blocks to the level
         for (int i = 0; i < blockCount; i++) {
+            // Get random index
             int randomBlockIndex = Random.Range(0, blocks.Length);
 
-            if (randomBlockIndex == lastIndex) {
-                i--;
-                continue;
+            // If random index is the same as last index, choose another index
+            while (randomBlockIndex == lastIndex) {
+                randomBlockIndex = Random.Range(0, blocks.Length);
             }
 
+            // Reset last index
             lastIndex = randomBlockIndex;
 
-            GameObject block = Instantiate(
+            // Block addition to the level
+            Instantiate(
                 blocks[randomBlockIndex],
+                new Vector3(distanceBetweenBlocks * i + 15, 0, -0.5f),
+                Quaternion.identity,
                 transform
             );
-
-            block.transform.localPosition = new Vector3(distanceBetweenBlocks * i, 0, 0);
         }
     }
 }

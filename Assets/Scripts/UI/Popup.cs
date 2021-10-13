@@ -19,14 +19,14 @@ public class Popup : MonoBehaviour
         cameraController = FindObjectOfType<CameraController>();
     }
 
-    public void showPopup(string text, Transform objTransform = null)
+    public void ShowPopup(string text, Transform objTransform = null)
     {
         if (!objTransform) {
             objTransform = transform;
         }
 
         // Get position in viewport
-        Vector2 newPosition = cameraController.getActiveCamera().WorldToViewportPoint(objTransform.position);
+        Vector2 newPosition = cameraController.GetActiveCamera().WorldToViewportPoint(objTransform.position);
 
         // Translate coordinates to the screen
         newPosition = new Vector2(newPosition.x * Screen.width, newPosition.y * Screen.height);
@@ -45,6 +45,6 @@ public class Popup : MonoBehaviour
         alert.color = color;
 
         // Fade out and destroy text object
-        alert.GetComponent<FadeOut>().fadeOut();
+        alert.GetComponent<FadeOut>().StartFadeOut();
     }
 }

@@ -56,7 +56,7 @@ public class CutsceneController : MonoBehaviour
         fadeScreenImage.color = Color.black;
         cam.orthographicSize = 14f;
 
-        StartCoroutine(startCutScene());
+        StartCoroutine(StartCutScene());
     }
 
     private void Update()
@@ -72,17 +72,18 @@ public class CutsceneController : MonoBehaviour
 
             // Start move cutscene banners before player stops
             if (pTransform.position.x >= targetPositionX - 6) {
-                StartCoroutine(endCutScene());
+                StartCoroutine(EndCutScene());
             }
         }
 
         // Smooth fade out to introduce the level
         if (startFading) {
-            // Decrease alpha to make the object fade out
+            // Decrease alpha to make the fadeScreen fade out
             Color color = fadeScreenImage.color;
             color.a -= fadeOutSpeed;
             fadeScreenImage.color = color;
 
+            // Camera flight to the player
             if (cam.orthographicSize > 7f) {
                 cam.orthographicSize -= fadeOutSpeed * 10;
             }
@@ -90,6 +91,7 @@ public class CutsceneController : MonoBehaviour
                 cam.orthographicSize = 7f;
             }
 
+            // When fadeScreen is invisible, destroy its game object
             if (color.a <= 0) {
                 startFading = false;
                 Destroy(fadeScreen.gameObject);
@@ -107,6 +109,7 @@ public class CutsceneController : MonoBehaviour
             pAnimator.SetFloat("velocity", Mathf.Abs(velocityX));
         }
 
+        // Move top banner up and bottom banner down
         if (moveCutsceneBanners) {
             topBanner.transform.position += Vector3.up * bannerMoveSpeed * Time.fixedDeltaTime;
             bottomBanner.transform.position += Vector3.down * bannerMoveSpeed * Time.fixedDeltaTime;
@@ -127,20 +130,23 @@ public class CutsceneController : MonoBehaviour
         }
     }
 
-    private IEnumerator endCutScene()
+    private IEnumerator EndCutScene()
     {
+        // Start to move top and bottom black banners
         moveCutsceneBanners = true;
 
         yield return new WaitForSeconds(3f);
 
+        // Set camera size and load game scene
         PlayerPrefs.SetFloat("CameraOrthographicSize", 7f);
         SceneManager.LoadScene(1);
     }
 
-    private IEnumerator startCutScene()
+    private IEnumerator StartCutScene()
     {
         yield return new WaitForSeconds(delayBeforeStart);
 
+        // Start cutscene animations
         startFading = true;
         cutSceneStart = true;
     }

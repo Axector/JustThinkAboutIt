@@ -11,16 +11,16 @@ public class Money : MonoBehaviour
 
     private void Awake()
     {
+        textPopup = GetComponent<Popup>();
         player = FindObjectOfType<Player>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        textPopup = GetComponent<Popup>();
     }
 
-    public void earn()
+    public void Earn()
     {
-        player.setMoney(amount);
+        player.AddMoney(amount);
 
         // Show text popup
-        textPopup.showPopup(amount.ToString());
+        textPopup.ShowPopup(amount.ToString());
     }
 }

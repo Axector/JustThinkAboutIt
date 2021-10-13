@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
 
         // Set basic stats for player
-        setHealth(maxHealth);
+        AddHealth(maxHealth);
         animator.SetBool("isAlive", isAlive);
     }
 
@@ -42,25 +42,25 @@ public class Player : MonoBehaviour
         // If player is dead animation should be started and after some seconds game restarts
         if (!isAlive) {
             animator.SetBool("isAlive", isAlive);
-            StartCoroutine(restartGame());
+            StartCoroutine(RestartGame());
         }
 
         // If player fell down the platform
         if (transform.position.y < -4f) {
             isAlive = false;
             health = 0;
-            playerController.showHealth();
+            playerController.ShowHealth();
         }
     }
 
-    private IEnumerator restartGame()
+    private IEnumerator RestartGame()
     {
         yield return new WaitForSeconds(delayToRestart);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void setHealth(int hp)
+    public void AddHealth(int hp)
     {
         health += hp;
 
@@ -74,10 +74,10 @@ public class Player : MonoBehaviour
             health = maxHealth;
         }
 
-        playerController.showHealth(this);
+        playerController.ShowHealth(this);
     }
 
-    public bool setMoney(int amount)
+    public bool AddMoney(int amount)
     {
         money += amount;
 

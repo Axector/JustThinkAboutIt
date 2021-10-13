@@ -29,12 +29,12 @@ public class FadeOut : MonoBehaviour
         transform.position += Vector3.up * goUpSpeed;
     }
 
-    public void fadeOut()
+    public void StartFadeOut()
     {
-        StartCoroutine(destroyAfterFadeOut());
+        StartCoroutine(DestroyAfterFadeOut());
     }
 
-    private IEnumerator destroyAfterFadeOut()
+    private IEnumerator DestroyAfterFadeOut()
     {
         startFading = true;
 
