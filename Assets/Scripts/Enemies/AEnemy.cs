@@ -1,56 +1,56 @@
-using System.Collections;
 using UnityEngine;
 
 public abstract class AEnemy : MonoBehaviour
 {
     [SerializeField]
-    protected int damage = 40;
+    protected int damage;
     [SerializeField]
-    protected float attackDelay = 1f;
+    protected int health;
+    [SerializeField]
+    protected float speed;
+    [SerializeField]
+    protected float speedIncrease;
+    [SerializeField]
+    protected SpriteRenderer spriteRenderer;
+    [SerializeField]
+    protected float delayBeforeAttack = 0.5f;
 
     protected Player player;
     protected Popup textPopup;
     protected Rigidbody2D rigidBody2D;
-    protected Collider2D enemyCollider2D;
-    protected bool canAttack = true;
+    protected Collider2D collider2d;
+    protected Vector3 startingPosition;
 
     protected virtual void Awake()
     {
-        // Get the player when the enemy has spawned
         player = FindObjectOfType<Player>();
         textPopup = GetComponent<Popup>();
         rigidBody2D = GetComponent<Rigidbody2D>();
-        enemyCollider2D = GetComponent<Collider2D>();
+        collider2d = GetComponent<Collider2D>();
+        startingPosition = transform.position;
     }
 
-    protected virtual void OnCollisionStay2D(Collision2D other)
+    protected virtual void OnCollisionEnter2D(Collision2D other)
     {
         // Checks if an enemy can attack then attacks
-        if (other.gameObject.tag == "Player" && canAttack && player.IsAlive) {
+        if (other.gameObject.tag == "Player" && player.IsAlive) {
             DoDamage();
-            canAttack = false;
-            StartCoroutine(DelayBeforeAttack());
         }
     }
 
-    protected IEnumerator DelayBeforeAttack()
+    protected bool NearlyEqual(float a, float b, float delta)
     {
-        yield return new WaitForSeconds(attackDelay);
-        canAttack = true;
+        return Mathf.Abs(a - b) < delta;
     }
 
-    protected void SetVelocity(Vector2 value, bool toIncrease = false)
+    protected void LookAtDirection(Vector3 direction)
     {
-        // If is needed to increase or to set the velocity
-        if (toIncrease) {
-            rigidBody2D.velocity += value;
-        }
-        else {
-            rigidBody2D.velocity = value;
-        }
+        // Set enemy rotation to face the player
+        float rotationAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(rotationAngle, Vector3.forward);
     }
 
-    protected void DoDamage()
+    public void DoDamage()
     {
         // Deal damage to the player
         player.AddHealth(-damage);
