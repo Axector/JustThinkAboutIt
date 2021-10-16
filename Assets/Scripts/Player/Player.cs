@@ -17,15 +17,19 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float delayToRestart = 3f;
     [SerializeField]
+    private GameObject fireUpParticles;
+    [SerializeField]
     private Vector3 attackUpOffset;
     [SerializeField]
-    private ParticleSystem fireUpParticles;
+    private GameObject fireLeftParticles;
     [SerializeField]
-    private ParticleSystem fireLeftParticles;
-    [SerializeField]
-    private ParticleSystem fireRightParticles;
+    private GameObject fireRightParticles;
     [SerializeField]
     private Vector3 attackHorizontalOffset;
+    [SerializeField]
+    private GameObject fireBall;
+    [SerializeField]
+    private Vector3 attackDownOffset;
 
     private int health;
     private bool isAlive = true;
@@ -117,7 +121,8 @@ public class Player : MonoBehaviour
             fireUpParticles,
             (spriteRenderer.flipX)
                 ? new Vector3(-attackUpOffset.x, attackUpOffset.y, 0)
-                : attackUpOffset
+                : attackUpOffset,
+            true
         );
     }
 
@@ -140,21 +145,43 @@ public class Player : MonoBehaviour
 
         // Create attack particles
         InstatiateAttackParticles(
-            (spriteRenderer.flipX) ? fireLeftParticles : fireRightParticles,
+            (spriteRenderer.flipX) 
+                ? fireLeftParticles 
+                : fireRightParticles,
             isStanding
                 ? offset
-                : new Vector3(offset.x, offset.y - 0.01f)
+                : new Vector3(offset.x, offset.y - 0.01f),
+            true
         );
     }
 
-    private void InstatiateAttackParticles(ParticleSystem particles, Vector3 attackOffset)
+    public void AttackDown()
     {
-        // Create particles in correct position
-        Instantiate(
-            particles,
-            transform.position,
-            Quaternion.Euler(-90, 0, 0),
-            transform
-        ).transform.localPosition += attackOffset;
+        InstatiateAttackParticles(
+            fireBall,
+            attackDownOffset,
+            false
+        );
+    }
+
+    private void InstatiateAttackParticles(GameObject particles, Vector3 attackOffset, bool underPlayer)
+    {
+        if (underPlayer) {
+            // Create particles in correct position under player game object
+            Instantiate(
+                particles,
+                transform.position,
+                Quaternion.Euler(-90, 0, 0),
+                transform
+            ).transform.position += attackOffset;
+        }
+        else {
+            // Create particles in correct position
+            Instantiate(
+                particles,
+                transform.position,
+                Quaternion.Euler(-90, 0, 0)
+            ).transform.position += attackOffset;
+        }
     }
 }

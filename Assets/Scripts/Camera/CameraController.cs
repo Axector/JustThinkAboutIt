@@ -23,6 +23,7 @@ public class CameraController : MonoBehaviour
     private Camera activeCamera;
 
     private int selectedCamera = 0;
+    private float bonusSpeed;
     private bool left;
     private bool right;
     private bool up;
@@ -59,6 +60,16 @@ public class CameraController : MonoBehaviour
         // Check to change camera size or not
         upCameraSize = (Input.GetKey(KeyCode.Plus) || Input.GetKey(KeyCode.Equals));
         downCameraSize = Input.GetKey(KeyCode.Minus);
+
+        // To always see player additional speed is needed
+        bonusSpeed = (
+            playerPosition.x > 0.9f ||
+            playerPosition.x < 0.1f ||
+            playerPosition.y > 0.9f ||
+            playerPosition.y < 0.1f
+        ) 
+            ? 3f
+            : 1f;
     }
 
     private void FixedUpdate()
@@ -95,7 +106,7 @@ public class CameraController : MonoBehaviour
     {
         // Move only if player is alive
         if (player.IsAlive) { 
-            activeCamera.transform.position += direction * player.PlayerSpeed * Time.fixedDeltaTime;
+            activeCamera.transform.position += direction * player.PlayerSpeed * bonusSpeed * Time.fixedDeltaTime;
         }
     }
 
@@ -112,12 +123,12 @@ public class CameraController : MonoBehaviour
         float size = activeCamera.orthographicSize;
 
         // Increase camera size
-        if (upCameraSize && size <= maxSize) {
+        if (downCameraSize && size <= maxSize) {
             size += cameraSizeChangeSpeed;
         }
 
         // Reduce camera size
-        if (downCameraSize && size >= minSize) {
+        if (upCameraSize && size >= minSize) {
             size -= cameraSizeChangeSpeed;
         }
 

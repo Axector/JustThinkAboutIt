@@ -149,16 +149,15 @@ MonoBehaviour:
   jumpForce: 10
   maxHealth: 1000
   money: 0
+  damage: 10
   delayToRestart: 3
-  attackUp: {fileID: 0}
-  attackUpOffset: {x: 0.076, y: 0.262, z: 0}
-  fireUpParticles: {fileID: 6090492106292262188, guid: feb40bfa62055aa4fb8ae9cbcd790641, type: 3}
-  attackLeft: {fileID: 0}
-  fireLeftParticles: {fileID: 6090492106292262188, guid: 7529a7e96f9960e4f9ea0d540505efb9, type: 3}
-  attackRight: {fileID: 0}
-  fireRightParticles: {fileID: 6090492106292262188, guid: a89812b7b7740164eb9ba2069922ae04, type: 3}
-  attackHorizontalOffset: {x: 0.1089, y: 0.037, z: 0}
-  attackDown: {fileID: 0}
+  fireUpParticles: {fileID: 6090492106292262186, guid: feb40bfa62055aa4fb8ae9cbcd790641, type: 3}
+  attackUpOffset: {x: 0.328, y: 0.626, z: 0}
+  fireLeftParticles: {fileID: 6090492106292262186, guid: 7529a7e96f9960e4f9ea0d540505efb9, type: 3}
+  fireRightParticles: {fileID: 6090492106292262186, guid: a89812b7b7740164eb9ba2069922ae04, type: 3}
+  attackHorizontalOffset: {x: 0.469, y: 0.163, z: 0}
+  fireBall: {fileID: 1808356621639487872, guid: a17dc272ea9f15640842a0204e67b92b, type: 3}
+  attackDownOffset: {x: 0, y: -0.098, z: 0}
 --- !u!95 &2654725592125547436
 Animator:
   serializedVersion: 3

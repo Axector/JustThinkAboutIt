@@ -2,18 +2,18 @@ using UnityEngine;
 
 public class DetectEnemy : MonoBehaviour
 {
-    private Player player;
+    protected Player player;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         player = FindObjectOfType<Player>();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         // Deal damage to an enemy
         if (other.gameObject.tag == "Enemy") {
-            other.GetComponent<AEnemy>().SetHealth(-player.Damage / 2);
+            other.GetComponent<AEnemy>().SetHealth(-player.Damage);
             Destroy(gameObject);
         }
     }
