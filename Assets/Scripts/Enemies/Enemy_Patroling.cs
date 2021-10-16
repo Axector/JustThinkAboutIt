@@ -11,6 +11,11 @@ public class Enemy_Patroling : AEnemy
     protected int currentPatrolPositionIndex = 0;
     protected bool move = true;
 
+    protected virtual void OnEnable()
+    {
+        move = true;
+    }
+
     protected virtual void Update()
     {
         // Stop moving when achieved the position

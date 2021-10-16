@@ -18,9 +18,6 @@ public class Enemy_Patroling_FlyingFollowing_Shooter : Enemy_Patroling
     {
         base.Update();
 
-        // DEBUG
-        Debug.DrawRay(transform.position, player.transform.position + Vector3.up * distanceFromPlayer - transform.position, Color.blue);
-
         if (attack) {
             // Get distance to player
             float distance = Vector3.Distance(transform.position, player.transform.position);
@@ -43,14 +40,7 @@ public class Enemy_Patroling_FlyingFollowing_Shooter : Enemy_Patroling
 
         // Atack player if he is in attack area
         if (otherTag == "Player" && !attack) {
-            attack = true;
-
-            // Take a look at the player before attack
-            Vector3 lookDirection = (player.transform.position - transform.position).normalized;
-            LookAtDirection(lookDirection);
-
-            // Start shooting
-            StartCoroutine(Shot());
+            StartAttack();
         }
     }
 
@@ -68,6 +58,18 @@ public class Enemy_Patroling_FlyingFollowing_Shooter : Enemy_Patroling
 
             Patrol();
         }
+    }
+
+    private void StartAttack()
+    {
+        attack = true;
+
+        // Take a look at the player before attack
+        Vector3 lookDirection = (player.transform.position - transform.position).normalized;
+        LookAtDirection(lookDirection);
+
+        // Start shooting
+        StartCoroutine(Shot());
     }
 
     private void Attack()
@@ -98,6 +100,16 @@ public class Enemy_Patroling_FlyingFollowing_Shooter : Enemy_Patroling
 
             // Delay before next shot
             yield return new WaitForSeconds(delayBeforeAttack);
+        }
+    }
+
+    public override void SetHealth(int hp)
+    {
+        base.SetHealth(hp);
+
+        // Agression after taking damage
+        if (!attack) {
+            StartAttack();
         }
     }
 }

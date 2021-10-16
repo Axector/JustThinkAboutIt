@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -23,7 +24,11 @@ public class PlayerController : MonoBehaviour
     private float velocityX = 0;
     private float movementSpeed;
     private float jumpForce;
-    private bool isGrounded = false;
+    private bool isGrounded         = false;
+    private bool canAttackDown      = false;
+    private bool isLeftAttacking    = false;
+    private bool isRightAttacking   = false;
+    private bool isWaitingForAttack = false;
 
     private void Start()
     {
@@ -47,10 +52,18 @@ public class PlayerController : MonoBehaviour
         // Checks if player is grounded
         SetIsGrounded();
 
+        // Player can attack down only once if not grounded
+        if (isGrounded) {
+            canAttackDown = true;
+        }
+
         // Jump when Space button is pressed and the player is grounded and alive
         if (Input.GetButtonDown("Jump") && isGrounded && player.IsAlive) {
-            pRigidBody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            Jump(jumpForce);
         }
+
+        // Player attack
+        Attack();
     }
 
     private void FixedUpdate()
@@ -61,6 +74,70 @@ public class PlayerController : MonoBehaviour
 
             // Set parameter for animator to animate running
             pAnimator.SetFloat("velocity", Mathf.Abs(velocityX));
+        }
+    }
+
+    private void Attack()
+    {
+        HorizontalAttack();
+
+        // PLayer attack up
+        if (Input.GetKeyDown(KeyCode.UpArrow) && !isWaitingForAttack) {
+            isWaitingForAttack = true;
+            pAnimator.Play("Player_Attack_Up");
+
+            StartCoroutine(WaitForAttack());
+        }
+
+        // PLayer attack down
+        if (Input.GetKeyDown(KeyCode.DownArrow) && canAttackDown) {
+            pAnimator.Play("Player_Flip");
+            canAttackDown = false;
+
+            // Attack down needs a leap
+            float jumpForceValue = jumpForce / 2;
+
+            // Jump forward
+            Jump(jumpForceValue);
+            pRigidBody2D.AddForce(
+                (pSpriteRenderer.flipX ? Vector2.left : Vector2.right) * jumpForceValue / 2,
+                ForceMode2D.Impulse
+            );
+        }
+    }
+
+    private void HorizontalAttack()
+    {
+        // PLayer attack left
+        if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+            isLeftAttacking = true;
+        }
+
+        // Stop to attack left
+        if (Input.GetKeyUp(KeyCode.LeftArrow)) {
+            isLeftAttacking = false;
+        }
+
+        // PLayer attack right
+        if (Input.GetKeyDown(KeyCode.RightArrow)) {
+            isRightAttacking = true;
+        }
+
+        // Stop to attack right
+        if (Input.GetKeyUp(KeyCode.RightArrow)) {
+            isRightAttacking = false;
+        }
+
+        // PLayer long horizontal attack
+        pAnimator.SetBool(
+            "longAttack",
+            Input.GetKey(KeyCode.RightArrow) || 
+            Input.GetKey(KeyCode.LeftArrow)
+        );
+
+        // Play specific animaion if player is attacking
+        if (isLeftAttacking || isRightAttacking) {
+            pAnimator.Play((velocityX != 0) ? "Player_RunAttack" : "Player_Attack_2");
         }
     }
 
@@ -100,10 +177,10 @@ public class PlayerController : MonoBehaviour
 
         // Player sprite rotation (left/right)
         // When velocity == 0, should stay in last rotation
-        if (velocityX < 0) {
+        if (velocityX < 0 && !isRightAttacking || isLeftAttacking) {
             pSpriteRenderer.flipX = true;
         }
-        else if (velocityX > 0) {
+        else if (velocityX > 0 && !isLeftAttacking || isRightAttacking) {
             pSpriteRenderer.flipX = false;
         }
     }
@@ -134,5 +211,17 @@ public class PlayerController : MonoBehaviour
         else {
             healthPointsText.color = Color.red;
         }
+    }
+
+    private void Jump(float jumpForceValue)
+    {
+        pRigidBody2D.AddForce(Vector2.up * jumpForceValue, ForceMode2D.Impulse);
+    }
+
+    private IEnumerator WaitForAttack()
+    {
+        yield return new WaitForSeconds(0.2f);
+
+        isWaitingForAttack = false;
     }
 }

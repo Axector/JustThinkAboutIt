@@ -5,7 +5,7 @@ public abstract class AEnemy : MonoBehaviour
     [SerializeField]
     protected int damage;
     [SerializeField]
-    protected int health;
+    protected int maxHealth;
     [SerializeField]
     protected float speed;
     [SerializeField]
@@ -20,6 +20,7 @@ public abstract class AEnemy : MonoBehaviour
     protected Rigidbody2D rigidBody2D;
     protected Collider2D collider2d;
     protected Vector3 startingPosition;
+    protected float health;
 
     protected virtual void Awake()
     {
@@ -28,6 +29,7 @@ public abstract class AEnemy : MonoBehaviour
         rigidBody2D = GetComponent<Rigidbody2D>();
         collider2d = GetComponent<Collider2D>();
         startingPosition = transform.position;
+        health = maxHealth;
     }
 
     protected virtual void OnCollisionEnter2D(Collision2D other)
@@ -57,5 +59,20 @@ public abstract class AEnemy : MonoBehaviour
 
         // Show damage popup on player
         textPopup.ShowPopup(damage.ToString(), player.transform);
+    }
+
+    public virtual void SetHealth(int hp)
+    {
+        health += hp;
+
+        // Enemy dies after health is < 0
+        if (health <= 0) {
+            Destroy(gameObject);
+        }
+
+        // Health cannot be more than maximum
+        if (health > maxHealth) {
+            health = maxHealth;
+        }
     }
 }

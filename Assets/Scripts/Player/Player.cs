@@ -13,11 +13,24 @@ public class Player : MonoBehaviour
     [SerializeField]
     private int money = 0;
     [SerializeField]
+    private int damage = 10;
+    [SerializeField]
     private float delayToRestart = 3f;
+    [SerializeField]
+    private Vector3 attackUpOffset;
+    [SerializeField]
+    private ParticleSystem fireUpParticles;
+    [SerializeField]
+    private ParticleSystem fireLeftParticles;
+    [SerializeField]
+    private ParticleSystem fireRightParticles;
+    [SerializeField]
+    private Vector3 attackHorizontalOffset;
 
     private int health;
     private bool isAlive = true;
     private PlayerController playerController;
+    private SpriteRenderer spriteRenderer;
     private Animator animator;
 
     public float PlayerSpeed { get => playerSpeed; }
@@ -25,11 +38,13 @@ public class Player : MonoBehaviour
     public int MaxHealth { get => maxHealth; }
     public int Health { get => health; }
     public bool IsAlive { get => isAlive; }
+    public int Damage { get => damage; }
 
     private void Awake()
     {
         // Get needed components
         playerController = FindObjectOfType<PlayerController>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
 
         // Set basic stats for player
@@ -75,6 +90,11 @@ public class Player : MonoBehaviour
         }
 
         playerController.ShowHealth(this);
+
+        // Play animation if the player was attacked
+        if (hp < 0) {
+            animator.Play("Player_Hurt");
+        }
     }
 
     public bool AddMoney(int amount)
@@ -89,5 +109,52 @@ public class Player : MonoBehaviour
         }
 
         return true;
+    }
+
+    public void AttackUp()
+    {
+        InstatiateAttackParticles(
+            fireUpParticles,
+            (spriteRenderer.flipX)
+                ? new Vector3(-attackUpOffset.x, attackUpOffset.y, 0)
+                : attackUpOffset
+        );
+    }
+
+    public void StandAttackHorizontal()
+    {
+        AttackHorizontal(true);
+    }
+
+    public void RunAttackHorizontal()
+    {
+        AttackHorizontal(false);
+    }
+
+    private void AttackHorizontal(bool isStanding)
+    {
+        // Get offset for left or right attack
+        Vector3 offset = (spriteRenderer.flipX)
+            ? new Vector3(-attackHorizontalOffset.x, attackHorizontalOffset.y)
+            : attackHorizontalOffset;
+
+        // Create attack particles
+        InstatiateAttackParticles(
+            (spriteRenderer.flipX) ? fireLeftParticles : fireRightParticles,
+            isStanding
+                ? offset
+                : new Vector3(offset.x, offset.y - 0.01f)
+        );
+    }
+
+    private void InstatiateAttackParticles(ParticleSystem particles, Vector3 attackOffset)
+    {
+        // Create particles in correct position
+        Instantiate(
+            particles,
+            transform.position,
+            Quaternion.Euler(-90, 0, 0),
+            transform
+        ).transform.localPosition += attackOffset;
     }
 }
