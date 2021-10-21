@@ -17,8 +17,8 @@ public abstract class AEnemy : MonoBehaviour
 
     protected Player player;
     protected Popup textPopup;
-    protected Rigidbody2D rigidBody2D;
     protected Collider2D collider2d;
+    protected Rigidbody2D rigidBody2D;
     protected Vector3 startingPosition;
     protected float health;
 
@@ -26,8 +26,8 @@ public abstract class AEnemy : MonoBehaviour
     {
         player = FindObjectOfType<Player>();
         textPopup = GetComponent<Popup>();
-        rigidBody2D = GetComponent<Rigidbody2D>();
         collider2d = GetComponent<Collider2D>();
+        rigidBody2D = GetComponent<Rigidbody2D>();
         startingPosition = transform.position;
         health = maxHealth;
     }

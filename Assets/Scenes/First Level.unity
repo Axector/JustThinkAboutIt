@@ -4627,7 +4627,7 @@ GameObject:
   - component: {fileID: 326576779}
   - component: {fileID: 326576781}
   - component: {fileID: 326576780}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10052,7 +10052,7 @@ GameObject:
   - component: {fileID: 741707357}
   - component: {fileID: 741707358}
   - component: {fileID: 741707359}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Entrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27461,7 +27461,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2002594520}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Structures
   m_TagString: Untagged
   m_Icon: {fileID: 0}

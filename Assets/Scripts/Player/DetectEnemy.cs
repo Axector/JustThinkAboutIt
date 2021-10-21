@@ -3,18 +3,29 @@ using UnityEngine;
 public class DetectEnemy : MonoBehaviour
 {
     protected Player player;
+    protected Popup textPopup;
+    protected ParticleSystem ps;
 
     protected virtual void Awake()
     {
         player = FindObjectOfType<Player>();
+        textPopup = GetComponent<Popup>();
+        ps = GetComponent<ParticleSystem>();
     }
 
-    protected virtual void OnTriggerEnter2D(Collider2D other)
+    protected void OnParticleCollision(GameObject other)
     {
-        // Deal damage to an enemy
+        // Detect an enemy
         if (other.gameObject.tag == "Enemy") {
+            // disable collision after hitting an enemy
+            ParticleSystem.CollisionModule coll = ps.collision;
+            coll.enabled = false;
+
+            // Deal damage to an enemy
             other.GetComponent<AEnemy>().SetHealth(-player.Damage);
-            Destroy(gameObject);
+
+            // Show damage popup
+            textPopup.ShowPopup(player.Damage.ToString(), other.transform);
         }
     }
 }

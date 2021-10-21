@@ -27,7 +27,7 @@ public class DetectEnemy_Fireball : DetectEnemy
         rigidBody2D.velocity += Vector2.down * fallSpeed * Time.fixedDeltaTime;
     }
 
-    protected override void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         string otherTag = other.gameObject.tag;
 
@@ -43,6 +43,7 @@ public class DetectEnemy_Fireball : DetectEnemy
             // Deal damage to an enemy
             if (otherTag == "Enemy") {
                 other.GetComponent<AEnemy>().SetHealth(-player.Damage);
+                textPopup.ShowPopup(player.Damage.ToString(), other.transform);
             }
 
             Destroy(gameObject);

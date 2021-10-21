@@ -14,6 +14,8 @@ public class Enemy_Patroling_FlyingFollowing_Shooter : Enemy_Patroling
 
     private bool attack = false;
 
+    public bool getAttack { get => attack; }
+
     protected override void Update()
     {
         base.Update();
@@ -34,33 +36,18 @@ public class Enemy_Patroling_FlyingFollowing_Shooter : Enemy_Patroling
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        string otherTag = other.gameObject.tag;
-
-        // Atack player if he is in attack area
-        if (otherTag == "Player" && !attack) {
-            StartAttack();
-        }
-    }
-
     protected override void FixedUpdate()
     {
         // Patroling or attacking
         if (attack) {
-            collider2d.isTrigger = false;
-
             Attack();
         }
         else {
-            // The enemy can go through the bojects, when not attacking the player and vice versa
-            collider2d.isTrigger = true;
-
             Patrol();
         }
     }
 
-    private void StartAttack()
+    public void StartAttack()
     {
         attack = true;
 

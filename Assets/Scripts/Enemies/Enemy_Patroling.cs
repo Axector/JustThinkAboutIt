@@ -7,6 +7,8 @@ public class Enemy_Patroling : AEnemy
     protected float delayBeforeMove = 1f;
     [SerializeField]
     protected Vector3[] patrolPositions;
+    [SerializeField]
+    protected float distanceToBecomeTrigger;
 
     protected int currentPatrolPositionIndex = 0;
     protected bool move = true;
@@ -18,11 +20,18 @@ public class Enemy_Patroling : AEnemy
 
     protected virtual void Update()
     {
+        // Get distance to a player
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+
+        // The enemy can go through the objects, when is far away from the player
+        collider2d.isTrigger = (distance >= distanceToBecomeTrigger);
+
         // Stop moving when achieved the position
         if (
+            patrolPositions.Length > 0 &&
             NearlyEqual(transform.localPosition.x, patrolPositions[currentPatrolPositionIndex].x, 0.1f) &&
-            NearlyEqual(transform.localPosition.y, patrolPositions[currentPatrolPositionIndex].y, 0.1f) && 
-            move
+            NearlyEqual(transform.localPosition.y, patrolPositions[currentPatrolPositionIndex].y, 0.1f) &&
+            move 
         ) {
             move = false;
 
@@ -48,7 +57,7 @@ public class Enemy_Patroling : AEnemy
     protected void Patrol()
     {
         // Move to next patrol position
-        if (move) {
+        if (move && patrolPositions.Length > 0) {
             // Get direction to right position
             Vector3 rightDirection = (patrolPositions[currentPatrolPositionIndex] - transform.localPosition).normalized;
 
