@@ -34,6 +34,11 @@ public class Enemy_Patroling_FlyingFollowing_Shooter : Enemy_Patroling
                 attack = false;
             }
         }
+
+        // Stop attack player after his death
+        if (!player.IsAlive) {
+            attack = false;
+        }
     }
 
     protected override void FixedUpdate()
@@ -46,6 +51,8 @@ public class Enemy_Patroling_FlyingFollowing_Shooter : Enemy_Patroling
             Patrol();
         }
     }
+
+    protected override void OnCollisionEnter2D(Collision2D other) {}
 
     public void StartAttack()
     {

@@ -96,7 +96,7 @@ public class Player : MonoBehaviour
         playerController.ShowHealth(this);
 
         // Play animation if the player was attacked
-        if (hp < 0) {
+        if (hp < 0 && isAlive) {
             animator.Play("Player_Hurt");
         }
     }

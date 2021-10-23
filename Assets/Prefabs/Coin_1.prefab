@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_Color.g
       value: 0.79383516
       objectReference: {fileID: 0}
+    - target: {fileID: 3412949229926686336, guid: 7cfeb26d38e24bd4f8cc0942e100162b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3412949229926686338, guid: 7cfeb26d38e24bd4f8cc0942e100162b, type: 3}
       propertyPath: m_Name
       value: Coin_1

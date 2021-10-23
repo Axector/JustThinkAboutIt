@@ -62,8 +62,10 @@ public class PlayerController : MonoBehaviour
             Jump(jumpForce);
         }
 
-        // Player attack
-        Attack();
+        // Player attack if is alive
+        if (player.IsAlive) { 
+            Attack();
+        }
     }
 
     private void FixedUpdate()
