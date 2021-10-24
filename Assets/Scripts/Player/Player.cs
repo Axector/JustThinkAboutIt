@@ -37,6 +37,8 @@ public class Player : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
+    public bool isCutscene;
+
     public float PlayerSpeed { get => playerSpeed; }
     public float JumpForce { get => jumpForce; }
     public int MaxHealth { get => maxHealth; }

@@ -49,33 +49,43 @@ public class PlayerController : MonoBehaviour
         // Get velocity value from axis
         velocityX = Input.GetAxis("Horizontal");
 
+        bool playerIsCutscene = player.isCutscene;
+
         // Checks if player is grounded
         SetIsGrounded();
 
         // Player can attack down only once if not grounded
-        if (isGrounded) {
+        if (isGrounded && !playerIsCutscene) {
             canAttackDown = true;
         }
 
         // Jump when Space button is pressed and the player is grounded and alive
-        if (Input.GetButtonDown("Jump") && isGrounded && player.IsAlive) {
+        if (Input.GetButtonDown("Jump") && 
+            isGrounded && 
+            player.IsAlive && 
+            !playerIsCutscene) {
             Jump(jumpForce);
         }
 
         // Player attack if is alive
-        if (player.IsAlive) { 
+        if (player.IsAlive && !playerIsCutscene) {
             Attack();
         }
     }
 
     private void FixedUpdate()
     {
-        // Movement to left and right while player is alive
-        if (player.IsAlive) {
+        // Movement to left and right while player is alive and it is not cutscene
+        if (player.IsAlive && !player.isCutscene) {
             Movement();
 
             // Set parameter for animator to animate running
             pAnimator.SetFloat("velocity", Mathf.Abs(velocityX));
+        }
+        // Move to the right direction
+        else if (player.IsAlive) {
+            pTransform.position += new Vector3(movementSpeed * Time.fixedDeltaTime, 0, 0);
+            pSpriteRenderer.flipX = false;
         }
     }
 

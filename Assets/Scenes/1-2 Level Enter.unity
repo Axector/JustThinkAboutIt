@@ -1647,6 +1647,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2822856215991457463, guid: 35c082b75e973a64597ecb36c2e6f38c, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822856215991457463, guid: 35c082b75e973a64597ecb36c2e6f38c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4459030389b6b6b4e8e788945874d8bf, type: 3}
+    - target: {fileID: 2822856215991457463, guid: 35c082b75e973a64597ecb36c2e6f38c, type: 3}
       propertyPath: m_SortingOrder
       value: -7
       objectReference: {fileID: 0}
@@ -2494,6 +2502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac8401fcf6033e49bed0e8c3d6d2830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneIndexToLoad: 3
+  sceneColor: {r: 0.101960786, g: 0.47843137, b: 0.8, a: 1}
   player: {fileID: 2097110885}
   cam: {fileID: 1867984266}
   moveDirection: 1
@@ -3034,6 +3044,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2822856215991457463, guid: 35c082b75e973a64597ecb36c2e6f38c, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822856215991457463, guid: 35c082b75e973a64597ecb36c2e6f38c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4459030389b6b6b4e8e788945874d8bf, type: 3}
     - target: {fileID: 2822856215991457463, guid: 35c082b75e973a64597ecb36c2e6f38c, type: 3}
       propertyPath: m_SortingOrder
       value: -7

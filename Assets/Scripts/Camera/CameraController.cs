@@ -1,9 +1,12 @@
+using UnityEngine.Rendering.PostProcessing;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
     [SerializeField]
     private GameObject[] cameras;
+    [SerializeField]
+    private Color sceneColor;
     [SerializeField]
     private float rightEdge;
     [SerializeField]
@@ -30,6 +33,7 @@ public class CameraController : MonoBehaviour
     private bool down;
     private bool upCameraSize;
     private bool downCameraSize;
+    private PostProcessVolume postProcessing;
 
     private void Start()
     {
@@ -44,6 +48,12 @@ public class CameraController : MonoBehaviour
 
         // Set default size to camera
         activeCamera.orthographicSize = Settings.GetCameraOrthographicSize();
+
+        // Set scene color
+        postProcessing = cameras[selectedCamera].GetComponent<PostProcessVolume>();
+        ColorGrading colorGrading;
+        postProcessing.profile.TryGetSettings(out colorGrading);
+        colorGrading.colorFilter.value = sceneColor;
     }
 
     private void Update()

@@ -2494,6 +2494,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac8401fcf6033e49bed0e8c3d6d2830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneIndexToLoad: 1
+  sceneColor: {r: 0.29803923, g: 0.09411765, b: 0.8666667, a: 1}
   player: {fileID: 2097110885}
   cam: {fileID: 1867984266}
   moveDirection: 1

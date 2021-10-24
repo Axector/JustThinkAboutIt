@@ -1,4 +1,5 @@
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering.PostProcessing;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
@@ -11,6 +12,10 @@ public class CutsceneController : MonoBehaviour
         right
     };
 
+    [SerializeField]
+    private int sceneIndexToLoad;
+    [SerializeField]
+    private Color sceneColor;
     [SerializeField]
     private CutscenePlayer player;
     [SerializeField]
@@ -35,6 +40,7 @@ public class CutsceneController : MonoBehaviour
     private Transform pTransform;
     private Animator pAnimator;
     private Image fadeScreenImage;
+    private PostProcessVolume postProcessing;
 
     private float velocityX;
     private float movementSpeed;
@@ -50,11 +56,17 @@ public class CutsceneController : MonoBehaviour
         pTransform = player.GetComponent<Transform>();
         pAnimator = player.GetComponent<Animator>();
         fadeScreenImage = fadeScreen.GetComponent<Image>();
+        postProcessing = cam.GetComponent<PostProcessVolume>();
 
         // Set basic stats
         movementSpeed = player.PlayerSpeed;
         fadeScreenImage.color = Color.black;
         cam.orthographicSize = 14f;
+
+        // Set scene color
+        ColorGrading colorGrading;
+        postProcessing.profile.TryGetSettings(out colorGrading);
+        colorGrading.colorFilter.value = sceneColor;
 
         StartCoroutine(StartCutScene());
     }
@@ -139,7 +151,7 @@ public class CutsceneController : MonoBehaviour
 
         // Set camera size and load game scene
         PlayerPrefs.SetFloat("CameraOrthographicSize", 7f);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(sceneIndexToLoad);
     }
 
     private IEnumerator StartCutScene()

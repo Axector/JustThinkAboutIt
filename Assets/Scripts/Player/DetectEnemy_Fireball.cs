@@ -43,7 +43,7 @@ public class DetectEnemy_Fireball : DetectEnemy
             // Deal damage to an enemy
             if (otherTag == "Enemy") {
                 other.GetComponent<AEnemy>().SetHealth(-player.Damage * 2);
-                textPopup.ShowPopup(player.Damage.ToString(), other.gameObject.transform);
+                textPopup.ShowPopup((player.Damage * 2).ToString(), other.gameObject.transform);
             }
 
             Destroy(gameObject);
