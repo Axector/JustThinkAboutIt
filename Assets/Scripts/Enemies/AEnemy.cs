@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public abstract class AEnemy : MonoBehaviour
@@ -19,8 +20,10 @@ public abstract class AEnemy : MonoBehaviour
     protected Popup textPopup;
     protected Collider2D collider2d;
     protected Rigidbody2D rigidBody2D;
+    protected Animator animator;
     protected Vector3 startingPosition;
     protected float health;
+    protected bool isAlive;
 
     protected virtual void Awake()
     {
@@ -28,8 +31,11 @@ public abstract class AEnemy : MonoBehaviour
         textPopup = GetComponent<Popup>();
         collider2d = GetComponent<Collider2D>();
         rigidBody2D = GetComponent<Rigidbody2D>();
+        animator = spriteRenderer.GetComponent<Animator>();
         startingPosition = transform.position;
         health = maxHealth;
+        isAlive = true;
+        animator.SetBool("isAlive", isAlive);
     }
 
     protected virtual void OnCollisionEnter2D(Collision2D other)
@@ -52,6 +58,11 @@ public abstract class AEnemy : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(rotationAngle, Vector3.forward);
     }
 
+    protected virtual void DestroyEnemy()
+    {
+        Destroy(gameObject);
+    }
+
     public void DoDamage()
     {
         // Deal damage to the player
@@ -67,7 +78,8 @@ public abstract class AEnemy : MonoBehaviour
 
         // Enemy dies after health is < 0
         if (health <= 0) {
-            Destroy(gameObject);
+            isAlive = false;
+            animator.SetBool("isAlive", isAlive);
         }
 
         // Health cannot be more than maximum
