@@ -1652,7 +1652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2822856215991457465, guid: 35c082b75e973a64597ecb36c2e6f38c, type: 3}
       propertyPath: m_Name
-      value: Tree_1
+      value: Tree
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35c082b75e973a64597ecb36c2e6f38c, type: 3}
@@ -3042,7 +3042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2822856215991457465, guid: 35c082b75e973a64597ecb36c2e6f38c, type: 3}
       propertyPath: m_Name
-      value: Tree_1
+      value: Tree
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35c082b75e973a64597ecb36c2e6f38c, type: 3}
@@ -4470,8 +4470,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2022598335}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 212.033, y: 2.5369, z: 0}
-  m_LocalScale: {x: 25.516579, y: 1.27249, z: 1}
+  m_LocalPosition: {x: -13.8674, y: 2.5369, z: 0}
+  m_LocalScale: {x: 1.9851243, y: 1.27249, z: 1}
   m_Children: []
   m_Father: {fileID: 2127937173}
   m_RootOrder: 0

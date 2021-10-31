@@ -27,16 +27,6 @@ public class AI_Enemy_Patrolling : AEnemy
     private bool doAttack = false;
     private bool isWaiting = false;
 
-    private void OnEnable()
-    {
-        seeGround = false;
-        seePlayer = false;
-        isFollowing = false;
-        isGoingBack = false;
-        doAttack = false;
-        isWaiting = false;
-    }
-
     private void Update()
     {
         // Check if an enemy is seeing the ground
@@ -57,17 +47,19 @@ public class AI_Enemy_Patrolling : AEnemy
 
     private void FixedUpdate()
     {
-        if (!seePlayer && !isGoingBack) {
-            // Patrolling
-            Patrolling();
-        }
-        else if (seePlayer && !doAttack && !isGoingBack) {
-            // Go and attack player
-            MoveToPlayer();
-        }
-        else if (isGoingBack) {
-            // Go back to start position
-            CheckGoBack();
+        if (isAlive) {
+            if (!seePlayer && !isGoingBack) {
+                // Patrolling
+                Patrolling();
+            }
+            else if (seePlayer && !doAttack && !isGoingBack) {
+                // Go and attack player
+                MoveToPlayer();
+            }
+            else if (isGoingBack) {
+                // Go back to start position
+                CheckGoBack();
+            }
         }
     }
 
@@ -274,5 +266,21 @@ public class AI_Enemy_Patrolling : AEnemy
 
         HorizontalFlip();
         isWaiting = false;
+    }
+
+    public override void SetHealth(int hp)
+    {
+        health += hp;
+
+        // Enemy dies after health is < 0
+        if (health <= 0) {
+            isAlive = false;
+            animator.SetBool("isAlive", isAlive);
+        }
+
+        // Health cannot be more than maximum
+        if (health > maxHealth) {
+            health = maxHealth;
+        }
     }
 }

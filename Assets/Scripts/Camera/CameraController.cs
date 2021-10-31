@@ -46,9 +46,6 @@ public class CameraController : MonoBehaviour
         player = FindObjectOfType<Player>();
         activeCamera = GetActiveCamera();
 
-        // Set default size to camera
-        activeCamera.orthographicSize = Settings.GetCameraOrthographicSize();
-
         // Set scene color
         postProcessing = cameras[selectedCamera].GetComponent<PostProcessVolume>();
         ColorGrading colorGrading;
@@ -142,9 +139,8 @@ public class CameraController : MonoBehaviour
             size -= cameraSizeChangeSpeed;
         }
 
-        // Set camera size and save value
+        // Set camera size
         activeCamera.orthographicSize = size;
-        Settings.SetCameraOrthographicSize(size);
     }
 
     public void SelectNextCamera()

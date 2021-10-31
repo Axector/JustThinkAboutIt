@@ -80,11 +80,17 @@ public abstract class AEnemy : MonoBehaviour
         if (health <= 0) {
             isAlive = false;
             animator.SetBool("isAlive", isAlive);
+            DestroyEnemy();
         }
 
         // Health cannot be more than maximum
         if (health > maxHealth) {
             health = maxHealth;
         }
+    }
+
+    public void IncreaseDamage(float factor)
+    {
+        damage = (int)(damage * factor);
     }
 }
