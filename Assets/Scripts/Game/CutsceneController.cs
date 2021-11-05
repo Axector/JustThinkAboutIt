@@ -90,7 +90,7 @@ public class CutsceneController : MonoBehaviour
 
         // Smooth fade out to introduce the level
         if (startFading) {
-            // Decrease alpha to make the fadeScreen fade out
+            // Decrease alpha to make the fadeScreen to fade out
             Color color = fadeScreenImage.color;
             color.a -= fadeOutSpeed;
             fadeScreenImage.color = color;

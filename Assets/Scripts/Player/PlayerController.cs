@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Text healthPointsText;
     [SerializeField]
+    private Image healthPointsBar;
+    [SerializeField]
     private float rayDistance = 1f;
     [SerializeField]
     private float rayOffsetRight = 1f;
@@ -212,16 +214,17 @@ public class PlayerController : MonoBehaviour
 
         // Get health percentage
         float healthPercentage = (float)playerHealth / player.MaxHealth;
+        healthPointsBar.fillAmount = healthPercentage;
 
         // Change color of the helth points depending on percentage
         if (healthPercentage >= .66f) {
-            healthPointsText.color = Color.green;
+            healthPointsBar.color = Color.green;
         }
         else if (healthPercentage >= .33f) {
-            healthPointsText.color = Color.yellow;
+            healthPointsBar.color = Color.yellow;
         }
         else {
-            healthPointsText.color = Color.red;
+            healthPointsBar.color = Color.red;
         }
     }
 

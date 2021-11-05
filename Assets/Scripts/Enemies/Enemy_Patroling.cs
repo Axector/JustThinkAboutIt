@@ -63,9 +63,6 @@ public class Enemy_Patroling : AEnemy
 
             LookAtDirection(rightDirection);
             rigidBody2D.MovePosition(transform.position + rightDirection * speed * Time.fixedDeltaTime);
-
-            // DEBUG
-            Debug.DrawRay(transform.position, patrolPositions[currentPatrolPositionIndex] - transform.localPosition);
         }
     }
 
