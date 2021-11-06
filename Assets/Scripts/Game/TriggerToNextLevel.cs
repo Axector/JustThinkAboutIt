@@ -31,8 +31,8 @@ public class TriggerToNextLevel : MonoBehaviour
     private void OnTriggerEnter2D()
     {
         // if it is not cutscene, then start cutscene
-        if (!player.isCutscene) {
-            player.isCutscene = true;
+        if (!player.IsCutscene) {
+            player.IsCutscene = true;
 
             StartCoroutine(StartCutscene());
         }

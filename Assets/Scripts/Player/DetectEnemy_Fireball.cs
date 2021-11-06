@@ -33,6 +33,10 @@ public class DetectEnemy_Fireball : DetectEnemy
 
         // Explode on collision
         if (otherTag == "Enemy" || otherTag == "SolidBlock") {
+            // Play explosion sound
+            player.AudioSource.clip = player.playerAttackExplosionSound;
+            player.AudioSource.Play();
+
             // Play explosion
             Instantiate(
                  explosion,

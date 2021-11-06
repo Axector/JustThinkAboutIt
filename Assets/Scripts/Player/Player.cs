@@ -31,13 +31,20 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Vector3 attackDownOffset;
 
+    [SerializeField]
+    public AudioClip playerAttackSound;
+    [SerializeField]
+    public AudioClip playerAttackExplosionSound;
+    [SerializeField]
+    public AudioClip playerHitSound;
+
     private int health;
     private bool isAlive = true;
     private PlayerController playerController;
     private SpriteRenderer spriteRenderer;
+    private AudioSource audioSource;
     private Animator animator;
-
-    public bool isCutscene;
+    private bool isCutscene;
 
     public float PlayerSpeed { get => playerSpeed; }
     public float JumpForce { get => jumpForce; }
@@ -45,12 +52,15 @@ public class Player : MonoBehaviour
     public int Health { get => health; }
     public bool IsAlive { get => isAlive; }
     public int Damage { get => damage; }
+    public bool IsCutscene { get => isCutscene; set => isCutscene = value; }
+    public AudioSource AudioSource { get => audioSource;}
 
     private void Awake()
     {
         // Get needed components
         playerController = FindObjectOfType<PlayerController>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
 
         // Set basic stats for player
@@ -99,6 +109,10 @@ public class Player : MonoBehaviour
 
         // Play animation if the player was attacked
         if (hp < 0 && isAlive) {
+            // Play attack sound
+            audioSource.clip = playerHitSound;
+            audioSource.Play();
+
             animator.Play("Player_Hurt");
         }
     }
@@ -159,6 +173,7 @@ public class Player : MonoBehaviour
 
     public void AttackDown()
     {
+        // Create falling fireball
         InstatiateAttackParticles(
             fireBall,
             attackDownOffset,
@@ -168,6 +183,10 @@ public class Player : MonoBehaviour
 
     private void InstatiateAttackParticles(GameObject particles, Vector3 attackOffset, bool underPlayer)
     {
+        // Play attack sound
+        audioSource.clip = playerAttackSound;
+        audioSource.Play();
+
         if (underPlayer) {
             // Create particles in correct position under player game object
             Instantiate(

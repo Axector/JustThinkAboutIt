@@ -2100,8 +2100,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -152.32, y: -19.986}
-  m_SizeDelta: {x: 289.8572, y: 25.362}
+  m_AnchoredPosition: {x: -150, y: -20}
+  m_SizeDelta: {x: 285, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &83578558
 MonoBehaviour:
@@ -2129,14 +2129,14 @@ MonoBehaviour:
     m_FontStyle: 2
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 52
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 100 %
 --- !u!222 &83578559
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20332,8 +20332,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -152.32, y: -19.986}
-  m_SizeDelta: {x: 289.8551, y: 25.3602}
+  m_AnchoredPosition: {x: -150, y: -20}
+  m_SizeDelta: {x: 285, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1053854968
 MonoBehaviour:
@@ -20348,14 +20348,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.47058824, b: 0, a: 0.61960787}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8181818153270352352, guid: b4b450d4bb7a7424e88a0bdd2d48d521, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f3cc706ae487691478b0538373a28fb7, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24510,7 +24510,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -189.7257, y: -50.1557}
-  m_SizeDelta: {x: 304.6455, y: 39.9724}
+  m_SizeDelta: {x: 300, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1280398895
 MonoBehaviour:
@@ -24532,7 +24532,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8181818153270352352, guid: b4b450d4bb7a7424e88a0bdd2d48d521, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fcd0f277a653ecb469bfac6db01f3f02, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -40084,6 +40084,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2654725592125547427, guid: 32536c955df250b49b5af93540beb1d1, type: 3}
+      propertyPath: gameCamera
+      value: 
+      objectReference: {fileID: 1867984266}
     - target: {fileID: 2654725592125547439, guid: 32536c955df250b49b5af93540beb1d1, type: 3}
       propertyPath: m_RootOrder
       value: 1

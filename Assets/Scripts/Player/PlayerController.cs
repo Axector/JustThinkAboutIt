@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         // Get velocity value from axis
         velocityX = Input.GetAxis("Horizontal");
 
-        bool playerIsCutscene = player.isCutscene;
+        bool playerIsCutscene = player.IsCutscene;
 
         // Checks if player is grounded
         SetIsGrounded();
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         // Movement to left and right while player is alive and it is not cutscene
-        if (player.IsAlive && !player.isCutscene) {
+        if (player.IsAlive && !player.IsCutscene) {
             Movement();
 
             // Set parameter for animator to animate running
@@ -99,6 +99,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow) && !isWaitingForAttack) {
             isWaitingForAttack = true;
             pAnimator.Play("Player_Attack_Up");
+
 
             StartCoroutine(WaitForAttack());
         }
@@ -210,7 +211,7 @@ public class PlayerController : MonoBehaviour
         int playerHealth = player.Health;
 
         // Set health points text
-        healthPointsText.text = playerHealth.ToString();
+        healthPointsText.text = playerHealth.ToString() + " %";
 
         // Get health percentage
         float healthPercentage = (float)playerHealth / player.MaxHealth;
@@ -218,13 +219,13 @@ public class PlayerController : MonoBehaviour
 
         // Change color of the helth points depending on percentage
         if (healthPercentage >= .66f) {
-            healthPointsBar.color = Color.green;
+            healthPointsBar.color = new Color(0, 120 / 255f, 0, 120 / 255f);
         }
         else if (healthPercentage >= .33f) {
-            healthPointsBar.color = Color.yellow;
+            healthPointsBar.color = new Color(1, 150 / 255f, 0, 120 / 255f);
         }
         else {
-            healthPointsBar.color = Color.red;
+            healthPointsBar.color = new Color(150 / 255f, 0, 0, 120 / 255f);
         }
     }
 
