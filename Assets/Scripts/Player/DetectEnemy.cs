@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DetectEnemy : MonoBehaviour
+public class DetectEnemy : DefaultClass
 {
     protected Player player;
     protected Popup textPopup;

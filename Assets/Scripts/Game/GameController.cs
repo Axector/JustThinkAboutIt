@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GameController : MonoBehaviour
+public class GameController : DefaultClass
 {
     public float damageIncreaseFactor = 1f;
 

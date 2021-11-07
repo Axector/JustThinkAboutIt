@@ -2,7 +2,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : DefaultClass
 {
     [SerializeField]
     private float playerSpeed = 10f;
@@ -66,6 +66,7 @@ public class Player : MonoBehaviour
         // Set basic stats for player
         AddHealth(maxHealth);
         animator.SetBool("isAlive", isAlive);
+        audioSource.volume = GameSettings.soundVolume;
     }
 
     private void Update()

@@ -4,7 +4,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class CutsceneController : MonoBehaviour
+public class CutsceneController : DefaultClass
 {
     private enum Direction
     {

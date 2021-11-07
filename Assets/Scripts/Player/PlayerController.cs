@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : DefaultClass
 {
     [SerializeField]
     private GameObject playerGameObject;
@@ -211,7 +211,7 @@ public class PlayerController : MonoBehaviour
         int playerHealth = player.Health;
 
         // Set health points text
-        healthPointsText.text = playerHealth.ToString() + " %";
+        healthPointsText.text = playerHealth.ToString();
 
         // Get health percentage
         float healthPercentage = (float)playerHealth / player.MaxHealth;
@@ -219,13 +219,13 @@ public class PlayerController : MonoBehaviour
 
         // Change color of the helth points depending on percentage
         if (healthPercentage >= .66f) {
-            healthPointsBar.color = new Color(0, 120 / 255f, 0, 120 / 255f);
+            healthPointsBar.color = GameSettings.successColor;
         }
         else if (healthPercentage >= .33f) {
-            healthPointsBar.color = new Color(1, 150 / 255f, 0, 120 / 255f);
+            healthPointsBar.color = GameSettings.warningColor;
         }
         else {
-            healthPointsBar.color = new Color(150 / 255f, 0, 0, 120 / 255f);
+            healthPointsBar.color = GameSettings.dangerColor;
         }
     }
 

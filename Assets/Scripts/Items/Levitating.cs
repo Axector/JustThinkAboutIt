@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Levitating : MonoBehaviour
+public class Levitating : DefaultClass
 {
     [SerializeField]
     private float speed = 1f;

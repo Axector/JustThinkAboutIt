@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Detect_Player : MonoBehaviour
+public class Detect_Player : DefaultClass
 {
     [SerializeField]
     private Enemy_Patroling_FlyingFollowing_Shooter parent;

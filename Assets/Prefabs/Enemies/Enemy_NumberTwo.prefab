@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4241215abd0ee51478d34b8aa9a8b014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 4
+  damage: 2
   maxHealth: 50
   speed: 3
   speedIncrease: 1.5
@@ -224,7 +224,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2189541862947104632}
-  - component: {fileID: 8146485291427641241}
+  - component: {fileID: 7746327797640789011}
   - component: {fileID: 6458287055048870940}
   m_Layer: 0
   m_Name: Aggression Area
@@ -247,8 +247,8 @@ Transform:
   m_Father: {fileID: 1467923879636827397}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &8146485291427641241
-BoxCollider2D:
+--- !u!70 &7746327797640789011
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -260,19 +260,9 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.0280461, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5.7559443, y: 1.8928434}
-  m_EdgeRadius: 0
+  m_Offset: {x: 2.028046, y: 0}
+  m_Size: {x: 5.755944, y: 1.892843}
+  m_Direction: 1
 --- !u!114 &6458287055048870940
 MonoBehaviour:
   m_ObjectHideFlags: 0

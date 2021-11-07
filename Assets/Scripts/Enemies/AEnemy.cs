@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public abstract class AEnemy : MonoBehaviour
+public abstract class AEnemy : DefaultClass
 {
     [SerializeField]
     protected int damage;
@@ -44,11 +44,6 @@ public abstract class AEnemy : MonoBehaviour
         if (other.gameObject.tag == "Player" && player.IsAlive) {
             DoDamage();
         }
-    }
-
-    protected bool NearlyEqual(float a, float b, float delta)
-    {
-        return Mathf.Abs(a - b) < delta;
     }
 
     protected void LookAtDirection(Vector3 direction)

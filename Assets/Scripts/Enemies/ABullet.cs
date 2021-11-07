@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class ABullet : MonoBehaviour
+public abstract class ABullet : DefaultClass
 {
     [SerializeField]
     protected float speed;

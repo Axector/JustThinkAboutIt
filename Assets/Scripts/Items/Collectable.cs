@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Collectable : MonoBehaviour
+public class Collectable : DefaultClass
 {
     private void OnTriggerEnter2D(Collider2D other)
     {

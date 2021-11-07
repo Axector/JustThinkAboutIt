@@ -29,8 +29,7 @@ public class Enemy_Patroling : AEnemy
         // Stop moving when achieved the position
         if (
             patrolPositions.Length > 0 &&
-            NearlyEqual(transform.localPosition.x, patrolPositions[currentPatrolPositionIndex].x, 0.1f) &&
-            NearlyEqual(transform.localPosition.y, patrolPositions[currentPatrolPositionIndex].y, 0.1f) &&
+            NearlyEqual(transform.localPosition, patrolPositions[currentPatrolPositionIndex], 0.1f) &&
             move 
         ) {
             move = false;

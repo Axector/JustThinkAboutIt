@@ -2,7 +2,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine;
 
-public class MenuController : MonoBehaviour
+public class MenuController : DefaultClass
 {
     public void StartFirstChapter()
     {

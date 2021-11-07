@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class FadeOut : MonoBehaviour
+public class FadeOut : DefaultClass
 {
     [SerializeField]
     private float fadeOutSpeed = 0.0005f;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Money : MonoBehaviour
+public class Money : DefaultClass
 {
     [SerializeField]
     private int amount = 1000;

@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class EnterBlock : MonoBehaviour
+public class EnterBlock : DefaultClass
 {
     private void Start()
     {

@@ -1,7 +1,7 @@
 using UnityEngine.UI;
 using UnityEngine;
 
-public class Popup : MonoBehaviour
+public class Popup : DefaultClass
 {
     [SerializeField]
     private Text moneyEarnedText;

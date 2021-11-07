@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CutscenePlayer : MonoBehaviour
+public class CutscenePlayer : DefaultClass
 {
     [SerializeField]
     private float playerSpeed = 10f;

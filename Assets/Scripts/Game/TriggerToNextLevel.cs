@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class TriggerToNextLevel : MonoBehaviour
+public class TriggerToNextLevel : DefaultClass
 {
     [SerializeField]
     private Player player;
