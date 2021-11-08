@@ -219,13 +219,13 @@ public class PlayerController : DefaultClass
 
         // Change color of the helth points depending on percentage
         if (healthPercentage >= .66f) {
-            healthPointsBar.color = GameSettings.successColor;
+            healthPointsBar.color = successColor;
         }
         else if (healthPercentage >= .33f) {
-            healthPointsBar.color = GameSettings.warningColor;
+            healthPointsBar.color = warningColor;
         }
         else {
-            healthPointsBar.color = GameSettings.dangerColor;
+            healthPointsBar.color = dangerColor;
         }
     }
 

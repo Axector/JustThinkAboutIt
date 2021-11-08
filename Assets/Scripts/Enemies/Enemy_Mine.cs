@@ -4,13 +4,37 @@ public class Enemy_Mine : Enemy_Ground_Shooter
 {
     [SerializeField]
     private GameObject pivot;
-
-    private float rotationMax = 40f;
+    [SerializeField]
+    private float rotationMax;
+    [SerializeField]
+    private float rotationOffset;
 
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
 
-        // TODO: Rotate eye to player
+        if (seePlayer) {
+            // Get rotation angle to look at player
+            Vector3 directionToPlayer = player.transform.position - pivot.transform.position;
+            float rotationAngle = getLookAtRotation(directionToPlayer).eulerAngles.z;
+            rotationAngle = normalizeRotationAngle(rotationAngle);
+
+            // Include offset that depends on the object rotation
+            rotationAngle -= rotationOffset;
+
+            // DEBUG
+            Debug.Log(rotationAngle);
+
+            // Check angle maximum and minimum
+            rotationAngle = rotationAngle < rotationMax ? rotationAngle : rotationMax;
+            rotationAngle = rotationAngle > -rotationMax ? rotationAngle : -rotationMax;
+
+            // Rotate to player
+            pivot.transform.localRotation = Quaternion.Euler(
+                0,
+                0,
+                rotationAngle
+            );
+        }
     }
 }

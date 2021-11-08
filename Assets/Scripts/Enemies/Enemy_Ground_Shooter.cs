@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy_Ground_Shooter : DefaultClass
@@ -16,12 +15,18 @@ public class Enemy_Ground_Shooter : DefaultClass
     private GameObject shotBullet;
 
     protected Player player;
+    private SpriteRenderer shotPositionSprite;
+    private Color defaultColor;
+    private Color angerColor;
     private bool canShoot;
     protected bool seePlayer;
 
     private void Start()
     {
         player = FindObjectOfType<Player>();
+        shotPositionSprite = shotPosition.GetComponent<SpriteRenderer>();
+        defaultColor = shotPositionSprite.color;
+        angerColor = lightGreyColor;
 
         canShoot = true;
         seePlayer = false;
@@ -34,6 +39,11 @@ public class Enemy_Ground_Shooter : DefaultClass
         // Check if player is in anger distance
         if (distanceToPlayer < angerDistance) {
             seePlayer = true;
+            shotPositionSprite.color = angerColor;
+        }
+        else {
+            seePlayer = false;
+            shotPositionSprite.color = defaultColor;
         }
     }
 

@@ -5168,14 +5168,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 255303350}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.436, y: -3.127, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.9998619, w: 0.016621733}
+  m_LocalPosition: {x: -16.6, y: -0.6, z: 0}
   m_LocalScale: {x: 1.7, y: 1.5, z: 1}
   m_Children:
   - {fileID: 1159548343}
   m_Father: {fileID: 0}
   m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 178.095}
 --- !u!114 &255303353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5194,6 +5194,7 @@ MonoBehaviour:
   shotPosition: {fileID: 1709451829}
   shotBullet: {fileID: 5681389355617282992, guid: 73ab3aec00377dc4d96a81fc395e4304, type: 3}
   pivot: {fileID: 1159548342}
+  rotationMax: 40
 --- !u!1001 &256921063
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32253,7 +32254,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c27db2f272d5f284b9aa62bf8a2fe45d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

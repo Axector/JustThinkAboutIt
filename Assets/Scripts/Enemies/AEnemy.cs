@@ -46,13 +46,6 @@ public abstract class AEnemy : DefaultClass
         }
     }
 
-    protected void LookAtDirection(Vector3 direction)
-    {
-        // Set enemy rotation to face the player
-        float rotationAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(rotationAngle, Vector3.forward);
-    }
-
     protected virtual void DestroyEnemy()
     {
         Destroy(gameObject);
