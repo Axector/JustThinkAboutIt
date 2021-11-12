@@ -4,6 +4,8 @@ using UnityEngine;
 public class Enemy_Ground_Shooter : DefaultClass
 {
     [SerializeField]
+    private int damage;
+    [SerializeField]
     private float shotForce;
     [SerializeField]
     private float angerDistance;
@@ -12,10 +14,11 @@ public class Enemy_Ground_Shooter : DefaultClass
     [SerializeField]
     private GameObject shotPosition;
     [SerializeField]
-    private GameObject shotBullet;
+    private Enemy_Fireball shotBullet;
 
     protected Player player;
     private SpriteRenderer shotPositionSprite;
+    private Popup textPopup;
     private Color defaultColor;
     private Color angerColor;
     private bool canShoot;
@@ -27,6 +30,7 @@ public class Enemy_Ground_Shooter : DefaultClass
         shotPositionSprite = shotPosition.GetComponent<SpriteRenderer>();
         defaultColor = shotPositionSprite.color;
         angerColor = lightGreyColor;
+        textPopup = GetComponent<Popup>();
 
         canShoot = true;
         seePlayer = false;
@@ -60,11 +64,14 @@ public class Enemy_Ground_Shooter : DefaultClass
     private void DoShot()
     {
         // Create bullet
-        GameObject bullet = Instantiate(
+        Enemy_Fireball bullet = Instantiate(
             shotBullet,
             shotPosition.transform.position,
             Quaternion.identity
         );
+
+        // Give parent to the bullet
+        bullet.Setup(this);
 
         // Give impulse to bullet
         bullet.GetComponent<Rigidbody2D>().AddForce(shotPosition.transform.up * shotForce, ForceMode2D.Impulse);
@@ -78,5 +85,14 @@ public class Enemy_Ground_Shooter : DefaultClass
         yield return new WaitForSeconds(delayBeforeShot);
 
         canShoot = true;
+    }
+
+    public void DoDamage()
+    {
+        // Deal damage to the player
+        player.AddHealth(-damage);
+
+        // Show damage popup on player
+        textPopup.ShowPopup(damage.ToString(), player.transform);
     }
 }

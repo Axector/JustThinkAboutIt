@@ -124,9 +124,10 @@ GameObject:
   - component: {fileID: 4496365227338514066}
   - component: {fileID: 4496365227338514077}
   - component: {fileID: 4496365227338514067}
-  m_Layer: 0
+  - component: {fileID: 3358944274121322233}
+  m_Layer: 8
   m_Name: Enemy_Mine
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -209,11 +210,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bed0392936bfe5e46855b26bce154702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 5
   shotForce: 10
-  angerDistance: 10
+  angerDistance: 7
   delayBeforeShot: 2
   shotPosition: {fileID: 4496365225548548639}
-  shotBullet: {fileID: 5681389355617282992, guid: 73ab3aec00377dc4d96a81fc395e4304, type: 3}
+  shotBullet: {fileID: 8285813318626893797, guid: 73ab3aec00377dc4d96a81fc395e4304, type: 3}
   pivot: {fileID: 4496365226094292380}
   rotationMax: 40
   rotationOffset: 90
+--- !u!114 &3358944274121322233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4496365227338514076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1048d0a3042227e40b877c4e15dda9fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyEarnedText: {fileID: 6936950582075386107, guid: d7b8ce873516f33409ea10a0b99f56bd, type: 3}
+  beforeText: '-'
+  color: {r: 0.7254902, g: 0, b: 0, a: 1}
