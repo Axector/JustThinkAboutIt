@@ -26,7 +26,7 @@ public class DefaultClass : MonoBehaviour
         return Vector3.Distance(a, b) <= delta;
     }
 
-    protected float normalizeRotationAngle(float angle)
+    protected float NormalizeRotationAngle(float angle)
     {
         if (angle < 0) {
             angle %= 360;
@@ -37,7 +37,7 @@ public class DefaultClass : MonoBehaviour
         return angle % 360f;
     }
 
-    protected Quaternion getLookAtRotation(Vector3 direction)
+    protected Quaternion GetLookAtRotation(Vector3 direction)
     {
         // Set enemy rotation to face the player
         float rotationAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;

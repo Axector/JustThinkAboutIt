@@ -1,3 +1,4 @@
+using UnityEngine.Localization.Settings;
 using UnityEngine;
 
 public static class GameSettings

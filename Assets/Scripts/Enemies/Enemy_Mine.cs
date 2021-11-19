@@ -16,8 +16,8 @@ public class Enemy_Mine : Enemy_Ground_Shooter
         if (seePlayer) {
             // Get rotation angle to look at player
             Vector3 directionToPlayer = player.transform.position - pivot.transform.position;
-            float rotationAngle = getLookAtRotation(directionToPlayer).eulerAngles.z;
-            rotationAngle = normalizeRotationAngle(rotationAngle);
+            float rotationAngle = GetLookAtRotation(directionToPlayer).eulerAngles.z;
+            rotationAngle = NormalizeRotationAngle(rotationAngle);
 
             // Include offset that depends on the object rotation
             rotationAngle -= rotationOffset;

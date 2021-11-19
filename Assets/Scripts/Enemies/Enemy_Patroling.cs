@@ -60,7 +60,7 @@ public class Enemy_Patroling : AEnemy
             // Get direction to right position
             Vector3 rightDirection = (patrolPositions[currentPatrolPositionIndex] - transform.localPosition).normalized;
 
-            transform.rotation = getLookAtRotation(rightDirection);
+            transform.rotation = GetLookAtRotation(rightDirection);
             rigidBody2D.MovePosition(transform.position + rightDirection * speed * Time.fixedDeltaTime);
         }
     }

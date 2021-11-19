@@ -1,3 +1,4 @@
+using UnityEngine.Localization.Settings;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine;
@@ -111,8 +112,7 @@ public class Player : DefaultClass
         // Play animation if the player was attacked
         if (hp < 0 && isAlive) {
             // Play attack sound
-            audioSource.clip = playerHitSound;
-            audioSource.Play();
+            PlaySound(playerHitSound);
 
             animator.Play("Player_Hurt");
         }
@@ -153,6 +153,16 @@ public class Player : DefaultClass
         AttackHorizontal(false);
     }
 
+    public void AttackDown()
+    {
+        // Create falling fireball
+        InstatiateAttackParticles(
+            fireBall,
+            attackDownOffset,
+            false
+        );
+    }
+
     private void AttackHorizontal(bool isStanding)
     {
         // Get offset for left or right attack
@@ -172,21 +182,10 @@ public class Player : DefaultClass
         );
     }
 
-    public void AttackDown()
-    {
-        // Create falling fireball
-        InstatiateAttackParticles(
-            fireBall,
-            attackDownOffset,
-            false
-        );
-    }
-
     private void InstatiateAttackParticles(GameObject particles, Vector3 attackOffset, bool underPlayer)
     {
         // Play attack sound
-        audioSource.clip = playerAttackSound;
-        audioSource.Play();
+        PlaySound(playerAttackSound);
 
         if (underPlayer) {
             // Create particles in correct position under player game object
@@ -205,5 +204,11 @@ public class Player : DefaultClass
                 Quaternion.Euler(-90, 0, 0)
             ).transform.position += attackOffset;
         }
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.clip = clip;
+        audioSource.Play();
     }
 }

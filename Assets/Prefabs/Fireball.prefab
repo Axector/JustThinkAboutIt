@@ -112,6 +112,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fireball_Particles
       objectReference: {fileID: 0}
+    - target: {fileID: 2410076814042931549, guid: c8dd285b5cae4754b834b8ae211edc5c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2410076814042931551, guid: c8dd285b5cae4754b834b8ae211edc5c, type: 3}
       propertyPath: m_RootOrder
       value: 0

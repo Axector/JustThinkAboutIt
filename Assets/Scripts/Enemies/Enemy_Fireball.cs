@@ -25,8 +25,7 @@ public class Enemy_Fireball : MonoBehaviour
         // Explode on collision
         if (otherTag == "Player" || otherTag == "SolidBlock") {
             // Play explosion sound
-            player.AudioSource.clip = player.playerAttackExplosionSound;
-            player.AudioSource.Play();
+            player.PlaySound(player.playerAttackExplosionSound);
 
             // Play explosion
             Instantiate(

@@ -60,7 +60,7 @@ public class Enemy_Patroling_FlyingFollowing_Shooter : Enemy_Patroling
 
         // Take a look at the player before attack
         Vector3 lookDirection = (player.transform.position - transform.position).normalized;
-        transform.rotation = getLookAtRotation(lookDirection);
+        transform.rotation = GetLookAtRotation(lookDirection);
 
         // Start shooting
         StartCoroutine(Shot());
@@ -73,7 +73,7 @@ public class Enemy_Patroling_FlyingFollowing_Shooter : Enemy_Patroling
 
         // Look at the player
         Vector3 lookDirection = (player.transform.position - transform.position).normalized;
-        transform.rotation = getLookAtRotation(lookDirection);
+        transform.rotation = GetLookAtRotation(lookDirection);
 
         // Stay above player
         rigidBody2D.MovePosition(transform.position + direction * speed * speedIncrease * Time.fixedDeltaTime);
@@ -90,7 +90,10 @@ public class Enemy_Patroling_FlyingFollowing_Shooter : Enemy_Patroling
             );
 
             // Call bullet constructor
-            newBullet.GetComponent<Bullet_Standard>().Setup(this);
+            Bullet_Standard standardBullet;
+            if (newBullet.TryGetComponent<Bullet_Standard>(out standardBullet)) {
+                standardBullet.Setup(this);
+            }
 
             // Delay before next shot
             yield return new WaitForSeconds(delayBeforeAttack);
