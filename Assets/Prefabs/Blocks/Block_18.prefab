@@ -2650,7 +2650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4496365227338514067, guid: 3e02bd238284dda4fa13de1dfcb16181, type: 3}
       propertyPath: rotationOffset
-      value: 180
+      value: 270
       objectReference: {fileID: 0}
     - target: {fileID: 4496365227338514076, guid: 3e02bd238284dda4fa13de1dfcb16181, type: 3}
       propertyPath: m_Name

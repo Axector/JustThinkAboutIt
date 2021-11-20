@@ -19,6 +19,30 @@ MonoBehaviour:
     m_Key: lost_woods
     m_Metadata:
       m_Items: []
+  - m_Id: 324570485837824
+    m_Key: abandoned_village
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339006734946304
+    m_Key: fallen_city
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353986666516480
+    m_Key: pauze
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366651086426112
+    m_Key: resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366672880029696
+    m_Key: settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366685366472704
+    m_Key: exit
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

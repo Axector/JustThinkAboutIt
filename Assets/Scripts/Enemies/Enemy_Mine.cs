@@ -22,9 +22,6 @@ public class Enemy_Mine : Enemy_Ground_Shooter
             // Include offset that depends on the object rotation
             rotationAngle -= rotationOffset;
 
-            // DEBUG
-            Debug.Log(rotationAngle);
-
             // Check angle maximum and minimum
             rotationAngle = rotationAngle < rotationMax ? rotationAngle : rotationMax;
             rotationAngle = rotationAngle > -rotationMax ? rotationAngle : -rotationMax;

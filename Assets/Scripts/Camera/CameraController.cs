@@ -51,6 +51,9 @@ public class CameraController : MonoBehaviour
         ColorGrading colorGrading;
         postProcessing.profile.TryGetSettings(out colorGrading);
         colorGrading.colorFilter.value = sceneColor;
+
+        // Camera settings
+        activeCamera.orthographicSize = PlayerPrefs.GetFloat("camera_size", 7f);
     }
 
     private void Update()
@@ -141,6 +144,7 @@ public class CameraController : MonoBehaviour
 
         // Set camera size
         activeCamera.orthographicSize = size;
+        PlayerPrefs.SetFloat("camera_size", size);
     }
 
     public void SelectNextCamera()

@@ -5,16 +5,20 @@ using UnityEngine;
 public class FadeOut : DefaultClass
 {
     [SerializeField]
-    private float fadeOutSpeed = 0.0005f;
+    protected float fadeOutSpeed = 0.0005f;
     [SerializeField]
-    private float goUpSpeed = 0.1f;
+    protected float goUpSpeed = 0.1f;
+    [SerializeField]
+    private float delay;
 
     private bool startFading = false;
     private Text text;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         text = GetComponent<Text>();
+
+        StartCoroutine(DelayBeforeFading());
     }
 
     private void Update()
@@ -24,22 +28,21 @@ public class FadeOut : DefaultClass
             Color color = text.color;
             color.a -= fadeOutSpeed;
             text.color = color;
+
+            // Destroy invisible object
+            if (color.a <= 0) {
+                Destroy(gameObject);
+            }
         }
 
+        // Slowly move text up
         transform.position += Vector3.up * goUpSpeed;
     }
 
-    public void StartFadeOut()
+    private IEnumerator DelayBeforeFading()
     {
-        StartCoroutine(DestroyAfterFadeOut());
-    }
+        yield return new WaitForSeconds(delay);
 
-    private IEnumerator DestroyAfterFadeOut()
-    {
         startFading = true;
-
-        yield return new WaitForSeconds(2f);
-
-        Destroy(gameObject);
     }
 }

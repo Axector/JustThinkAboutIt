@@ -15,8 +15,11 @@ public class Enemy_Ground_Shooter : DefaultClass
     private GameObject shotPosition;
     [SerializeField]
     private Enemy_Fireball shotBullet;
+    [SerializeField]
+    private AudioClip shotSound;
 
     protected Player player;
+    private AudioSource audioSource;
     private SpriteRenderer shotPositionSprite;
     private Popup textPopup;
     private Color defaultColor;
@@ -27,6 +30,7 @@ public class Enemy_Ground_Shooter : DefaultClass
     private void Start()
     {
         player = FindObjectOfType<Player>();
+        audioSource = GetComponent<AudioSource>();
         shotPositionSprite = shotPosition.GetComponent<SpriteRenderer>();
         defaultColor = shotPositionSprite.color;
         angerColor = lightGreyColor;
@@ -63,6 +67,9 @@ public class Enemy_Ground_Shooter : DefaultClass
 
     private void DoShot()
     {
+        // Play shot sound
+        PlaySound(audioSource, shotSound);
+
         // Create bullet
         Enemy_Fireball bullet = Instantiate(
             shotBullet,

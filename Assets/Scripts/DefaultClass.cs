@@ -43,4 +43,10 @@ public class DefaultClass : MonoBehaviour
         float rotationAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         return Quaternion.AngleAxis(rotationAngle, Vector3.forward);
     }
+
+    protected void PlaySound(AudioSource source, AudioClip clip)
+    {
+        source.clip = clip;
+        source.Play();
+    }
 }

@@ -1,16 +1,18 @@
 using UnityEngine;
 
-public class Enemy_Fireball : MonoBehaviour
+public class Enemy_Fireball : DefaultClass
 {
     [SerializeField]
     private ParticleSystem explosion;
 
     private Player player;
+    private AudioSource audioSource;
     protected Enemy_Ground_Shooter parent;
 
     private void Awake()
     {
         player = FindObjectOfType<Player>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Setup(Enemy_Ground_Shooter parent)
@@ -25,7 +27,7 @@ public class Enemy_Fireball : MonoBehaviour
         // Explode on collision
         if (otherTag == "Player" || otherTag == "SolidBlock") {
             // Play explosion sound
-            player.PlaySound(player.playerAttackExplosionSound);
+            PlaySound(audioSource, player.playerAttackExplosionSound);
 
             // Play explosion
             Instantiate(

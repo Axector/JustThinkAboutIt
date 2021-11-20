@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : DefaultClass
 {
     [SerializeField]
-    private GameObject playerGameObject;
+    private Player player;
     [SerializeField]
     private Text healthPointsText;
     [SerializeField]
@@ -16,8 +16,7 @@ public class PlayerController : DefaultClass
     private float rayOffsetRight = 1f;
     [SerializeField]
     private float rayOffsetLeft = 1f;
-
-    private Player player;
+    
     private Rigidbody2D pRigidBody2D;   // prefix p means player
     private SpriteRenderer pSpriteRenderer;
     private Transform pTransform;
@@ -35,11 +34,10 @@ public class PlayerController : DefaultClass
     private void Start()
     {
         // Get different components of a player
-        player = playerGameObject.GetComponent<Player>();
-        pRigidBody2D = playerGameObject.GetComponent<Rigidbody2D>();
-        pSpriteRenderer = playerGameObject.GetComponent<SpriteRenderer>();
-        pTransform = playerGameObject.GetComponent<Transform>();
-        pAnimator = playerGameObject.GetComponent<Animator>();
+        pRigidBody2D = player.GetComponent<Rigidbody2D>();
+        pSpriteRenderer = player.GetComponent<SpriteRenderer>();
+        pTransform = player.GetComponent<Transform>();
+        pAnimator = player.GetComponent<Animator>();
 
         // Set basic stats for player movement
         movementSpeed = player.PlayerSpeed;
@@ -62,10 +60,12 @@ public class PlayerController : DefaultClass
         }
 
         // Jump when Space button is pressed and the player is grounded and alive
-        if (Input.GetButtonDown("Jump") && 
+        if (
+            Input.GetButtonDown("Jump") && 
             isGrounded && 
             player.IsAlive && 
-            !playerIsCutscene) {
+            !playerIsCutscene
+        ) {
             Jump(jumpForce);
         }
 

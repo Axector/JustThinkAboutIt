@@ -32,7 +32,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -14.040001, y: -2.8163767, z: 0}
   m_LocalScale: {x: 4.3, y: 4.3, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4619067109617323140}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -161,7 +162,7 @@ MonoBehaviour:
   attackDownOffset: {x: 0, y: -0.098, z: 0}
   playerAttackSound: {fileID: 8300000, guid: ceb543717c5d92744908a1a75d041d84, type: 3}
   playerAttackExplosionSound: {fileID: 8300000, guid: a74424efc0c8f0e40bf16679108c2af7, type: 3}
-  playerHitSound: {fileID: 8300000, guid: a8e7f868a6ebd0945b4cc322b88b765a, type: 3}
+  playerHitSound: {fileID: 8300000, guid: 33d43c76cab336e46b65baaa1152a792, type: 3}
 --- !u!95 &2654725592125547436
 Animator:
   serializedVersion: 3
@@ -277,3 +278,52 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &4356356943675241716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4619067109617323140}
+  - component: {fileID: 3286987112368868878}
+  m_Layer: 0
+  m_Name: Player Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4619067109617323140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4356356943675241716}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.644168, y: 0.6049346, z: 1}
+  m_LocalScale: {x: 0.23255815, y: 0.23255815, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2654725592125547439}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3286987112368868878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4356356943675241716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 342f4d8f1acaae549938ad1cdf6d5237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2654725592125547427}
+  healthPointsText: {fileID: 0}
+  healthPointsBar: {fileID: 0}
+  rayDistance: 0.74
+  rayOffsetRight: 0.22
+  rayOffsetLeft: 0.25

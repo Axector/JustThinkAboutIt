@@ -15,12 +15,15 @@ public abstract class AEnemy : DefaultClass
     protected SpriteRenderer spriteRenderer;
     [SerializeField]
     protected float delayBeforeAttack = 0.5f;
+    [SerializeField]
+    private AudioClip hurtAudio;
 
     protected Player player;
     protected Popup textPopup;
     protected Collider2D collider2d;
     protected Rigidbody2D rigidBody2D;
     protected Animator animator;
+    protected AudioSource audioSource;
     protected Vector3 startingPosition;
     protected float health;
     protected bool isAlive;
@@ -32,6 +35,7 @@ public abstract class AEnemy : DefaultClass
         collider2d = GetComponent<Collider2D>();
         rigidBody2D = GetComponent<Rigidbody2D>();
         animator = spriteRenderer.GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         startingPosition = transform.position;
         health = maxHealth;
         isAlive = true;
@@ -64,11 +68,16 @@ public abstract class AEnemy : DefaultClass
     {
         health += hp;
 
-        // Enemy dies after health is < 0
+        // Enemy takes damage
+        if (hp < 0) {
+            // Play hurt sound
+            PlaySound(audioSource, hurtAudio);
+        }
+
+        // Enemy dies after health is less than 0
         if (health <= 0) {
             isAlive = false;
             animator.SetBool("isAlive", isAlive);
-            DestroyEnemy();
         }
 
         // Health cannot be more than maximum
@@ -77,8 +86,11 @@ public abstract class AEnemy : DefaultClass
         }
     }
 
-    public void IncreaseDamage(float factor)
+    public void IncreaseStats(float factor)
     {
+        // Increase damage and health points
         damage = (int)(damage * factor);
+        maxHealth = (int)(maxHealth * factor);
+        health = maxHealth;
     }
 }

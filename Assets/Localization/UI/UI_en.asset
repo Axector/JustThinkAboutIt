@@ -19,7 +19,31 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 11354198016
-    m_Localized: lost woods
+    m_Localized: LOST WOODS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 324570485837824
+    m_Localized: ABANDONED VILLAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339006734946304
+    m_Localized: FALLEN CITY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353986666516480
+    m_Localized: PAUSE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366651086426112
+    m_Localized: RESUME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366672880029696
+    m_Localized: SETTINGS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366685366472704
+    m_Localized: EXIT
     m_Metadata:
       m_Items: []
   references:

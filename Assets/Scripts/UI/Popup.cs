@@ -43,8 +43,5 @@ public class Popup : DefaultClass
         alert.transform.localPosition = newPosition;
         alert.text = beforeText + text;
         alert.color = color;
-
-        // Fade out and destroy text object
-        alert.GetComponent<FadeOut>().StartFadeOut();
     }
 }

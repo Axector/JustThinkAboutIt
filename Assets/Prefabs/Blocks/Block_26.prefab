@@ -1734,6 +1734,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7482286720792940872, guid: 74b246499634cd149a23100ae3b759b5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8783872786606747446, guid: 74b246499634cd149a23100ae3b759b5, type: 3}
       propertyPath: m_Name
       value: Street Lamp
@@ -2169,6 +2173,10 @@ PrefabInstance:
     - target: {fileID: 120991235873870137, guid: 74b246499634cd149a23100ae3b759b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482286720792940872, guid: 74b246499634cd149a23100ae3b759b5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8783872786606747446, guid: 74b246499634cd149a23100ae3b759b5, type: 3}
       propertyPath: m_Name

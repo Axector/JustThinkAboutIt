@@ -2,11 +2,26 @@ using UnityEngine;
 
 public class GameController : DefaultClass
 {
-    public float damageIncreaseFactor = 1f;
+    [SerializeField]
+    private Player player;
+    [SerializeField]
+    private bool bFirstLevel;
+    [SerializeField]
+    private bool bPlayStartSound;
+    [SerializeField]
+    private AudioClip startSound;
+
+    public float increaseFactor = 1f;
 
     private void Start()
     {
+        PlayStartSound();
+    }
+
+    private void Awake()
+    {
         IncreaseDamage();
+        ResetPlayerHealth();
     }
 
     private void IncreaseDamage()
@@ -14,7 +29,22 @@ public class GameController : DefaultClass
         AEnemy[] enemies = FindObjectsOfType<AEnemy>();
 
         foreach (AEnemy enemy in enemies) {
-            enemy.IncreaseDamage(damageIncreaseFactor);
+            enemy.IncreaseStats(increaseFactor);
+        }
+    }
+
+    private void PlayStartSound()
+    {
+        if (bPlayStartSound) {
+            PlaySound(player.AudioSource, startSound);
+        }
+    }
+
+    private void ResetPlayerHealth()
+    {
+        if (bFirstLevel) {
+            PlayerPrefs.SetInt("player_health", player.MaxHealth);
+            player.AddHealth(player.MaxHealth);
         }
     }
 }

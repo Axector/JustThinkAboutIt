@@ -19,6 +19,8 @@ public class AI_Enemy_Patrolling : AEnemy
     private float distanceToGoBack = 15f;
     [SerializeField]
     private float jumpForce = 7f;
+    [SerializeField]
+    private AudioClip[] attackSounds;
 
     private bool seeGround = false;
     private bool seePlayer = false;
@@ -137,6 +139,12 @@ public class AI_Enemy_Patrolling : AEnemy
 
         // DEBUG
         Debug.DrawRay(transform.position, (spriteRenderer.flipX) ? Vector2.left : Vector2.right);
+
+        // Get random punch sound
+        AudioClip punchSound = attackSounds[Random.Range(0, attackSounds.Length)];
+
+        // Play punch sound
+        PlaySound(audioSource, punchSound);
 
         // Check if ray hits anything
         if (hits.Length > 0) {
@@ -266,21 +274,5 @@ public class AI_Enemy_Patrolling : AEnemy
 
         HorizontalFlip();
         isWaiting = false;
-    }
-
-    public override void SetHealth(int hp)
-    {
-        health += hp;
-
-        // Enemy dies after health is < 0
-        if (health <= 0) {
-            isAlive = false;
-            animator.SetBool("isAlive", isAlive);
-        }
-
-        // Health cannot be more than maximum
-        if (health > maxHealth) {
-            health = maxHealth;
-        }
     }
 }

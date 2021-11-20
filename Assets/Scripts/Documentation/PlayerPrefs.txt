@@ -1,0 +1,6 @@
+//PlayerPrefs
+float sound_volume		- Audio sound
+float camera_size		- Orthographic size of camera
+
+int player_health		- Player health
+int selected_lang		- Selected localization language

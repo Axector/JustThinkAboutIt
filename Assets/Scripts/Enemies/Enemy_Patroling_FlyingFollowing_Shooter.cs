@@ -11,6 +11,14 @@ public class Enemy_Patroling_FlyingFollowing_Shooter : Enemy_Patroling
     private float returnBackDistance = 10f;
     [SerializeField]
     private GameObject bullet;
+    [SerializeField]
+    private ParticleSystem spriteParticleSystem;
+    [SerializeField]
+    private float deathSpeed;
+    [SerializeField]
+    private AudioClip shotAudio;
+    [SerializeField]
+    private ParticleSystem selfExplosion;
 
     private bool attack = false;
 
@@ -50,6 +58,33 @@ public class Enemy_Patroling_FlyingFollowing_Shooter : Enemy_Patroling
         else {
             Patrol();
         }
+
+        // Destroy enemy if it is dead
+        if (!isAlive) {
+            // Get value to decrese enemy size
+            Vector3 scaleDecrease = deathSpeed * Vector3.one * Time.fixedDeltaTime;
+
+            // Get scale values
+            float spriteScaleX = spriteRenderer.transform.localScale.x;
+            float particlesScaleX = spriteParticleSystem.transform.localScale.x;
+
+            // Decrease both sprite and particles sizes till 0
+            spriteRenderer.transform.localScale -= (spriteScaleX > 0)
+                ? scaleDecrease
+                : Vector3.zero;
+            spriteParticleSystem.transform.localScale -= (particlesScaleX > 0)
+                ? scaleDecrease
+                : Vector3.zero;
+
+            // Get scale values to know which to compare
+            spriteScaleX = spriteRenderer.transform.localScale.x;
+            particlesScaleX = spriteParticleSystem.transform.localScale.x;
+
+            // Check if an enemy is small enough to be destroyed
+            if (Mathf.Max(spriteScaleX, particlesScaleX) <= 0) {
+                DestroyEnemy();
+            }
+        }
     }
 
     protected override void OnCollisionEnter2D(Collision2D other) {}
@@ -82,6 +117,9 @@ public class Enemy_Patroling_FlyingFollowing_Shooter : Enemy_Patroling
     private IEnumerator Shot()
     {
         while (attack) {
+            // Play shot sound
+            PlaySound(audioSource, shotAudio);
+
             // Create bullet
             GameObject newBullet = Instantiate(
                 bullet,
@@ -103,6 +141,15 @@ public class Enemy_Patroling_FlyingFollowing_Shooter : Enemy_Patroling
     public override void SetHealth(int hp)
     {
         base.SetHealth(hp);
+
+        if (!isAlive) {
+            Instantiate(
+                selfExplosion,
+                transform.position,
+                Quaternion.identity,
+                transform
+            );
+        }
 
         // Agression after taking damage
         if (!attack) {

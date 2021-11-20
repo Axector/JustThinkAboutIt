@@ -28,6 +28,8 @@ public class CutsceneController : DefaultClass
     private float bannerMoveSpeed = 20f;
     [SerializeField]
     private float delayBeforeStart = 1f;
+    [SerializeField]
+    private float fadeOutSpeed = 0.0015f;
 
     [SerializeField]
     private GameObject topBanner;
@@ -44,7 +46,6 @@ public class CutsceneController : DefaultClass
 
     private float velocityX;
     private float movementSpeed;
-    private float fadeOutSpeed = 0.0015f;
     private bool startFading = false;
     private bool cutSceneStart = false;
     private bool moveCutsceneBanners = false;

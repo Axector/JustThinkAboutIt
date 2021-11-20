@@ -1,4 +1,3 @@
-using UnityEngine.Localization.Settings;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine;
@@ -32,11 +31,8 @@ public class Player : DefaultClass
     [SerializeField]
     private Vector3 attackDownOffset;
 
-    [SerializeField]
     public AudioClip playerAttackSound;
-    [SerializeField]
     public AudioClip playerAttackExplosionSound;
-    [SerializeField]
     public AudioClip playerHitSound;
 
     private int health;
@@ -65,9 +61,9 @@ public class Player : DefaultClass
         animator = GetComponent<Animator>();
 
         // Set basic stats for player
-        AddHealth(maxHealth);
+        AddHealth(PlayerPrefs.GetInt("player_health", maxHealth));
         animator.SetBool("isAlive", isAlive);
-        audioSource.volume = GameSettings.soundVolume;
+        audioSource.volume = PlayerPrefs.GetFloat("sound_volume", 1f);
     }
 
     private void Update()
@@ -75,14 +71,8 @@ public class Player : DefaultClass
         // If player is dead animation should be started and after some seconds game restarts
         if (!isAlive) {
             animator.SetBool("isAlive", isAlive);
+            PlayerPrefs.SetInt("player_health", maxHealth);
             StartCoroutine(RestartGame());
-        }
-
-        // If player fell down the platform
-        if (transform.position.y < -4f) {
-            isAlive = false;
-            health = 0;
-            playerController.ShowHealth();
         }
     }
 
@@ -107,12 +97,14 @@ public class Player : DefaultClass
             health = maxHealth;
         }
 
+        PlayerPrefs.SetInt("player_health", health);
+
         playerController.ShowHealth(this);
 
         // Play animation if the player was attacked
         if (hp < 0 && isAlive) {
             // Play attack sound
-            PlaySound(playerHitSound);
+            PlaySound(audioSource, playerHitSound);
 
             animator.Play("Player_Hurt");
         }
@@ -185,7 +177,7 @@ public class Player : DefaultClass
     private void InstatiateAttackParticles(GameObject particles, Vector3 attackOffset, bool underPlayer)
     {
         // Play attack sound
-        PlaySound(playerAttackSound);
+        PlaySound(audioSource, playerAttackSound);
 
         if (underPlayer) {
             // Create particles in correct position under player game object
@@ -204,11 +196,5 @@ public class Player : DefaultClass
                 Quaternion.Euler(-90, 0, 0)
             ).transform.position += attackOffset;
         }
-    }
-
-    public void PlaySound(AudioClip clip)
-    {
-        audioSource.clip = clip;
-        audioSource.Play();
     }
 }
