@@ -46,5 +46,77 @@ MonoBehaviour:
     m_Localized: IZIET
     m_Metadata:
       m_Items: []
+  - m_Id: 591914168700928
+    m_Localized: "PIRM\u0100 NODA\u013BA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 592035669299200
+    m_Localized: "OTR\u0100 NODA\u013BA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 634553190535168
+    m_Localized: "ATPAKA\u013B"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 646388715311104
+    m_Localized: "Kontroles izk\u0101rtojums"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 646997489176576
+    m_Localized: Valoda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 647256562946048
+    m_Localized: "Ska\u0146as efekti"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 647397088907264
+    m_Localized: "M\u016Bzika"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 700631484682240
+    m_Localized: Iet pa kreisi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 701520341585920
+    m_Localized: Iet pa labi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 701625362763776
+    m_Localized: "L\u0113ciens"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 701740961976320
+    m_Localized: Uzbrukt pa kreisi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 701798168088576
+    m_Localized: Uzbrukt pa labi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 701828299968512
+    m_Localized: "Uzbrukt uz aug\u0161u"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 701847128199168
+    m_Localized: Nomest ugunsbumbu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 728892872806400
+    m_Localized: "TURPIN\u0100T"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 735288301408256
+    m_Localized: "REZULT\u0100TI"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 735698902798336
+    m_Localized: "Pa\u0161reiz\u0113j\u0101 vesel\u012Bba"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 736450962477056
+    m_Localized: "Nopeln\u012Bta nauda"
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

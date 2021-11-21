@@ -19,6 +19,7 @@ public abstract class AEnemy : DefaultClass
     private AudioClip hurtAudio;
 
     protected Player player;
+    protected GameController gameController;
     protected Popup textPopup;
     protected Collider2D collider2d;
     protected Rigidbody2D rigidBody2D;
@@ -31,13 +32,19 @@ public abstract class AEnemy : DefaultClass
     protected virtual void Awake()
     {
         player = FindObjectOfType<Player>();
+        gameController = FindObjectOfType<GameController>();
         textPopup = GetComponent<Popup>();
         collider2d = GetComponent<Collider2D>();
         rigidBody2D = GetComponent<Rigidbody2D>();
         animator = spriteRenderer.GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-        startingPosition = transform.position;
+
+        // Increase stats depending on level and set some basic values
+        float factor = gameController.IncreaseFactor;
+        damage = (int)(damage * factor);
+        maxHealth = (int)(maxHealth * factor);
         health = maxHealth;
+        startingPosition = transform.position;
         isAlive = true;
         animator.SetBool("isAlive", isAlive);
     }
@@ -84,13 +91,5 @@ public abstract class AEnemy : DefaultClass
         if (health > maxHealth) {
             health = maxHealth;
         }
-    }
-
-    public void IncreaseStats(float factor)
-    {
-        // Increase damage and health points
-        damage = (int)(damage * factor);
-        maxHealth = (int)(maxHealth * factor);
-        health = maxHealth;
     }
 }

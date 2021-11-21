@@ -43,6 +43,78 @@ MonoBehaviour:
     m_Key: exit
     m_Metadata:
       m_Items: []
+  - m_Id: 591914168700928
+    m_Key: first_chapter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 592035669299200
+    m_Key: second_chapter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 634553190535168
+    m_Key: back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 646388715311104
+    m_Key: controls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 646997489176576
+    m_Key: language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 647256562946048
+    m_Key: sound_effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 647397088907264
+    m_Key: music_volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 700631484682240
+    m_Key: go_left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 701520341585920
+    m_Key: go_right
+    m_Metadata:
+      m_Items: []
+  - m_Id: 701625362763776
+    m_Key: jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 701740961976320
+    m_Key: attack_left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 701798168088576
+    m_Key: attack_right
+    m_Metadata:
+      m_Items: []
+  - m_Id: 701828299968512
+    m_Key: attack_up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 701847128199168
+    m_Key: attack_down
+    m_Metadata:
+      m_Items: []
+  - m_Id: 728892872806400
+    m_Key: continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 735288301408256
+    m_Key: results
+    m_Metadata:
+      m_Items: []
+  - m_Id: 735698902798336
+    m_Key: current_health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 736450962477056
+    m_Key: money_earned
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

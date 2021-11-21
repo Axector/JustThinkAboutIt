@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Enemy_Fireball : DefaultClass
@@ -27,7 +28,7 @@ public class Enemy_Fireball : DefaultClass
         // Explode on collision
         if (otherTag == "Player" || otherTag == "SolidBlock") {
             // Play explosion sound
-            PlaySound(audioSource, player.playerAttackExplosionSound);
+            PlaySound(parent.AudioSource, player.playerAttackExplosionSound);
 
             // Play explosion
             Instantiate(

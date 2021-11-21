@@ -27,6 +27,8 @@ public class Enemy_Ground_Shooter : DefaultClass
     private bool canShoot;
     protected bool seePlayer;
 
+    public AudioSource AudioSource { get => audioSource; }
+
     private void Start()
     {
         player = FindObjectOfType<Player>();

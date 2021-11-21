@@ -46,5 +46,77 @@ MonoBehaviour:
     m_Localized: EXIT
     m_Metadata:
       m_Items: []
+  - m_Id: 591914168700928
+    m_Localized: FIRST CHAPTER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 592035669299200
+    m_Localized: SECOND CHAPTER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 634553190535168
+    m_Localized: BACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 646388715311104
+    m_Localized: Controls layout
+    m_Metadata:
+      m_Items: []
+  - m_Id: 646997489176576
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 647256562946048
+    m_Localized: Sound Effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 647397088907264
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 700631484682240
+    m_Localized: Go Left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 701520341585920
+    m_Localized: Go Right
+    m_Metadata:
+      m_Items: []
+  - m_Id: 701625362763776
+    m_Localized: Jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 701740961976320
+    m_Localized: Attack Left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 701798168088576
+    m_Localized: Attack Right
+    m_Metadata:
+      m_Items: []
+  - m_Id: 701828299968512
+    m_Localized: Attack Up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 701847128199168
+    m_Localized: Drop Fireball
+    m_Metadata:
+      m_Items: []
+  - m_Id: 728892872806400
+    m_Localized: CONTINUE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 735288301408256
+    m_Localized: RESULTS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 735698902798336
+    m_Localized: Current Health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 736450962477056
+    m_Localized: Money Earned
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

@@ -153,6 +153,7 @@ MonoBehaviour:
   money: 0
   damage: 10
   delayToRestart: 3
+  playerController: {fileID: 3286987112368868878}
   fireUpParticles: {fileID: 6090492106292262186, guid: feb40bfa62055aa4fb8ae9cbcd790641, type: 3}
   attackUpOffset: {x: 0.328, y: 0.626, z: 0}
   fireLeftParticles: {fileID: 6090492106292262186, guid: 7529a7e96f9960e4f9ea0d540505efb9, type: 3}

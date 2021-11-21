@@ -4,11 +4,11 @@ public class DefaultClass : MonoBehaviour
 {
     /// Variables
     // Colors
-    public static Color successColor   = new Color(0, 120 / 255f, 0, 120 / 255f);        // Green
-    public static Color warningColor   = new Color(1, 150 / 255f, 0, 120 / 255f);        // Yellow
-    public static Color dangerColor    = new Color(150 / 255f, 0, 0, 120 / 255f);        // Red
-    public static Color darkGreyColor  = new Color(90 / 255f, 90 / 255f, 90 / 255f);     // Dark Grey
-    public static Color lightGreyColor = new Color(188 / 255f, 188 / 255f, 188 / 255f);  // Light Grey
+    protected Color successColor   = new Color(0, 120 / 255f, 0, 120 / 255f);        // Green
+    protected Color warningColor   = new Color(1, 150 / 255f, 0, 120 / 255f);        // Yellow
+    protected Color dangerColor    = new Color(150 / 255f, 0, 0, 120 / 255f);        // Red
+    protected Color darkGreyColor  = new Color(90 / 255f, 90 / 255f, 90 / 255f);     // Dark Grey
+    protected Color lightGreyColor = new Color(188 / 255f, 188 / 255f, 188 / 255f);  // Light Grey
 
     /// Functions
     protected bool NearlyEqual(float a, float b, float delta)
@@ -47,6 +47,7 @@ public class DefaultClass : MonoBehaviour
     protected void PlaySound(AudioSource source, AudioClip clip)
     {
         source.clip = clip;
+        source.volume = PlayerPrefs.GetFloat("sound_volume", 1f);
         source.Play();
     }
 }

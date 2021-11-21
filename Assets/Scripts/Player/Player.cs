@@ -17,6 +17,8 @@ public class Player : DefaultClass
     [SerializeField]
     private float delayToRestart = 3f;
     [SerializeField]
+    private PlayerController playerController;
+    [SerializeField]
     private GameObject fireUpParticles;
     [SerializeField]
     private Vector3 attackUpOffset;
@@ -37,7 +39,6 @@ public class Player : DefaultClass
 
     private int health;
     private bool isAlive = true;
-    private PlayerController playerController;
     private SpriteRenderer spriteRenderer;
     private AudioSource audioSource;
     private Animator animator;
@@ -55,13 +56,22 @@ public class Player : DefaultClass
     private void Awake()
     {
         // Get needed components
-        playerController = FindObjectOfType<PlayerController>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
 
-        // Set basic stats for player
+        // Set max health if it was increased
+        if (PlayerPrefs.GetInt("player_max_health", 0) == 0) {
+            PlayerPrefs.SetInt("player_max_health", maxHealth);
+        }
+        else {
+            maxHealth = PlayerPrefs.GetInt("player_max_health", maxHealth);
+        }
+        // Set health for current run
         AddHealth(PlayerPrefs.GetInt("player_health", maxHealth));
+        // Set money for current run
+        money = PlayerPrefs.GetInt("player_money", 0);
+
         animator.SetBool("isAlive", isAlive);
         audioSource.volume = PlayerPrefs.GetFloat("sound_volume", 1f);
     }
@@ -110,18 +120,16 @@ public class Player : DefaultClass
         }
     }
 
-    public bool AddMoney(int amount)
+    public void AddMoney(int amount)
     {
         money += amount;
 
-        // If there are not enough money to pay for something
-        if (money < 0) {
-            money -= amount;
+        PlayerPrefs.SetInt("player_money", money);
+    }
 
-            return false;
-        }
-
-        return true;
+    public void ResetMoney()
+    {
+        money = 0;
     }
 
     public void AttackUp()

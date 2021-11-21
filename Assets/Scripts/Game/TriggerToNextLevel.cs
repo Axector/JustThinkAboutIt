@@ -58,7 +58,7 @@ public class TriggerToNextLevel : DefaultClass
         yield return new WaitForSeconds(secondsTillChangeScene - timeToStartFadeIn);
 
         // Set camera size and load game scene
-        PlayerPrefs.SetFloat("CameraOrthographicSize", 7f);
+        PlayerPrefs.SetFloat("camera_size", 7f);
         SceneManager.LoadScene(sceneIndexToLoad);
     }
 }

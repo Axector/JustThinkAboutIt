@@ -8,14 +8,12 @@ public class DetectEnemy_Fireball : DetectEnemy
     private ParticleSystem explosion;
 
     private Rigidbody2D rigidBody2D;
-    private AudioSource audioSource;
 
     protected override void Awake()
     {
         base.Awake();
 
         rigidBody2D = GetComponent<Rigidbody2D>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -36,7 +34,7 @@ public class DetectEnemy_Fireball : DetectEnemy
         // Explode on collision
         if (otherTag == "Enemy" || otherTag == "SolidBlock") {
             // Play explosion sound
-            PlaySound(audioSource, player.playerAttackExplosionSound);
+            PlaySound(player.AudioSource, player.playerAttackExplosionSound);
 
             // Play explosion
             Instantiate(

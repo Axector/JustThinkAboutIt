@@ -1,3 +1,5 @@
+using UnityEngine.Localization.Settings;
+using UnityEngine.Localization;
 using UnityEngine;
 
 public class GameController : DefaultClass
@@ -10,8 +12,14 @@ public class GameController : DefaultClass
     private bool bPlayStartSound;
     [SerializeField]
     private AudioClip startSound;
+    [SerializeField]
+    private QuickMenu quickMenu;
+    [SerializeField]
+    private float increaseFactor = 1f;
+    [SerializeField]
+    private Locale[] languages;
 
-    public float increaseFactor = 1f;
+    public float IncreaseFactor { get => increaseFactor; set => increaseFactor = value; }
 
     private void Start()
     {
@@ -20,16 +28,30 @@ public class GameController : DefaultClass
 
     private void Awake()
     {
-        IncreaseDamage();
-        ResetPlayerHealth();
+        // Set game language
+        LocalizationSettings.SelectedLocale = languages[PlayerPrefs.GetInt("selected_lang", 0)];
+        ResetPlayerStats();
     }
 
-    private void IncreaseDamage()
+    private void Update()
     {
-        AEnemy[] enemies = FindObjectsOfType<AEnemy>();
-
-        foreach (AEnemy enemy in enemies) {
-            enemy.IncreaseStats(increaseFactor);
+        if (Input.GetKeyUp(KeyCode.Escape)) {
+            // Resume game and close menu
+            if (quickMenu.Menu.activeSelf) {
+                quickMenu.Resume();
+            }
+            // Close just controls layout
+            else if (quickMenu.SettingsMenu.BOpenControls) {
+                quickMenu.SettingsMenu.CloseControls();
+            }
+            // Close just settings menu
+            else if (quickMenu.SettingsMenu.gameObject.activeSelf) {
+                quickMenu.CloseSettings();
+            }
+            // Pause game and open menu
+            else {
+                quickMenu.OpenMenu();
+            }
         }
     }
 
@@ -40,11 +62,13 @@ public class GameController : DefaultClass
         }
     }
 
-    private void ResetPlayerHealth()
+    private void ResetPlayerStats()
     {
         if (bFirstLevel) {
             PlayerPrefs.SetInt("player_health", player.MaxHealth);
             player.AddHealth(player.MaxHealth);
+            PlayerPrefs.SetInt("player_money", 0);
+            player.ResetMoney();
         }
     }
 }

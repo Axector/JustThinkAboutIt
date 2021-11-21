@@ -1,6 +1,11 @@
 //PlayerPrefs
-float sound_volume		- Audio sound
+float music_volume		- Music volume
+float sound_volume		- Sound volume
 float camera_size		- Orthographic size of camera
 
 int player_health		- Player health
+int player_max_health	- Player maximum health
+int player_money		- Player money
+int all_money			- Stores all money of the player
 int selected_lang		- Selected localization language
+int next_level			- Stores index of the next scene
