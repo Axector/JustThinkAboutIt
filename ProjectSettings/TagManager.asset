@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Coin
   - AlertParent
+  - HealthItem
   layers:
   - Default
   - TransparentFX

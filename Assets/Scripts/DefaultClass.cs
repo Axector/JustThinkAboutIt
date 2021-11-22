@@ -50,4 +50,12 @@ public class DefaultClass : MonoBehaviour
         source.volume = PlayerPrefs.GetFloat("sound_volume", 1f);
         source.Play();
     }
+
+    protected bool Chance(float percent)
+    {
+        // Get percent as decimal
+        percent /= 100;
+
+        return percent > Random.Range(0, 1f);
+    }
 }

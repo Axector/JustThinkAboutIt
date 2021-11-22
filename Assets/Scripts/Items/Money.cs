@@ -18,6 +18,7 @@ public class Money : DefaultClass
 
     public void Earn()
     {
+        // Add money point to player current money amount
         player.AddMoney(amount);
 
         // Show text popup

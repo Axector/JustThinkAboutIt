@@ -5025,6 +5025,10 @@ MonoBehaviour:
   speed: 3
   speedIncrease: 1.5
   spriteRenderer: {fileID: 1467923878645964414}
+  drop:
+  - {fileID: 228309434692465917, guid: a9eb59d8c80307840b5ac1626d6c51e3, type: 3}
+  dropPercent: 3
+  maxDropAmount: 1
   delayBeforeAttack: 1
   hurtAudio: {fileID: 8300000, guid: 6eaac42093a97f6469189297a76c2bad, type: 3}
   delayBeforeMove: 1
