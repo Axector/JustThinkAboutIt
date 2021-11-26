@@ -35,6 +35,8 @@ public abstract class AEnemy : DefaultClass
     protected float health;
     protected bool isAlive;
 
+    public bool IsAlive { get => isAlive; }
+
     protected virtual void Awake()
     {
         player = FindObjectOfType<Player>();

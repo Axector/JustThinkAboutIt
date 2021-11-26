@@ -107,10 +107,6 @@ public class Results : DefaultClass
         int newMoney = PlayerPrefs.GetInt("all_money", 0) + currentPlayerMoney;
         PlayerPrefs.SetInt("all_money", newMoney);
 
-        // DEBUG
-        Debug.Log(PlayerPrefs.GetInt("all_money", 0));
-        PlayerPrefs.SetInt("all_money", 0);
-
         // Return to menu
         StartCoroutine(DelayBeforeSwithcScene(0));
     }

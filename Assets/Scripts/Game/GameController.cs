@@ -1,5 +1,6 @@
 using UnityEngine.Localization.Settings;
 using UnityEngine.Localization;
+using System.Collections;
 using UnityEngine;
 
 public class GameController : DefaultClass
@@ -10,6 +11,8 @@ public class GameController : DefaultClass
     private bool bFirstLevel;
     [SerializeField]
     private bool bPlayStartSound;
+    [SerializeField]
+    private float delayBeforeStartSound;
     [SerializeField]
     private AudioClip startSound;
     [SerializeField]
@@ -23,7 +26,9 @@ public class GameController : DefaultClass
 
     private void Start()
     {
-        PlayStartSound();
+        if (bPlayStartSound) {
+            StartCoroutine(PlayStartSound());
+        }
     }
 
     private void Awake()
@@ -55,13 +60,6 @@ public class GameController : DefaultClass
         }
     }
 
-    private void PlayStartSound()
-    {
-        if (bPlayStartSound) {
-            PlaySound(player.AudioSource, startSound);
-        }
-    }
-
     private void ResetPlayerStats()
     {
         if (bFirstLevel) {
@@ -70,5 +68,12 @@ public class GameController : DefaultClass
             PlayerPrefs.SetInt("player_money", 0);
             player.ResetMoney();
         }
+    }
+
+    private IEnumerator PlayStartSound()
+    {
+        yield return new WaitForSeconds(delayBeforeStartSound);
+
+        PlaySound(player.AudioSource, startSound);
     }
 }

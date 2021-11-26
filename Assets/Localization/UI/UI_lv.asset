@@ -118,5 +118,13 @@ MonoBehaviour:
     m_Localized: "Nopeln\u012Bta nauda"
     m_Metadata:
       m_Items: []
+  - m_Id: 1759255376121856
+    m_Localized: "GAISMAS SF\u0112RA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2545070104596480
+    m_Localized: "M\u012ANAS TR\u012AN\u012A\u0160I"
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

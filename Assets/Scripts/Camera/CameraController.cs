@@ -35,6 +35,8 @@ public class CameraController : MonoBehaviour
     private bool downCameraSize;
     private PostProcessVolume postProcessing;
 
+    public Color SceneColor { get => sceneColor; }
+
     private void Start()
     {
         DisableAllCameras();

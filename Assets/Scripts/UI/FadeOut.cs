@@ -10,6 +10,8 @@ public class FadeOut : DefaultClass
     protected float goUpSpeed = 0.1f;
     [SerializeField]
     private float delay;
+    [SerializeField]
+    private bool bHidden;
 
     private bool startFading = false;
     private Text text;
@@ -17,6 +19,12 @@ public class FadeOut : DefaultClass
     protected virtual void Awake()
     {
         text = GetComponent<Text>();
+
+        if (bHidden) {
+            Color color = text.color;
+            color.a = 0;
+            text.color = color;
+        }
 
         StartCoroutine(DelayBeforeFading());
     }
@@ -42,6 +50,12 @@ public class FadeOut : DefaultClass
     private IEnumerator DelayBeforeFading()
     {
         yield return new WaitForSeconds(delay);
+
+        if (bHidden) {
+            Color color = text.color;
+            color.a = 1f;
+            text.color = color;
+        }
 
         startFading = true;
     }

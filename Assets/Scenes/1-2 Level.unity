@@ -2637,7 +2637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2654725591377870023}
   secondsTillChangeScene: 4
-  sceneIndexToLoad: 5
+  sceneIndexToLoad: 6
   fadeScreen: {fileID: 1162671126}
 --- !u!1001 &329830982
 PrefabInstance:
@@ -7770,6 +7770,7 @@ MonoBehaviour:
   fadeOutSpeed: 0.001
   goUpSpeed: 0
   delay: 0
+  bHidden: 0
 --- !u!1001 &953624908
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5900759333455460967}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: -2.47, y: 7.68, z: 0}
+  m_LocalPosition: {x: -3.97, y: 7.68, z: 0}
   m_LocalScale: {x: 8.35431, y: 7.37145, z: 4.9143}
   m_Children:
   - {fileID: 5900759334562021807}
@@ -101,7 +101,7 @@ MonoBehaviour:
   damage: 8
   shotForce: 15
   angerDistance: 100
-  delayBeforeShot: 5
+  delayBeforeShot: 3
   shotPosition: {fileID: 5900759333932519173}
   shotBullet: {fileID: 8285813318626893797, guid: 4e75da57f7c9ab847ab7ef70b040452b, type: 3}
   shotSound: {fileID: 8300000, guid: 3f6a8c95fc45eb647bcb193c1675ac50, type: 3}
@@ -588,7 +588,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5900759334723032348}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: 2.87, y: 6.68, z: 0}
+  m_LocalPosition: {x: 2.87, y: 6.88, z: 0}
   m_LocalScale: {x: 8.35431, y: 7.37145, z: 4.9143}
   m_Children:
   - {fileID: 5900759334862758360}
@@ -807,7 +807,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5900759334813629423}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: 8.25, y: 7.68, z: 0}
+  m_LocalPosition: {x: 9.58, y: 7.68, z: 0}
   m_LocalScale: {x: 8.35431, y: 7.37145, z: 4.9143}
   m_Children:
   - {fileID: 5900759333789396739}
@@ -877,10 +877,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bed0392936bfe5e46855b26bce154702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
-  shotForce: 10
+  damage: 8
+  shotForce: 15
   angerDistance: 100
-  delayBeforeShot: 7
+  delayBeforeShot: 3
   shotPosition: {fileID: 5900759334413464086}
   shotBullet: {fileID: 8285813318626893797, guid: 4e75da57f7c9ab847ab7ef70b040452b, type: 3}
   shotSound: {fileID: 8300000, guid: 3f6a8c95fc45eb647bcb193c1675ac50, type: 3}

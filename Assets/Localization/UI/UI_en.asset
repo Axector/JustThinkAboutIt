@@ -118,5 +118,13 @@ MonoBehaviour:
     m_Localized: Money Earned
     m_Metadata:
       m_Items: []
+  - m_Id: 1759255376121856
+    m_Localized: LIGHT SPHERE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2545070104596480
+    m_Localized: MINES TRIPLETS
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

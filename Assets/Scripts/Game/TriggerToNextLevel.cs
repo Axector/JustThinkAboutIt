@@ -53,6 +53,7 @@ public class TriggerToNextLevel : DefaultClass
     {
         yield return new WaitForSeconds(timeToStartFadeIn);
 
+        fadeScreen.SetActive(true);
         startFading = true;
 
         yield return new WaitForSeconds(secondsTillChangeScene - timeToStartFadeIn);
