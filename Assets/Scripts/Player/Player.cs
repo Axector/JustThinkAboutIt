@@ -81,16 +81,17 @@ public class Player : DefaultClass
         // If player is dead animation should be started and after some seconds game restarts
         if (!isAlive) {
             animator.SetBool("isAlive", isAlive);
-            PlayerPrefs.SetInt("player_health", maxHealth);
-            StartCoroutine(RestartGame());
+            PlayerPrefs.SetInt("player_health", 0);
+            StartCoroutine(EndGame());
         }
     }
 
-    private IEnumerator RestartGame()
+    private IEnumerator EndGame()
     {
         yield return new WaitForSeconds(delayToRestart);
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        PlayerPrefs.SetInt("next_level", 0);
+        SceneManager.LoadScene(10);
     }
 
     public void AddHealth(int hp)

@@ -5113,7 +5113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 8
-  maxHealth: 200
+  maxHealth: 500
   speed: 3
   speedIncrease: 1
   spriteRenderer: {fileID: 8340782015216312714}

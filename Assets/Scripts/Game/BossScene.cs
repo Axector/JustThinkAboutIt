@@ -1,5 +1,6 @@
 using UnityEngine.Rendering.PostProcessing;
 using System.Collections;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class BossScene : DefaultClass
@@ -8,6 +9,14 @@ public class BossScene : DefaultClass
     private AEnemy boss;
     [SerializeField]
     private GameObject agressionArea;
+    [SerializeField]
+    private GameObject bossHealthBar;
+    [SerializeField]
+    private Image bossHealthBarFill;
+    [SerializeField]
+    private Text bossHealthBarText;
+    [SerializeField]
+    private GameObject playerController;
     [SerializeField]
     private Timer timer;
     [SerializeField]
@@ -48,19 +57,25 @@ public class BossScene : DefaultClass
         if (boss && !boss.IsAlive && bToggle) {
             bToggle = false;
 
-            // Hide blocker
+            // Hide blockers and boss health bar
             blocker.isTrigger = true;
             ParticleSystem.MainModule blockerMain = blockerParticles.main;
             blockerMain.loop = false;
+            bossHealthBar.SetActive(false);
 
             // Open exit to next level
             exit.SetActive(true);
         }
 
-        if (!boss && timer.bTimerEnded && bToggle) {
+        // Change boss health bar status
+        if (boss) {
+            ShowBossHealth();
+        }
+
+        if (timer && timer.bTimerEnded && bToggle) {
             bToggle = false;
 
-            // Hide blocker
+            // Hide blockers
             blocker.isTrigger = true;
             ParticleSystem.MainModule blockerMain = blockerParticles.main;
             blockerMain.loop = false;
@@ -73,21 +88,46 @@ public class BossScene : DefaultClass
 
     private IEnumerator StartScene()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.1f);
+
+        // Stop player controller
+        playerController.SetActive(false);
+
+        yield return new WaitForSeconds(1.9f);
 
         // Show the boss
         cameraController.SelectNextCamera();
         cam.Play("EnterBossScene");
 
-        yield return new WaitForSeconds(7.5f);
+        yield return new WaitForSeconds(2f);
+
+        // Show boss health bar
+        if (boss) {
+            bossHealthBar.SetActive(true);
+        }
+
+        yield return new WaitForSeconds(5.5f);
 
         // Resume the game
         cameraController.SelectNextCamera();
-        if (agressionArea) {
+        playerController.SetActive(true);
+
+        if (boss) {
             agressionArea.SetActive(true);
         }
-        player.enabled = true;
-        player.GetComponent<Rigidbody2D>().gravityScale = 1;
+        else {
+            player.enabled = true;
+            player.GetComponent<Rigidbody2D>().gravityScale = 1;
+        }
+
         Destroy(cam.gameObject);
+    }
+
+    private void ShowBossHealth()
+    {
+        int bossHealth = boss.Health;
+
+        bossHealthBarFill.fillAmount = (float)bossHealth / boss.MaxHealth;
+        bossHealthBarText.text = bossHealth.ToString();
     }
 }

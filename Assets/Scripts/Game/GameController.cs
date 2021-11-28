@@ -63,8 +63,11 @@ public class GameController : DefaultClass
     private void ResetPlayerStats()
     {
         if (bFirstLevel) {
-            PlayerPrefs.SetInt("player_health", player.MaxHealth);
+            int maxHealth = PlayerPrefs.GetInt("player_max_health", player.MaxHealth);
+
+            PlayerPrefs.SetInt("player_health", maxHealth);
             player.AddHealth(player.MaxHealth);
+
             PlayerPrefs.SetInt("player_money", 0);
             player.ResetMoney();
         }

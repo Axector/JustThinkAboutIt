@@ -80,7 +80,7 @@ public class Results : DefaultClass
 
     private IEnumerator ShowHealthPoints()
     {
-        for (int currentHealth = playerMaxHealth; currentHealth > playerHealth; currentHealth--) {
+        for (int currentHealth = playerMaxHealth; currentHealth >= playerHealth; currentHealth--) {
             CheckHealthColor(currentHealth);
 
             yield return new WaitForSeconds(1f / valueChangeSpeed);

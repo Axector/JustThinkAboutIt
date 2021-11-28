@@ -32,10 +32,12 @@ public abstract class AEnemy : DefaultClass
     protected Animator animator;
     protected AudioSource audioSource;
     protected Vector3 startingPosition;
-    protected float health;
+    protected int health;
     protected bool isAlive;
 
     public bool IsAlive { get => isAlive; }
+    public int Health { get => health; }
+    public int MaxHealth { get => maxHealth; }
 
     protected virtual void Awake()
     {
@@ -83,7 +85,9 @@ public abstract class AEnemy : DefaultClass
 
     public virtual void SetHealth(int hp)
     {
-        health += hp;
+        if (isAlive) {
+            health += hp;
+        }
 
         // Enemy takes damage
         if (hp < 0) {

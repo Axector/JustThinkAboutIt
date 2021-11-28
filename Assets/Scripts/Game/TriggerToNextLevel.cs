@@ -28,10 +28,10 @@ public class TriggerToNextLevel : DefaultClass
         fadeScreenImage.color = new Color(0, 0, 0, 0);
     }
 
-    private void OnTriggerEnter2D()
+    private void OnTriggerEnter2D(Collider2D other)
     {
         // if it is not cutscene, then start cutscene
-        if (!player.IsCutscene) {
+        if (other.gameObject.tag == "Player" && !player.IsCutscene) {
             player.IsCutscene = true;
 
             StartCoroutine(StartCutscene());
