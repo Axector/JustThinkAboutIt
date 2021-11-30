@@ -126,5 +126,13 @@ MonoBehaviour:
     m_Localized: "M\u012ANAS TR\u012AN\u012A\u0160I"
     m_Metadata:
       m_Items: []
+  - m_Id: 3970177817595904
+    m_Localized: "P\u0112D\u0112JAIS KRIST\u0100LS"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4016346870534144
+    m_Localized: "Izmanto ugunsbumbu, lai salauztu Krist\u0101lu"
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

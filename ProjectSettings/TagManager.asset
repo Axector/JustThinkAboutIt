@@ -9,6 +9,7 @@ TagManager:
   - Coin
   - AlertParent
   - HealthItem
+  - PlayerAttack
   layers:
   - Default
   - TransparentFX

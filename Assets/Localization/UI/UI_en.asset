@@ -126,5 +126,13 @@ MonoBehaviour:
     m_Localized: MINES TRIPLETS
     m_Metadata:
       m_Items: []
+  - m_Id: 3970177817595904
+    m_Localized: THE LAST CRYSTAL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4016346870534144
+    m_Localized: Use fireball to brake Crystal
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

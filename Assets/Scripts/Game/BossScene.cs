@@ -1,4 +1,5 @@
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
@@ -35,6 +36,12 @@ public class BossScene : DefaultClass
     private GameObject exit;
     [SerializeField]
     private int nextLevelIndex;
+    [SerializeField]
+    private bool bLastLevel;
+    [SerializeField]
+    private GameObject lastFadingScreen;
+    [SerializeField]
+    private KeyObjectDestroy keyObject;
 
     private bool bToggle = true;
 
@@ -84,6 +91,12 @@ public class BossScene : DefaultClass
             // Open exit to next level
             exit.SetActive(true);
         }
+
+        if (bToggle && keyObject.IsDestroyed) {
+            bToggle = false;
+
+            StartCoroutine(EndLastLevel());
+        }
     }
 
     private IEnumerator StartScene()
@@ -97,7 +110,12 @@ public class BossScene : DefaultClass
 
         // Show the boss
         cameraController.SelectNextCamera();
-        cam.Play("EnterBossScene");
+        if (bLastLevel) {
+            cam.Play("EnterLastBossScene");
+        }
+        else {
+            cam.Play("EnterBossScene");
+        }
 
         yield return new WaitForSeconds(2f);
 
@@ -121,6 +139,17 @@ public class BossScene : DefaultClass
         }
 
         Destroy(cam.gameObject);
+    }
+
+    private IEnumerator EndLastLevel()
+    {
+        yield return new WaitForSeconds(2f);
+
+        lastFadingScreen.SetActive(true);
+
+        yield return new WaitForSeconds(4f);
+
+        SceneManager.LoadScene(10);
     }
 
     private void ShowBossHealth()
