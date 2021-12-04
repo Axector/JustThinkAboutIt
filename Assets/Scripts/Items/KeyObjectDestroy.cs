@@ -43,13 +43,11 @@ public class KeyObjectDestroy : DefaultClass
     {
         int dropCount = drop.Length;
 
-        if (Chance(dropPercent) && dropCount != 0)
-        {
+        if (Chance(dropPercent) && dropCount != 0) {
             int randomAmount = Random.Range(1, maxDropAmount);
 
             // Create random amount of drop items
-            for (int i = 0; i < randomAmount; i++)
-            {
+            for (int i = 0; i < randomAmount; i++) {
                 // Get random drop item from list with drop
                 GameObject randomDrop = drop[Random.Range(0, dropCount)];
 

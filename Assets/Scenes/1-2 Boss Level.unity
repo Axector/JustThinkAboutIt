@@ -13251,6 +13251,9 @@ MonoBehaviour:
   cameraController: {fileID: 1576879307}
   exit: {fileID: 326576778}
   nextLevelIndex: 7
+  bLastLevel: 0
+  lastFadingScreen: {fileID: 0}
+  keyObject: {fileID: 0}
 --- !u!4 &844815477
 Transform:
   m_ObjectHideFlags: 0
@@ -14334,6 +14337,7 @@ MonoBehaviour:
   player: {fileID: 2654725591377870023}
   bFirstLevel: 0
   bPlayStartSound: 1
+  bSaveMoney: 1
   delayBeforeStartSound: 4
   startSound: {fileID: 8300000, guid: 5bd267e87729345448afadc4964a0dd7, type: 3}
   quickMenu: {fileID: 1577481732}
@@ -18592,7 +18596,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 05:00:00
+  m_Text: 02:00:00
 --- !u!222 &1851047160
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18613,7 +18617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61a7b182a284535499a328fd9d64daa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minutes: 5
+  minutes: 2
   timer: {fileID: 1851047159}
   bTimerEnded: 0
 --- !u!4 &1851630979 stripped

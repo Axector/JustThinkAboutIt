@@ -10776,7 +10776,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395093686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.4, y: -0.013135433, z: -10}
+  m_LocalPosition: {x: -16.84, y: -0.013135433, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -12368,6 +12368,9 @@ MonoBehaviour:
   cameraController: {fileID: 1576879307}
   exit: {fileID: 326576778}
   nextLevelIndex: 4
+  bLastLevel: 0
+  lastFadingScreen: {fileID: 0}
+  keyObject: {fileID: 0}
 --- !u!4 &844815477
 Transform:
   m_ObjectHideFlags: 0
@@ -13540,6 +13543,7 @@ MonoBehaviour:
   player: {fileID: 2654725591377870023}
   bFirstLevel: 0
   bPlayStartSound: 1
+  bSaveMoney: 1
   delayBeforeStartSound: 4
   startSound: {fileID: 8300000, guid: 5bd267e87729345448afadc4964a0dd7, type: 3}
   quickMenu: {fileID: 1577481732}
@@ -16289,7 +16293,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867984264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.4, y: -0.013135433, z: -10}
+  m_LocalPosition: {x: -16.839998, y: -0.013135433, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1576879308}
@@ -17418,7 +17422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2654725592125547439, guid: 32536c955df250b49b5af93540beb1d1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -24.53
+      value: -19.97
       objectReference: {fileID: 0}
     - target: {fileID: 2654725592125547439, guid: 32536c955df250b49b5af93540beb1d1, type: 3}
       propertyPath: m_LocalPosition.y

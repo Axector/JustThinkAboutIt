@@ -12,6 +12,8 @@ public class GameController : DefaultClass
     [SerializeField]
     private bool bPlayStartSound;
     [SerializeField]
+    private bool bSaveMoney;
+    [SerializeField]
     private float delayBeforeStartSound;
     [SerializeField]
     private AudioClip startSound;
@@ -29,6 +31,8 @@ public class GameController : DefaultClass
         if (bPlayStartSound) {
             StartCoroutine(PlayStartSound());
         }
+
+        PlayerPrefs.SetInt("save_money", (bSaveMoney) ? 1 : 0);
     }
 
     private void Awake()

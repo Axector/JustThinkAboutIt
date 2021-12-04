@@ -5,7 +5,10 @@ float camera_size		- Orthographic size of camera
 
 int player_health		- Player health
 int player_max_health	- Player maximum health
-int player_money		- Player current money
+int player_money		- Player current money on level
+int player_run_money	- Player current money on run
 int all_money			- Stores all money of the player
 int selected_lang		- Selected localization language
 int next_level			- Stores index of the next scene after results
+int save_money			- Stores boolean to save player money or not	(0 - false, 1 - true)
+int open_second_chapter - Stores boolean to open second chapter or not  (0 - disabled, 1 - to open, 2 - opened)

@@ -21,16 +21,28 @@ public class Results : DefaultClass
     private GameObject fadingScreen;
     [SerializeField]
     private GameObject[] children;
+    [SerializeField]
+    private GameObject buttons;
+    [SerializeField]
+    private GameObject buttonsExitOnly;
 
     private int playerHealth;
     private int playerMaxHealth;
     private int currentPlayerMoney;
+    private int currentRunMoney;
+    private int bSaveMoney;     // 1 - true, 0 - false
 
     private void Awake()
     {
         playerMaxHealth = PlayerPrefs.GetInt("player_max_health", 0);
         playerHealth = PlayerPrefs.GetInt("player_health", playerMaxHealth);
         currentPlayerMoney = PlayerPrefs.GetInt("player_money", 0);
+        currentRunMoney = PlayerPrefs.GetInt("player_run_money", 0);
+        bSaveMoney = PlayerPrefs.GetInt("save_money", 0);
+
+        if (bSaveMoney == 1) {
+            currentRunMoney += currentPlayerMoney;
+        }
 
         StartCoroutine(ShowResults());
     }
@@ -89,32 +101,55 @@ public class Results : DefaultClass
 
     private IEnumerator ShowCurrentMoney()
     {
-        for (int currentMoney = 0; currentMoney <= currentPlayerMoney; currentMoney++) {
+        for (int currentMoney = 0; currentMoney <= currentRunMoney; currentMoney++) {
             currentMoneyText.text = currentMoney.ToString();
 
-            yield return new WaitForSeconds(1f / valueChangeSpeed);
+            yield return new WaitForSeconds(1f / (valueChangeSpeed * 2));
         }
 
         coinIcon.SetActive(true);
+
+        if (
+            PlayerPrefs.GetInt("next_level", 0) == 0 ||
+            PlayerPrefs.GetInt("next_level", 0) == 11
+        ) {
+            buttonsExitOnly.SetActive(true);
+        }
+        else {
+            buttons.SetActive(true);
+        }
     }
 
     public void Exit()
     {
         // Enable fading screen
         fadingScreen.SetActive(true);
+        PlayerPrefs.SetInt("player_money", 0);
+        PlayerPrefs.SetInt("player_run_money", 0);
 
         // Save earned money
-        int newMoney = PlayerPrefs.GetInt("all_money", 0) + currentPlayerMoney;
-        PlayerPrefs.SetInt("all_money", newMoney);
+        if (bSaveMoney == 1) {
+            int newMoney = PlayerPrefs.GetInt("all_money", 0) + currentRunMoney;
+            PlayerPrefs.SetInt("all_money", newMoney);
+        }
 
         // Return to menu
-        StartCoroutine(DelayBeforeSwithcScene(0));
+        if (PlayerPrefs.GetInt("next_level", 0) == 11) {
+            StartCoroutine(DelayBeforeSwithcScene(11));
+        }
+        else {
+            StartCoroutine(DelayBeforeSwithcScene(0));
+        }
+
     }
 
     public void Continue()
     {
         // Enable fading screen
         fadingScreen.SetActive(true);
+
+        PlayerPrefs.SetInt("player_run_money", currentRunMoney);
+        PlayerPrefs.SetInt("player_money", 0);
 
         // Return to menu
         StartCoroutine(DelayBeforeSwithcScene(PlayerPrefs.GetInt("next_level", 0)));

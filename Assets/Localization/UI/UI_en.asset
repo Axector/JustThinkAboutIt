@@ -134,5 +134,58 @@ MonoBehaviour:
     m_Localized: Use fireball to brake Crystal
     m_Metadata:
       m_Items: []
+  - m_Id: 5007775193321472
+    m_Localized: 'Producer
+
+      Chief designer
+
+      Screenwriter
+
+      Development
+      Director
+
+      Technical Director
+
+      Art designer
+
+      Animation Director
+
+      Visual
+      Effects Director
+
+      Head of Translation Department
+
+      Music producer
+
+      Sound
+      Design Director'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5008414791127040
+    m_Localized: 'Daniil Leschisin
+
+      Daniil Leschisin
+
+      Daniil Leschisin
+
+      Daniil
+      Leschisin
+
+      Daniil Leschisin
+
+      Daniil Leschisin
+
+      Daniil Leschisin
+
+      Daniil
+      Leschisin
+
+      Daniil Leschisin
+
+      SELDENKOVS
+
+      SELDENKOVS'
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

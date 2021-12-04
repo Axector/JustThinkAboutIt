@@ -87,9 +87,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 3
-  maxHealth: 80
-  speed: 5
-  speedIncrease: 0
+  maxHealth: 50
+  speed: 4
+  speedIncrease: 1
   spriteRenderer: {fileID: 4116479289997112788}
   drop:
   - {fileID: 228309434692465917, guid: a9eb59d8c80307840b5ac1626d6c51e3, type: 3}

@@ -134,5 +134,19 @@ MonoBehaviour:
     m_Localized: "Izmanto ugunsbumbu, lai salauztu Krist\u0101lu"
     m_Metadata:
       m_Items: []
+  - m_Id: 5007775193321472
+    m_Localized: "Ra\u017Eot\u0101js\nGalvenais dizainers\nScen\u0101rists\nAtt\u012Bst\u012Bbas
+      direktors\nTehniskais direktors\nM\u0101kslas dizainers\nAnim\u0101cijas re\u017Eisors\nVizu\u0101lo
+      efektu re\u017Eisors\nTulko\u0161anas noda\u013Cas vad\u012Bt\u0101js\nM\u016Bzikas
+      producents\nSka\u0146u dizaina direktors"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5008414791127040
+    m_Localized: "Daniils Le\u0161\u010Di\u0161ins\nDaniils Le\u0161\u010Di\u0161ins\nDaniils
+      Le\u0161\u010Di\u0161ins\nDaniils Le\u0161\u010Di\u0161ins\nDaniils Le\u0161\u010Di\u0161ins\nDaniils
+      Le\u0161\u010Di\u0161ins\nDaniils Le\u0161\u010Di\u0161ins\nDaniils Le\u0161\u010Di\u0161ins\nDaniils
+      Le\u0161\u010Di\u0161ins\nSELDENKOVS\nSELDENKOVS"
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

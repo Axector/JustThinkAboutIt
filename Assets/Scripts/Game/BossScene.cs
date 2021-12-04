@@ -92,7 +92,7 @@ public class BossScene : DefaultClass
             exit.SetActive(true);
         }
 
-        if (bToggle && keyObject.IsDestroyed) {
+        if (keyObject && bToggle && keyObject.IsDestroyed) {
             bToggle = false;
 
             StartCoroutine(EndLastLevel());
@@ -143,7 +143,7 @@ public class BossScene : DefaultClass
 
     private IEnumerator EndLastLevel()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
 
         lastFadingScreen.SetActive(true);
 

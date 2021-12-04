@@ -63305,6 +63305,7 @@ MonoBehaviour:
   player: {fileID: 2654725591377870023}
   bFirstLevel: 0
   bPlayStartSound: 1
+  bSaveMoney: 0
   delayBeforeStartSound: 0
   startSound: {fileID: 8300000, guid: 5bd267e87729345448afadc4964a0dd7, type: 3}
   quickMenu: {fileID: 1903051772}
@@ -99221,7 +99222,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867984264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.83992, y: -0.013135433, z: -10}
+  m_LocalPosition: {x: -16.796515, y: -0.013135433, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1576879308}
@@ -129375,7 +129376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2654725592125547439, guid: 32536c955df250b49b5af93540beb1d1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.969921
+      value: -19.926516
       objectReference: {fileID: 0}
     - target: {fileID: 2654725592125547439, guid: 32536c955df250b49b5af93540beb1d1, type: 3}
       propertyPath: m_LocalPosition.y
