@@ -9,6 +9,8 @@ public class MenuController : DefaultClass
     [SerializeField]
     private GameObject settingsMenu;
     [SerializeField]
+    private GameObject shopMenu;
+    [SerializeField]
     private GameObject fadingScreenIn;
     [SerializeField]
     private GameObject secondChapterButtonPlaceholder;
@@ -33,6 +35,8 @@ public class MenuController : DefaultClass
 
     private IEnumerator ActivateSecondChapter()
     {
+        PlayerPrefs.SetInt("open_second_chapter", 2);
+
         yield return new WaitForSeconds(1f);
 
         StartCoroutine(DestroyButtonPlaceholder());
@@ -95,6 +99,16 @@ public class MenuController : DefaultClass
     public void ExitSettings()
     {
         settingsMenu.SetActive(false);
+    }
+
+    public void EnterShop()
+    {
+        shopMenu.SetActive(true);
+    }
+
+    public void ExitShop()
+    {
+        shopMenu.SetActive(false);
     }
 
     public void ExitGame()

@@ -78,6 +78,9 @@ public class Player : DefaultClass
 
     private void Update()
     {
+        // DEBUG
+        Debug.Log(money);
+
         // If player is dead animation should be started and after some seconds game restarts
         if (!isAlive) {
             animator.SetBool("isAlive", isAlive);
@@ -121,11 +124,17 @@ public class Player : DefaultClass
         }
     }
 
-    public void AddMoney(int amount)
+    public bool AddMoney(int amount)
     {
+        // If player does not have enough coins
+        if (money + amount < 0) {
+            return false;
+        }
+
         money += amount;
 
         PlayerPrefs.SetInt("player_money", money);
+        return true;
     }
 
     public void ResetMoney()

@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthItem : MonoBehaviour
+public class HealthItem : DefaultClass
 {
     [SerializeField]
     private int health;

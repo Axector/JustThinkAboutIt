@@ -10,24 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Localization-Assets-Shared
+  m_Name: Localization-Assets-Russian (ru)
   m_EditorClassIdentifier: 
-  m_GroupName: Localization-Assets-Shared
+  m_GroupName: Localization-Assets-Russian (ru)
   m_Data:
     m_SerializedData: []
-  m_GUID: 43297d3e82c415341abb7c5e0d83de2c
+  m_GUID: c07df20762ba4ee4390e04f0b795ab2f
   m_SerializeEntries:
-  - m_GUID: 14dbc1c820a52814d8364841d953c7cc
-    m_Address: Assets/Localization/UI/UI Shared Data.asset
+  - m_GUID: 1940ae44983a06e4fb94207b67343877
+    m_Address: DialogTooltipRU
     m_ReadOnly: 1
-    m_SerializedLabels: []
-  - m_GUID: 625c30cef9043d545ac6af9b06758e84
-    m_Address: Assets/Localization/Tooltips/Tooltips Shared Data.asset
-    m_ReadOnly: 1
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Locale-ru
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 8694ce1aaafd105489276940b3b920dd, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 6a74216ee45ccf745abc1a57f37f2978, type: 2}
-    - {fileID: 11400000, guid: 8d821ee3c26b7de4a9df2d5f589dda57, type: 2}
+    - {fileID: 11400000, guid: 3b8d0d355dc8c9e4f93c2ea6b8d2e4c3, type: 2}
+    - {fileID: 11400000, guid: c45ca75fc2a24cf46832377c46bd8875, type: 2}

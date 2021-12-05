@@ -1927,7 +1927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7036144986542102247, guid: fbdefee856516d54ca81ed47f2e2f815, type: 3}
       propertyPath: fadingSpeed
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbdefee856516d54ca81ed47f2e2f815, type: 3}

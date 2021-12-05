@@ -1,7 +1,7 @@
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class CameraController : DefaultClass
 {
     [SerializeField]
     private GameObject[] cameras;

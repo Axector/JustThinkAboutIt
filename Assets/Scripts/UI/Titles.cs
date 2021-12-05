@@ -2,7 +2,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine;
 
-public class Titles : MonoBehaviour
+public class Titles : DefaultClass
 {
     [SerializeField]
     private GameObject fadingScreenIn;
@@ -10,6 +10,9 @@ public class Titles : MonoBehaviour
     private void Start()
     {
         StartCoroutine(StartTitles());
+
+        // Second chapter can be opened
+        PlayerPrefs.SetInt("open_second_chapter", 1);
     }
 
     private void Update()

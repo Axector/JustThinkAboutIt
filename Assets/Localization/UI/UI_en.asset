@@ -187,5 +187,9 @@ MonoBehaviour:
       SELDENKOVS'
     m_Metadata:
       m_Items: []
+  - m_Id: 5729140257624064
+    m_Localized: SHOP
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

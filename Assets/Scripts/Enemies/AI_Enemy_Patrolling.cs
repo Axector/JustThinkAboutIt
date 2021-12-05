@@ -135,7 +135,8 @@ public class AI_Enemy_Patrolling : AEnemy
             transform.position,
             (spriteRenderer.flipX) ? Vector2.left : Vector2.right,
             1.5f,
-            mask);
+            mask
+        );
 
         // DEBUG
         Debug.DrawRay(transform.position, (spriteRenderer.flipX) ? Vector2.left : Vector2.right);

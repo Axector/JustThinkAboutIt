@@ -23,7 +23,7 @@ public class FadingScreen : MonoBehaviour
             color.a += (toFadeIn) ? 5f/255f : -5f/255f;
             image.color = color;
 
-            yield return new WaitForSeconds(1f / fadingSpeed);
+            yield return new WaitForSecondsRealtime(1f / fadingSpeed);
         }
 
         if (!toFadeIn) {

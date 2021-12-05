@@ -1,4 +1,5 @@
 using UnityEngine.SceneManagement;
+using System.Collections;
 using UnityEngine;
 
 public class QuickMenu : DefaultClass
@@ -7,6 +8,8 @@ public class QuickMenu : DefaultClass
     private GameObject menu;
     [SerializeField]
     private Settings settingsMenu;
+    [SerializeField]
+    private GameObject fadingScreen;
 
     public GameObject Menu { get => menu; }
     public Settings SettingsMenu { get => settingsMenu; }
@@ -14,8 +17,7 @@ public class QuickMenu : DefaultClass
     public void Exit()
     {
         // Load main menu scene
-        Time.timeScale = 1;
-        SceneManager.LoadScene(0);
+        StartCoroutine(ToExit());
     }
 
     public void Settings()
@@ -50,5 +52,15 @@ public class QuickMenu : DefaultClass
     public void BackFromControls()
     {
         settingsMenu.CloseControls();
+    }
+
+    private IEnumerator ToExit()
+    {
+        fadingScreen.SetActive(true);
+
+        yield return new WaitForSecondsRealtime(3f);
+
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
     }
 }

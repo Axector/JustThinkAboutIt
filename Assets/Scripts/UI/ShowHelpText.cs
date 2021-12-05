@@ -6,13 +6,17 @@ public class ShowHelpText : DefaultClass
     [SerializeField]
     private Text helpText;
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        helpText.enabled = true;
+        if (other.gameObject.tag == "Player") {
+            helpText.enabled = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        helpText.enabled = false;
+        if (other.gameObject.tag == "Player") {
+            helpText.enabled = false;
+        }
     }
 }
