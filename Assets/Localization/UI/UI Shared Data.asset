@@ -143,6 +143,22 @@ MonoBehaviour:
     m_Key: shop
     m_Metadata:
       m_Items: []
+  - m_Id: 8256874288549888
+    m_Key: x2_damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8256938981494784
+    m_Key: x2_health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8256971059531776
+    m_Key: 2 lives
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8316332557504512
+    m_Key: value_your_time
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

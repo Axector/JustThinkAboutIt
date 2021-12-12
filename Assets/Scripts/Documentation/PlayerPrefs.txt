@@ -12,3 +12,8 @@ int selected_lang		- Selected localization language
 int next_level			- Stores index of the next scene after results
 int save_money			- Stores boolean to save player money or not	(0 - false, 1 - true)
 int open_second_chapter - Stores boolean to open second chapter or not  (0 - disabled, 1 - to open, 2 - opened)
+int damage_power_up 	- Stores boolean to use double damage or not (0 - false, 1 - true)
+int health_power_up 	- Stores boolean to use double health or not (0 - false, 1 - true)
+int lives_power_up 		- Stores boolean to use double lives or not (0 - false, 1 - true)
+
+string total_date		- Stores total time spent on playing the game

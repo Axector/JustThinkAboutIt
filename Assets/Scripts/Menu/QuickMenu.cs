@@ -60,6 +60,11 @@ public class QuickMenu : DefaultClass
 
         yield return new WaitForSecondsRealtime(3f);
 
+        // Reset power-ups
+        PlayerPrefs.SetInt("damage_power_up", 0);
+        PlayerPrefs.SetInt("health_power_up", 0);
+        PlayerPrefs.SetInt("lives_power_up", 0);
+
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }

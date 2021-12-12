@@ -19,7 +19,7 @@ public class SlideTo : DefaultClass
     private void Update()
     {
         // Check current to target position distance
-        if (NearlyEqual(rectTransform.localPosition.y, targetPosition.y, 2f)) {
+        if (NearlyEqual(rectTransform.localPosition.y, targetPosition.y, speed / 10)) {
             isSliding = false;
         }
     }

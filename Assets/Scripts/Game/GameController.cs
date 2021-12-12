@@ -1,5 +1,3 @@
-using UnityEngine.Localization.Settings;
-using UnityEngine.Localization;
 using System.Collections;
 using UnityEngine;
 
@@ -21,8 +19,6 @@ public class GameController : DefaultClass
     private QuickMenu quickMenu;
     [SerializeField]
     private float increaseFactor = 1f;
-    [SerializeField]
-    private Locale[] languages;
 
     public float IncreaseFactor { get => increaseFactor; set => increaseFactor = value; }
 
@@ -37,8 +33,6 @@ public class GameController : DefaultClass
 
     private void Awake()
     {
-        // Set game language
-        LocalizationSettings.SelectedLocale = languages[PlayerPrefs.GetInt("selected_lang", 0)];
         ResetPlayerStats();
     }
 

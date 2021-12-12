@@ -133,6 +133,11 @@ public class Results : DefaultClass
             PlayerPrefs.SetInt("all_money", newMoney);
         }
 
+        // Reset power-ups
+        PlayerPrefs.SetInt("damage_power_up", 0);
+        PlayerPrefs.SetInt("health_power_up", 0);
+        PlayerPrefs.SetInt("lives_power_up", 0);
+
         // Return to menu
         if (PlayerPrefs.GetInt("next_level", 0) == 11) {
             StartCoroutine(DelayBeforeSwithcScene(11));

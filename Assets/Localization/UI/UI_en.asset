@@ -191,5 +191,21 @@ MonoBehaviour:
     m_Localized: SHOP
     m_Metadata:
       m_Items: []
+  - m_Id: 8256874288549888
+    m_Localized: X2 Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8256938981494784
+    m_Localized: X2 Health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8256971059531776
+    m_Localized: 2 Lives
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8316332557504512
+    m_Localized: Value your Time
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

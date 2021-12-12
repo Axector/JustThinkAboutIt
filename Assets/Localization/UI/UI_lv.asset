@@ -152,5 +152,21 @@ MonoBehaviour:
     m_Localized: VEIKALS
     m_Metadata:
       m_Items: []
+  - m_Id: 8256874288549888
+    m_Localized: "X2 Boj\u0101jumi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8256938981494784
+    m_Localized: "X2 Vesel\u012Bbas"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8256971059531776
+    m_Localized: "2 Dz\u012Bv\u012Bbas"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8316332557504512
+    m_Localized: "V\u0113rt\u0113 savu laiku"
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
