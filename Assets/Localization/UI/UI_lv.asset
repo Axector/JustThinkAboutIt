@@ -119,7 +119,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1759255376121856
-    m_Localized: "GAISMAS SF\u0112RA"
+    m_Localized: "SF\u0112R\u0100S M\u0100TE"
     m_Metadata:
       m_Items: []
   - m_Id: 2545070104596480
@@ -166,6 +166,18 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 8316332557504512
     m_Localized: "V\u0113rt\u0113 savu laiku"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10901360240005120
+    m_Localized: "Kop\u0113jais pavad\u012Btais laiks"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10901399553216512
+    m_Localized: "Pa\u0161reiz\u0113jais pavad\u012Btais laiks"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10895200111857664
+    m_Localized: SKRIEN
     m_Metadata:
       m_Items: []
   references:

@@ -8,6 +8,8 @@ public class FadingScreen : MonoBehaviour
     private float fadingSpeed;
     [SerializeField]
     private bool toFadeIn;
+    [SerializeField]
+    private float delay;
 
     private void OnEnable()
     {
@@ -16,6 +18,8 @@ public class FadingScreen : MonoBehaviour
 
     private IEnumerator Fading()
     {
+        yield return new WaitForSeconds(delay);
+
         Image image = GetComponent<Image>();
 
         while ((toFadeIn) ? image.color.a < 1f : image.color.a > 0f) {

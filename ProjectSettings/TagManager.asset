@@ -10,6 +10,7 @@ TagManager:
   - AlertParent
   - HealthItem
   - PlayerAttack
+  - LivesPowerUp
   layers:
   - Default
   - TransparentFX

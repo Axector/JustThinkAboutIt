@@ -18,7 +18,6 @@ public class MenuController : DefaultClass
     private Text shopCoins;
 
     private int bOpenSecondChapter;
-    private System.DateTime date;
     private int coins;
     private bool bNeedMoreMoney = true;
 
@@ -28,9 +27,6 @@ public class MenuController : DefaultClass
         PlayerPrefs.SetInt("all_money", 200);
 
         bOpenSecondChapter = PlayerPrefs.GetInt("open_second_chapter", 0); // 0 - disabled, 1 - to open, 2 - opened
-
-        // Set enter date time
-        date = System.DateTime.Now;
 
         // Set coins number to Shop
         coins = PlayerPrefs.GetInt("all_money", 0);
@@ -94,10 +90,7 @@ public class MenuController : DefaultClass
     {
         yield return new WaitForSeconds(4f);
 
-        Application.Quit();
-
-        // DEBUG
-        UnityEditor.EditorApplication.isPlaying = false;
+        SceneManager.LoadScene(13);
     }
 
     public void StartFirstChapter()
@@ -134,34 +127,7 @@ public class MenuController : DefaultClass
     {
         fadingScreenIn.SetActive(true);
 
-        TimeSpan deltaTimePlayed = DateTime.Now - date;
-
-        // DEBUG
-        Debug.Log("Delta: " + getDateString(deltaTimePlayed));
-
-        // Store time spent on playing the game
-        if (PlayerPrefs.HasKey("total_date")) {
-            TimeSpan lastTime = TimeSpan.Parse(PlayerPrefs.GetString("total_date"));
-
-            // DEBUG
-            Debug.Log("Total: " + getDateString(lastTime + deltaTimePlayed));
-
-            PlayerPrefs.SetString("total_date", getDateString(lastTime + deltaTimePlayed));
-        }
-        else {
-            PlayerPrefs.SetString("total_date", getDateString(deltaTimePlayed));
-        }
-
         StartCoroutine(DelayBeforeExit());
-    }
-
-    private string getDateString(TimeSpan deltaTimePlayed)
-    {
-        return new TimeSpan(
-            deltaTimePlayed.Hours,
-            deltaTimePlayed.Minutes,
-            deltaTimePlayed.Seconds
-        ).ToString();
     }
 
     public void BuyPowerUp(ShopButton powerUpIndex)

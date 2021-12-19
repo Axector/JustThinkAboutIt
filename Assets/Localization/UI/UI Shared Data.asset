@@ -159,6 +159,18 @@ MonoBehaviour:
     m_Key: value_your_time
     m_Metadata:
       m_Items: []
+  - m_Id: 10895200111857664
+    m_Key: run
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10901360240005120
+    m_Key: total_time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10901399553216512
+    m_Key: current_time
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

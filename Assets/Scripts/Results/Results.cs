@@ -2,6 +2,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
+using System;
 
 public class Results : DefaultClass
 {
@@ -11,6 +12,8 @@ public class Results : DefaultClass
     private Text healthPointsText;
     [SerializeField]
     private Text currentMoneyText;
+    [SerializeField]
+    private Text currentTimeText;
     [SerializeField]
     private float delayBetweenResults;
     [SerializeField]
@@ -86,7 +89,23 @@ public class Results : DefaultClass
                 StartCoroutine(ShowCurrentMoney());
             }
 
+            // Show current time spent
+            if (child == currentTimeText.gameObject) {
+                TimeSpan time = DateTime.Now - DateTime.Parse(PlayerPrefs.GetString("current_date"));
+                currentTimeText.text = GetTimeString(time);
+            }
+
             yield return new WaitForSeconds(delayBetweenResults);
+        }
+
+        if (
+            PlayerPrefs.GetInt("next_level", 0) == 0 ||
+            PlayerPrefs.GetInt("next_level", 0) == 11
+        ) {
+            buttonsExitOnly.SetActive(true);
+        }
+        else {
+            buttons.SetActive(true);
         }
     }
 
@@ -108,16 +127,6 @@ public class Results : DefaultClass
         }
 
         coinIcon.SetActive(true);
-
-        if (
-            PlayerPrefs.GetInt("next_level", 0) == 0 ||
-            PlayerPrefs.GetInt("next_level", 0) == 11
-        ) {
-            buttonsExitOnly.SetActive(true);
-        }
-        else {
-            buttons.SetActive(true);
-        }
     }
 
     public void Exit()

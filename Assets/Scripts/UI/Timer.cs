@@ -8,6 +8,8 @@ public class Timer : DefaultClass
     private int minutes;
     [SerializeField]
     private Text timer;
+    [SerializeField]
+    private GameObject endText;
 
     public bool bTimerEnded = false;
 
@@ -38,6 +40,7 @@ public class Timer : DefaultClass
         }
 
         bTimerEnded = true;
-        timer.text = "RUN";
+        gameObject.SetActive(false);
+        endText.SetActive(true);
     }
 }

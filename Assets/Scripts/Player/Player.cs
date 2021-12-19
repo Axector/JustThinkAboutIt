@@ -60,13 +60,14 @@ public class Player : DefaultClass
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
 
-        // Set max health if it was increased
-        if (PlayerPrefs.GetInt("player_max_health", 0) == 0) {
-            PlayerPrefs.SetInt("player_max_health", maxHealth);
+        // Apply health power-up
+        if (PlayerPrefs.GetInt("health_power_up", 0) == 1) {
+            maxHealth *= 2;
         }
-        else {
-            maxHealth = PlayerPrefs.GetInt("player_max_health", maxHealth);
-        }
+
+        // Save max health
+        PlayerPrefs.SetInt("player_max_health", maxHealth);
+
         // Set health for current run
         AddHealth(PlayerPrefs.GetInt("player_health", maxHealth));
         // Set money for current run
@@ -74,6 +75,11 @@ public class Player : DefaultClass
 
         animator.SetBool("isAlive", isAlive);
         audioSource.volume = PlayerPrefs.GetFloat("sound_volume", 1f);
+
+        // Apply damage power-up
+        if (PlayerPrefs.GetInt("damage_power_up", 0) == 1) {
+            damage *= 2;
+        }
     }
 
     private void Update()
@@ -84,17 +90,39 @@ public class Player : DefaultClass
         // If player is dead animation should be started and after some seconds game restarts
         if (!isAlive) {
             animator.SetBool("isAlive", isAlive);
-            PlayerPrefs.SetInt("player_health", 0);
-            StartCoroutine(EndGame());
+
+            if (PlayerPrefs.GetInt("lives_power_up", 0) == 1) {
+                StartCoroutine(Revive());
+            }
+            else {
+                StartCoroutine(EndGame());
+            }
         }
     }
 
     private IEnumerator EndGame()
     {
+        PlayerPrefs.SetInt("player_health", 0);
         yield return new WaitForSeconds(delayToRestart);
 
         PlayerPrefs.SetInt("next_level", 0);
         SceneManager.LoadScene(10);
+    }
+
+    private IEnumerator Revive()
+    {
+        yield return new WaitForSeconds(2f);
+
+        PlayerPrefs.SetInt("player_health", maxHealth);
+        PlayerPrefs.SetInt("lives_power_up", 0);
+
+        Destroy(GameObject.FindGameObjectWithTag("LivesPowerUp"));
+
+        // Animate Player to rise from death
+        isAlive = true;
+        animator.SetBool("isAlive", isAlive);
+
+        AddHealth(maxHealth);
     }
 
     public void AddHealth(int hp)

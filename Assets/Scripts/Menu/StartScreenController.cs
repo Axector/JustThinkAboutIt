@@ -2,9 +2,10 @@ using UnityEngine.Localization.Settings;
 using UnityEngine.Localization;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine.UI;
 using UnityEngine;
 
-public class StartScreenController : MonoBehaviour
+public class StartScreenController : DefaultClass
 {
     [SerializeField]
     private float delayBeforeNextScene;
@@ -12,6 +13,10 @@ public class StartScreenController : MonoBehaviour
     private int nextScene;
     [SerializeField]
     private Locale[] languages;
+    [SerializeField]
+    private Text time;
+    [SerializeField]
+    private Animator title;
 
     private void Start()
     {
@@ -23,6 +28,14 @@ public class StartScreenController : MonoBehaviour
     private IEnumerator WaitToEndScene()
     {
         yield return new WaitForSeconds(delayBeforeNextScene);
+
+        time.text = PlayerPrefs.GetString("total_time", "00:00:00");
+
+        yield return new WaitForSeconds(3f);
+
+        title.Play("Small Title");
+
+        yield return new WaitForSeconds(2f);
 
         SceneManager.LoadScene(nextScene);
     }

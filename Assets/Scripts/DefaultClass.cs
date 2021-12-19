@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class DefaultClass : MonoBehaviour
 {
@@ -55,6 +56,15 @@ public class DefaultClass : MonoBehaviour
         // Get percent as decimal
         percent /= 100;
 
-        return percent > Random.Range(0, 1f);
+        return percent > UnityEngine.Random.Range(0, 1f);
+    }
+
+    protected string GetTimeString(TimeSpan deltaTimePlayed)
+    {
+        return new TimeSpan(
+            deltaTimePlayed.Hours,
+            deltaTimePlayed.Minutes,
+            deltaTimePlayed.Seconds
+        ).ToString();
     }
 }

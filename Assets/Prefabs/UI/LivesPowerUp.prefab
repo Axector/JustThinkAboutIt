@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7607502957622117728}
   m_Layer: 5
   m_Name: LivesPowerUp
-  m_TagString: Untagged
+  m_TagString: LivesPowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
