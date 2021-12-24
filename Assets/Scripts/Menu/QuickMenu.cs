@@ -1,6 +1,8 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine.UI;
 using UnityEngine;
+using System;
 
 public class QuickMenu : DefaultClass
 {
@@ -10,6 +12,8 @@ public class QuickMenu : DefaultClass
     private Settings settingsMenu;
     [SerializeField]
     private GameObject fadingScreen;
+    [SerializeField]
+    private Text shopCoins;
 
     public GameObject Menu { get => menu; }
     public Settings SettingsMenu { get => settingsMenu; }
@@ -38,6 +42,7 @@ public class QuickMenu : DefaultClass
     {
         Time.timeScale = 0;
         menu.SetActive(true);
+        SetCoinsShop();
     }
 
     public void CloseSettings()
@@ -64,8 +69,18 @@ public class QuickMenu : DefaultClass
         PlayerPrefs.SetInt("damage_power_up", 0);
         PlayerPrefs.SetInt("health_power_up", 0);
         PlayerPrefs.SetInt("lives_power_up", 0);
+        PlayerPrefs.SetInt("player_money", 0);
+        PlayerPrefs.SetInt("player_run_money", 0);
 
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
+    }
+
+    private void SetCoinsShop()
+    {
+        int coins = PlayerPrefs.GetInt("player_run_money", 0) + PlayerPrefs.GetInt("player_money", 0);
+        int coinsDigitCount = (int)Math.Floor(Math.Log10(coins)) + 1;
+        shopCoins.GetComponent<RectTransform>().sizeDelta = new Vector2(26 * coinsDigitCount, 50);
+        shopCoins.text = coins.ToString();
     }
 }

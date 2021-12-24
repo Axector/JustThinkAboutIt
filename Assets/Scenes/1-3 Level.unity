@@ -63362,10 +63362,6 @@ MonoBehaviour:
   startSound: {fileID: 8300000, guid: 5bd267e87729345448afadc4964a0dd7, type: 3}
   quickMenu: {fileID: 1903051772}
   increaseFactor: 3
-  languages:
-  - {fileID: 11400000, guid: dd649b149afa9914a89c9ee5c44a74c5, type: 2}
-  - {fileID: 11400000, guid: 45782e2185675144686aee3006534551, type: 2}
-  - {fileID: 11400000, guid: dbcc27a960cc30248a4ac21a657e614a, type: 2}
 --- !u!4 &1117317594
 Transform:
   m_ObjectHideFlags: 0
@@ -93410,6 +93406,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6750782673231832139, guid: b761f04dfccd06846bed966e42843643, type: 3}
   m_PrefabInstance: {fileID: 1451763797}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1451763800 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1586489366563024617, guid: b761f04dfccd06846bed966e42843643, type: 3}
+  m_PrefabInstance: {fileID: 1451763797}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1488161085
 GameObject:
   m_ObjectHideFlags: 0
@@ -104335,6 +104342,7 @@ MonoBehaviour:
   menu: {fileID: 1451763799}
   settingsMenu: {fileID: 562886671}
   fadingScreen: {fileID: 2008552467}
+  shopCoins: {fileID: 1451763800}
 --- !u!224 &1903051773
 RectTransform:
   m_ObjectHideFlags: 0
