@@ -54,6 +54,7 @@ public class NPC_Fairy : NPC
             if (i == specialTriggerTextIndex) {
                 blackScreenForBlink.SetActive(true);
                 dog.SetActive(false);
+                textBg.SetActive(false);
 
                 yield return new WaitForSecondsRealtime(0.5f);
 
@@ -68,6 +69,8 @@ public class NPC_Fairy : NPC
                 sprite.flipX = false;
 
                 yield return new WaitForSecondsRealtime(1.5f);
+
+                textBg.SetActive(true);
             }
         }
 

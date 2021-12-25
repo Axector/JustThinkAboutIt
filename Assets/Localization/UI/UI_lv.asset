@@ -180,5 +180,65 @@ MonoBehaviour:
     m_Localized: SKRIEN
     m_Metadata:
       m_Items: []
+  - m_Id: 13087429657579520
+    m_Localized: '???: Ak, sveiks!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087460481519616
+    m_Localized: "???: Paldies, ka atbr\u012Bvoji mani no \u0161\u012B krist\u0101la!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087466391293952
+    m_Localized: "???: Es dom\u0101ju, ka palik\u0161u tur uz visiem laikiem.."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087497223622656
+    m_Localized: '???: Vismaz es nebiju viena!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087521315704832
+    m_Localized: '???: Tas ir mans suns - Marusja!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087529469431808
+    m_Localized: '???: Ak, pareizi!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087539502206976
+    m_Localized: 'NASTJA: Mani sauc Nastja!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087549841166336
+    m_Localized: "NASTJA: Un es esmu feja, k\u0101 tu redzi."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087561719435264
+    m_Localized: 'NASTJA: KUR IR MARUSJA???'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087575774547968
+    m_Localized: "NASTJA: Vi\u0146a pazuda!?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087589838049280
+    m_Localized: "NASTJA: Vai vari man pal\u012Bdz\u0113t vi\u0146u atrast, l\u016Bdzu??"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087604702662656
+    m_Localized: "NASTJA: Es nevaru atst\u0101t \u0161o pasauli, tom\u0113r tu vari!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087614534111232
+    m_Localized: "NASTJA: Atved vi\u0146u atpaka\u013C."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087624868876288
+    m_Localized: "NASTJA: L\u016Bdzu!!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13088403835015168
+    m_Localized: 'MARUSJA: Vau!'
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

@@ -219,5 +219,65 @@ MonoBehaviour:
     m_Localized: Current time spent
     m_Metadata:
       m_Items: []
+  - m_Id: 13087429657579520
+    m_Localized: '???: Oh, hello!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087460481519616
+    m_Localized: '???: Thank you for freeing me from this crystal!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087466391293952
+    m_Localized: '???: I thought I would stay there forever..'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087497223622656
+    m_Localized: '???: At least I was not alone!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087521315704832
+    m_Localized: '???: It is my dog - Marusya!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087529469431808
+    m_Localized: '???: Oh, right!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087539502206976
+    m_Localized: 'NASTYA: My name is Nastya!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087549841166336
+    m_Localized: 'NASTYA: And I am a fairy, as you can see.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087561719435264
+    m_Localized: 'NASTYA: WHERE IS MARUSYA???'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087575774547968
+    m_Localized: 'NASTYA: She disappeared!?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087589838049280
+    m_Localized: 'NASTYA: Can you help me to find her, please??'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087604702662656
+    m_Localized: 'NASTYA: I cannot leave this world, but you can!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087614534111232
+    m_Localized: 'NASTYA: Bring her back.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087624868876288
+    m_Localized: 'NASTYA: Please!!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13088403835015168
+    m_Localized: 'MARUSYA: Woof!'
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

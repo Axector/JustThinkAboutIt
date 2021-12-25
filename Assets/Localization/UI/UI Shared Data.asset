@@ -171,6 +171,66 @@ MonoBehaviour:
     m_Key: current_time
     m_Metadata:
       m_Items: []
+  - m_Id: 13087429657579520
+    m_Key: fairy_text_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087460481519616
+    m_Key: fairy_text_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087466391293952
+    m_Key: fairy_text_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087497223622656
+    m_Key: fairy_text_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087521315704832
+    m_Key: fairy_text_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087529469431808
+    m_Key: fairy_text_6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087539502206976
+    m_Key: fairy_text_7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087549841166336
+    m_Key: fairy_text_8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087561719435264
+    m_Key: fairy_text_9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087575774547968
+    m_Key: fairy_text_10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087589838049280
+    m_Key: fairy_text_11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087604702662656
+    m_Key: fairy_text_12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087614534111232
+    m_Key: fairy_text_13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13087624868876288
+    m_Key: fairy_text_14
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13088403835015168
+    m_Key: dog_text_1
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

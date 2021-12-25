@@ -42,7 +42,7 @@ public class TheLastCrystal : DefaultClass
             bToggle = false;
 
             // Spawn fairy if it is first time player managed to beat the first chapter
-            if (PlayerPrefs.GetInt("first_chapter_beaten", 1) != 0) {
+            if (PlayerPrefs.GetInt("first_chapter_beaten", 0) == 0) {
                 StartCoroutine(EndAfterDialog());
             }
             else { 
@@ -56,6 +56,8 @@ public class TheLastCrystal : DefaultClass
         fairyToSpawn.gameObject.SetActive(true);
 
         yield return new WaitForSecondsRealtime(62f);
+
+        PlayerPrefs.SetInt("first_chapter_beaten", 1);
 
         StartCoroutine(EndLastLevel());
     }
