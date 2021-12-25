@@ -15,6 +15,7 @@ int open_second_chapter - Stores boolean to open second chapter or not  (0 - dis
 int damage_power_up 	- Stores boolean to use double damage or not (0 - false, 1 - true)
 int health_power_up 	- Stores boolean to use double health or not (0 - false, 1 - true)
 int lives_power_up 		- Stores boolean to use double lives or not (0 - false, 1 - true)
+int first_chapter_beaten	- Stores boolean to show fairy at the end or not (0 - false, 1 - true)
 
 string total_time		- Stores total time spent on playing the game
 string current_date		- Stores last time entered into the game

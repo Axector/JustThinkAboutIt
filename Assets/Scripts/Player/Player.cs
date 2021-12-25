@@ -68,6 +68,9 @@ public class Player : DefaultClass
         // Save max health
         PlayerPrefs.SetInt("player_max_health", maxHealth);
 
+        // DEBUG
+        PlayerPrefs.SetInt("player_health", maxHealth);
+
         // Set health for current run
         AddHealth(PlayerPrefs.GetInt("player_health", maxHealth));
         // Set money for current run

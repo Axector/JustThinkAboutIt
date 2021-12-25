@@ -99,7 +99,10 @@ public class AI_Enemy_Patrolling : AEnemy
         float distance = Vector3.Distance(transform.position, player.transform.position);
 
         // Stop following if the enemy is too far from starting position
-        if (distanceToStart > distanceToGoBack) {
+        if (
+            distanceToStart > distanceToGoBack || 
+            distance > distanceToGoBack
+        ) {
             isGoingBack = true;
             isFollowing = false;
         }
