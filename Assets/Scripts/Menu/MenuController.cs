@@ -23,9 +23,6 @@ public class MenuController : DefaultClass
 
     private void Awake()
     {
-        // DEBUG
-        PlayerPrefs.SetInt("all_money", 200);
-
         bOpenSecondChapter = PlayerPrefs.GetInt("open_second_chapter", 0); // 0 - disabled, 1 - to open, 2 - opened
 
         // Set coins number to Shop

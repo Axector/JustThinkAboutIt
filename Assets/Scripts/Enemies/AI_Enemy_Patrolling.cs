@@ -141,9 +141,6 @@ public class AI_Enemy_Patrolling : AEnemy
             mask
         );
 
-        // DEBUG
-        Debug.DrawRay(transform.position, (spriteRenderer.flipX) ? Vector2.left : Vector2.right);
-
         // Get random punch sound
         AudioClip punchSound = attackSounds[Random.Range(0, attackSounds.Length)];
 
@@ -247,10 +244,6 @@ public class AI_Enemy_Patrolling : AEnemy
     {
         // Get Floor layer
         LayerMask mask = LayerMask.GetMask("Floor");
-
-        // DEBUG
-        Debug.DrawRay(new Vector2(transform.position.x + rayOffsetRight, transform.position.y - rayOffsetDown), Vector2.down * rayDistance, Color.cyan);
-        Debug.DrawRay(new Vector2(transform.position.x + rayOffsetRight, transform.position.y - rayOffsetDown), Vector2.down * rayDistance, Color.cyan);
 
         // Cast ray to check if there is the ground in front of an enemy
         RaycastHit2D[] rayHit = Physics2D.RaycastAll(

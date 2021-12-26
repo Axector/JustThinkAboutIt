@@ -22,8 +22,5 @@ public class EndScreenController : DefaultClass
         yield return new WaitForSeconds(4f);
 
         Application.Quit();
-
-        // DEBUG
-        UnityEditor.EditorApplication.isPlaying = false;
     }
 }

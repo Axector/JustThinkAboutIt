@@ -24,9 +24,6 @@ public class GameTime : DefaultClass
         DateTime date = DateTime.Parse(PlayerPrefs.GetString("current_date"));
         TimeSpan deltaTimePlayed = DateTime.Now - date;
 
-        // DEBUG
-        Debug.Log("Delta: " + GetTimeString(deltaTimePlayed));
-
         // Store time spent on playing the game
         if (PlayerPrefs.HasKey("total_time")) {
             TimeSpan lastTime = TimeSpan.Parse(PlayerPrefs.GetString("total_time"));
@@ -36,8 +33,5 @@ public class GameTime : DefaultClass
         else {
             PlayerPrefs.SetString("total_time", GetTimeString(deltaTimePlayed));
         }
-
-        // DEBUG
-        Debug.Log("Total: " + PlayerPrefs.GetString("total_time"));
     }
 }

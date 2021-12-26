@@ -68,9 +68,6 @@ public class Player : DefaultClass
         // Save max health
         PlayerPrefs.SetInt("player_max_health", maxHealth);
 
-        // DEBUG
-        PlayerPrefs.SetInt("player_health", maxHealth);
-
         // Set health for current run
         AddHealth(PlayerPrefs.GetInt("player_health", maxHealth));
         // Set money for current run
@@ -87,9 +84,6 @@ public class Player : DefaultClass
 
     private void Update()
     {
-        // DEBUG
-        Debug.Log(money);
-
         // If player is dead animation should be started and after some seconds game restarts
         if (!isAlive) {
             animator.SetBool("isAlive", isAlive);

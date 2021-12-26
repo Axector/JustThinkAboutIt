@@ -161,10 +161,6 @@ public class PlayerController : DefaultClass
         // Get Floor layer
         LayerMask mask = LayerMask.GetMask("Floor");
 
-        // DEBUG
-        Debug.DrawRay(new Vector2(pTransform.position.x + rayOffsetRight, pTransform.position.y), Vector2.down * rayDistance, Color.red);
-        Debug.DrawRay(new Vector2(pTransform.position.x - rayOffsetLeft, pTransform.position.y), Vector2.down * rayDistance, Color.red);
-
         // Cast two rays down to check if the player is on the ground
         RaycastHit2D[] rightHit = Physics2D.RaycastAll(
                 new Vector2(pTransform.position.x + rayOffsetRight, pTransform.position.y), 

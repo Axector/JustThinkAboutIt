@@ -32,10 +32,6 @@ public class Enemy_Patroling_FlyingFollowing_Shooter : Enemy_Patroling
             // Get distance to player
             float distance = Vector3.Distance(transform.position, player.transform.position);
             float startDistance = Vector3.Distance(transform.position, startingPosition);
-
-            // DEBUG
-            Debug.DrawRay(transform.position, player.transform.position - transform.position, (distance >= playerLoseDistance) ? Color.red : Color.green);
-            Debug.DrawRay(transform.position, startingPosition - transform.position, Color.yellow);
             
             // If player is far from the enemy
             if (distance >= playerLoseDistance || startDistance >= returnBackDistance) {
