@@ -5,6 +5,8 @@ public class BuyHealth : DefaultClass
     [SerializeField]
     private GameObject tooltip;
     [SerializeField]
+    private MeshRenderer tooltipText;
+    [SerializeField]
     private GameObject healthDrop;
     [SerializeField]
     private GameObject healthDropPosition;
@@ -18,6 +20,7 @@ public class BuyHealth : DefaultClass
     {
         player = FindObjectOfType<Player>();
         boxCollider = FindObjectOfType<BoxCollider2D>();
+        tooltipText.sortingOrder = 7;
     }
 
     private void OnTriggerStay2D(Collider2D other)

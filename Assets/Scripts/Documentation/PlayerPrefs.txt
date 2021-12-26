@@ -19,24 +19,3 @@ int first_chapter_beaten	- Stores boolean to show fairy at the end or not (0 - f
 
 string total_time			- Stores total time spent on playing the game
 string current_date			- Stores last time entered into the game
-
-
-//////
-PlayerPrefs.DeleteKey("music_volume");
-PlayerPrefs.DeleteKey("sound_volume");
-PlayerPrefs.DeleteKey("camera_size");
-PlayerPrefs.DeleteKey("player_health");
-PlayerPrefs.DeleteKey("player_max_health");
-PlayerPrefs.DeleteKey("player_money");
-PlayerPrefs.DeleteKey("player_run_money");
-PlayerPrefs.DeleteKey("all_money");
-PlayerPrefs.DeleteKey("selected_lang");
-PlayerPrefs.DeleteKey("next_level");
-PlayerPrefs.DeleteKey("save_money");
-PlayerPrefs.DeleteKey("open_second_chapter");
-PlayerPrefs.DeleteKey("damage_power_up");
-PlayerPrefs.DeleteKey("health_power_up");
-PlayerPrefs.DeleteKey("lives_power_up");
-PlayerPrefs.DeleteKey("first_chapter_beaten");
-PlayerPrefs.DeleteKey("total_time");
-PlayerPrefs.DeleteKey("current_date");

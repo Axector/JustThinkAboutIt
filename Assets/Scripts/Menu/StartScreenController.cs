@@ -1,5 +1,3 @@
-using UnityEngine.Localization.Settings;
-using UnityEngine.Localization;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
@@ -12,16 +10,12 @@ public class StartScreenController : DefaultClass
     [SerializeField]
     private int nextScene;
     [SerializeField]
-    private Locale[] languages;
-    [SerializeField]
     private Text time;
     [SerializeField]
     private Animator title;
 
     private void Start()
     {
-        LocalizationSettings.SelectedLocale = languages[PlayerPrefs.GetInt("selected_lang", 0)];
-
         StartCoroutine(WaitToEndScene());
     }
 
