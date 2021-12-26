@@ -149,10 +149,10 @@ public class Results : DefaultClass
 
         // Return to menu
         if (PlayerPrefs.GetInt("next_level", 0) == 11) {
-            StartCoroutine(DelayBeforeSwithcScene(11));
+            StartCoroutine(DelayBeforeSwithcScene(12));
         }
         else {
-            StartCoroutine(DelayBeforeSwithcScene(0));
+            StartCoroutine(DelayBeforeSwithcScene(1));
         }
 
     }

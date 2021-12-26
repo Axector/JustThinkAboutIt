@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3861346100516323162}
   - component: {fileID: 1963719896270891903}
   - component: {fileID: 6919981580667646561}
-  - component: {fileID: 6947307617399932953}
+  - component: {fileID: 6875841734732270538}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -79,8 +79,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Controls layout
---- !u!114 &6947307617399932953
+  m_Text: controls
+--- !u!114 &6875841734732270538
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,36 +89,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 913232184191976347}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:14dbc1c820a52814d8364841d953c7cc
-    m_TableEntryReference:
-      m_KeyId: 646388715311104
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6919981580667646561}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 1
 --- !u!1 &1265712798418322890
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,7 +236,7 @@ GameObject:
   - component: {fileID: 5811668665759158630}
   - component: {fileID: 5411015928177005213}
   - component: {fileID: 664393709705284143}
-  - component: {fileID: 7227379114897098093}
+  - component: {fileID: 2176881096852389157}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -331,8 +304,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: BACK
---- !u!114 &7227379114897098093
+  m_Text: back
+--- !u!114 &2176881096852389157
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -341,36 +314,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1729182554917784891}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:14dbc1c820a52814d8364841d953c7cc
-    m_TableEntryReference:
-      m_KeyId: 634553190535168
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 664393709705284143}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 1
 --- !u!1 &2128713483432443006
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,13 +371,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473e6b4cb184d354d8659e68815ab190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  languages:
-  - {fileID: 11400000, guid: dd649b149afa9914a89c9ee5c44a74c5, type: 2}
-  - {fileID: 11400000, guid: 45782e2185675144686aee3006534551, type: 2}
-  - {fileID: 11400000, guid: dbcc27a960cc30248a4ac21a657e614a, type: 2}
   musicVolumeSlider: {fileID: 2128713484838327517}
   soundVolumeSlider: {fileID: 2285635693048326997}
-  languageDropDown: {fileID: 2128713485543748457}
+  languageDropdown: {fileID: 2128713485543748457}
   controls: {fileID: 8460550500606334733}
   contentToHide:
   - {fileID: 2128713484606132997}
@@ -451,7 +393,7 @@ GameObject:
   - component: {fileID: 2128713483450638763}
   - component: {fileID: 2128713483450638761}
   - component: {fileID: 2128713483450638760}
-  - component: {fileID: 4736181581047923399}
+  - component: {fileID: 4491190594128813746}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -519,8 +461,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Music
---- !u!114 &4736181581047923399
+  m_Text: music_volume
+--- !u!114 &4491190594128813746
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -529,36 +471,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2128713483450638762}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:14dbc1c820a52814d8364841d953c7cc
-    m_TableEntryReference:
-      m_KeyId: 647397088907264
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2128713483450638760}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 1
 --- !u!1 &2128713483560149235
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,7 +485,7 @@ GameObject:
   - component: {fileID: 2128713483560149232}
   - component: {fileID: 2128713483560149238}
   - component: {fileID: 2128713483560149233}
-  - component: {fileID: 2270433759458737503}
+  - component: {fileID: 6997115942153632276}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -638,8 +553,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sound Effects
---- !u!114 &2270433759458737503
+  m_Text: sound_effects
+--- !u!114 &6997115942153632276
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -648,36 +563,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2128713483560149235}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:14dbc1c820a52814d8364841d953c7cc
-    m_TableEntryReference:
-      m_KeyId: 647256562946048
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2128713483560149233}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 1
 --- !u!1 &2128713483877803479
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,7 +651,7 @@ GameObject:
   - component: {fileID: 2128713484129739203}
   - component: {fileID: 2128713484129739206}
   - component: {fileID: 2128713484129739201}
-  - component: {fileID: 2128713484129739200}
+  - component: {fileID: 547886725951854378}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -831,8 +719,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: SETTINGS
---- !u!114 &2128713484129739200
+  m_Text: settings
+--- !u!114 &547886725951854378
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -841,36 +729,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2128713484129739202}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:14dbc1c820a52814d8364841d953c7cc
-    m_TableEntryReference:
-      m_KeyId: 366672880029696
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2128713484129739201}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 1
 --- !u!1 &2128713484250200258
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,7 +988,7 @@ GameObject:
   - component: {fileID: 2128713484636325459}
   - component: {fileID: 2128713484636325457}
   - component: {fileID: 2128713484636325456}
-  - component: {fileID: 3247318363449944961}
+  - component: {fileID: 3447039935861544137}
   m_Layer: 5
   m_Name: Lable
   m_TagString: Untagged
@@ -1195,8 +1056,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Language
---- !u!114 &3247318363449944961
+  m_Text: language
+--- !u!114 &3447039935861544137
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1205,36 +1066,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2128713484636325458}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:14dbc1c820a52814d8364841d953c7cc
-    m_TableEntryReference:
-      m_KeyId: 646997489176576
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2128713484636325456}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 1
 --- !u!1 &2128713484705918700
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,7 +1080,7 @@ GameObject:
   - component: {fileID: 2128713484705918701}
   - component: {fileID: 2128713484705918691}
   - component: {fileID: 2128713484705918690}
-  - component: {fileID: 2825425806620607145}
+  - component: {fileID: 4228511394602400908}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1314,8 +1148,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Controls layout
---- !u!114 &2825425806620607145
+  m_Text: controls
+--- !u!114 &4228511394602400908
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1324,36 +1158,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2128713484705918700}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:14dbc1c820a52814d8364841d953c7cc
-    m_TableEntryReference:
-      m_KeyId: 646388715311104
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2128713484705918690}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 1
 --- !u!1 &2128713484892125941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1571,7 +1378,7 @@ GameObject:
   - component: {fileID: 2128713485523923446}
   - component: {fileID: 2128713485523923445}
   - component: {fileID: 2128713485523923444}
-  - component: {fileID: 2128713485523923447}
+  - component: {fileID: 5856718252446726773}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1639,8 +1446,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: BACK
---- !u!114 &2128713485523923447
+  m_Text: back
+--- !u!114 &5856718252446726773
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1649,36 +1456,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2128713485523923441}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:14dbc1c820a52814d8364841d953c7cc
-    m_TableEntryReference:
-      m_KeyId: 634553190535168
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2128713485523923444}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 1
 --- !u!1 &2128713485560084318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1749,8 +1529,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -25, y: 260}
-  m_SizeDelta: {x: -50, y: 400}
+  m_AnchoredPosition: {x: -43.5, y: 260}
+  m_SizeDelta: {x: -13, y: 400}
   m_Pivot: {x: 0.5, y: -0.000000038184226}
 --- !u!222 &5277977707689569128
 CanvasRenderer:
@@ -2127,6 +1907,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2128713483959210650}
     m_Modifications:
+    - target: {fileID: 3568754654552044392, guid: bf970e43621c54e48be649d5da2f8f9d, type: 3}
+      propertyPath: m_Text
+      value: English
+      objectReference: {fileID: 0}
     - target: {fileID: 3568754655222352005, guid: bf970e43621c54e48be649d5da2f8f9d, type: 3}
       propertyPath: m_Name
       value: Select
@@ -2216,28 +2000,44 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3568754655222352007, guid: bf970e43621c54e48be649d5da2f8f9d, type: 3}
+      propertyPath: m_Options.m_Options.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3568754655222352007, guid: bf970e43621c54e48be649d5da2f8f9d, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[0].m_Text
+      value: English
+      objectReference: {fileID: 0}
+    - target: {fileID: 3568754655222352007, guid: bf970e43621c54e48be649d5da2f8f9d, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[1].m_Text
+      value: "Latvie\u0161u"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3568754655222352007, guid: bf970e43621c54e48be649d5da2f8f9d, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[2].m_Text
+      value: "\u0420\u0443\u0441\u0441\u043A\u0438\u0439"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3568754655222352007, guid: bf970e43621c54e48be649d5da2f8f9d, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3568754655222352007, guid: bf970e43621c54e48be649d5da2f8f9d, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3568754655222352007, guid: bf970e43621c54e48be649d5da2f8f9d, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7023959712474584396}
+      objectReference: {fileID: 0}
     - target: {fileID: 3568754655222352007, guid: bf970e43621c54e48be649d5da2f8f9d, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3568754655222352007, guid: bf970e43621c54e48be649d5da2f8f9d, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeLanguage
+      value: SetLanguage
       objectReference: {fileID: 0}
     - target: {fileID: 3568754655222352007, guid: bf970e43621c54e48be649d5da2f8f9d, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Settings, Assembly-CSharp
+      value: LocalizationController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3568754655222352007, guid: bf970e43621c54e48be649d5da2f8f9d, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

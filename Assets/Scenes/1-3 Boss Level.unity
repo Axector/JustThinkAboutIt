@@ -340,7 +340,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Where is Marusya???
+  m_Text: fairy_text_9
 --- !u!222 &41992110
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -358,36 +358,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 41992107}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:14dbc1c820a52814d8364841d953c7cc
-    m_TableEntryReference:
-      m_KeyId: 13087561719435264
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 41992109}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 1
 --- !u!1 &42675407
 GameObject:
   m_ObjectHideFlags: 0
@@ -2717,8 +2690,8 @@ GameObject:
   - component: {fileID: 394858815}
   - component: {fileID: 394858819}
   - component: {fileID: 394858818}
-  - component: {fileID: 394858817}
   - component: {fileID: 394858816}
+  - component: {fileID: 394858817}
   m_Layer: 5
   m_Name: Boss Name
   m_TagString: Untagged
@@ -2770,36 +2743,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 394858814}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:14dbc1c820a52814d8364841d953c7cc
-    m_TableEntryReference:
-      m_KeyId: 3970177817595904
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 394858818}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 1
 --- !u!114 &394858818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2833,7 +2779,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LIGHT SPHERE
+  m_Text: boss-3
 --- !u!222 &394858819
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3077,7 +3023,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: It is my dog - Marusya!
+  m_Text: fairy_text_5
 --- !u!222 &412651652
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3095,36 +3041,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 412651649}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:14dbc1c820a52814d8364841d953c7cc
-    m_TableEntryReference:
-      m_KeyId: 13087521315704832
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 412651651}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 1
 --- !u!1 &430203548
 GameObject:
   m_ObjectHideFlags: 0
@@ -3278,7 +3197,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bring her back.
+  m_Text: fairy_text_13
 --- !u!222 &432200495
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3296,36 +3215,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 432200492}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:14dbc1c820a52814d8364841d953c7cc
-    m_TableEntryReference:
-      m_KeyId: 13087614534111232
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 432200494}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 1
 --- !u!1 &434346165
 GameObject:
   m_ObjectHideFlags: 0
@@ -3829,7 +3721,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Thank you for freeing me from this crystal!
+  m_Text: fairy_text_2
 --- !u!222 &528328250
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3847,36 +3739,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 528328247}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:14dbc1c820a52814d8364841d953c7cc
-    m_TableEntryReference:
-      m_KeyId: 13087460481519616
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 528328249}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 1
 --- !u!1001 &535125831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4092,6 +3957,14 @@ PrefabInstance:
     - target: {fileID: 2128713485304554791, guid: 62cd5f15e5a320048bd8fa82401e16b8, type: 3}
       propertyPath: m_SizeDelta.x
       value: 225
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128713485543748457, guid: 62cd5f15e5a320048bd8fa82401e16b8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1178195084}
+    - target: {fileID: 2128713485543748457, guid: 62cd5f15e5a320048bd8fa82401e16b8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetLanguage
       objectReference: {fileID: 0}
     - target: {fileID: 2285635693294865893, guid: 62cd5f15e5a320048bd8fa82401e16b8, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5730,7 +5603,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' My name is Nastya!'
+  m_Text: fairy_text_7
 --- !u!222 &828967188
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5748,36 +5621,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 828967185}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:14dbc1c820a52814d8364841d953c7cc
-    m_TableEntryReference:
-      m_KeyId: 13087539502206976
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 828967187}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 1
 --- !u!1 &832425282 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6351737898231526182, guid: abeaa18c3171b2b4f8c7fcfd6ef26826, type: 3}
@@ -7262,7 +7108,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Oh, hello!
+  m_Text: fairy_text_1
 --- !u!222 &1027440138
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7280,36 +7126,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1027440135}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:14dbc1c820a52814d8364841d953c7cc
-    m_TableEntryReference:
-      m_KeyId: 13087429657579520
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1027440137}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 1
 --- !u!1 &1029418865
 GameObject:
   m_ObjectHideFlags: 0
@@ -8679,7 +8498,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Oh, right!
+  m_Text: fairy_text_6
 --- !u!222 &1159330134
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8697,36 +8516,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1159330131}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:14dbc1c820a52814d8364841d953c7cc
-    m_TableEntryReference:
-      m_KeyId: 13087529469431808
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1159330133}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 1
 --- !u!1001 &1170188030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8916,7 +8708,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: I cannot leave this world, but you can!
+  m_Text: fairy_text_12
 --- !u!222 &1175124643
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8934,36 +8726,77 @@ MonoBehaviour:
   m_GameObject: {fileID: 1175124640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:14dbc1c820a52814d8364841d953c7cc
-    m_TableEntryReference:
-      m_KeyId: 13087604702662656
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1175124642}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 1
+--- !u!1001 &1178195083
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4040098119545488456, guid: 63cbd958d17e2b04596453592f6e4936, type: 3}
+      propertyPath: m_Name
+      value: LocalizationController
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040098119545488462, guid: 63cbd958d17e2b04596453592f6e4936, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040098119545488462, guid: 63cbd958d17e2b04596453592f6e4936, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.5042863
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040098119545488462, guid: 63cbd958d17e2b04596453592f6e4936, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.71931463
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040098119545488462, guid: 63cbd958d17e2b04596453592f6e4936, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -161.38956
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040098119545488462, guid: 63cbd958d17e2b04596453592f6e4936, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040098119545488462, guid: 63cbd958d17e2b04596453592f6e4936, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040098119545488462, guid: 63cbd958d17e2b04596453592f6e4936, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040098119545488462, guid: 63cbd958d17e2b04596453592f6e4936, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040098119545488462, guid: 63cbd958d17e2b04596453592f6e4936, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040098119545488462, guid: 63cbd958d17e2b04596453592f6e4936, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040098119545488462, guid: 63cbd958d17e2b04596453592f6e4936, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 63cbd958d17e2b04596453592f6e4936, type: 3}
+--- !u!114 &1178195084 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4040098119545488463, guid: 63cbd958d17e2b04596453592f6e4936, type: 3}
+  m_PrefabInstance: {fileID: 1178195083}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d5a297581caa2e40b578f4f622d4d20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1185088335 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1956834940146777517, guid: f56aba4c84e87fa48bc8ee8b68cd00b5, type: 3}
@@ -10187,7 +10020,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Please!!
+  m_Text: fairy_text_14
 --- !u!222 &1403195973
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10205,36 +10038,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1403195970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:14dbc1c820a52814d8364841d953c7cc
-    m_TableEntryReference:
-      m_KeyId: 13087624868876288
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1403195972}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 1
 --- !u!1 &1406028773
 GameObject:
   m_ObjectHideFlags: 0
@@ -10306,7 +10112,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'MARUSYA: Woof!'
+  m_Text: dog_text_1
 --- !u!222 &1406028776
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10324,36 +10130,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1406028773}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:14dbc1c820a52814d8364841d953c7cc
-    m_TableEntryReference:
-      m_KeyId: 13088403835015168
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1406028775}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 1
 --- !u!1 &1406031966
 GameObject:
   m_ObjectHideFlags: 0
@@ -11280,7 +11059,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: I thought I would stay there forever.
+  m_Text: fairy_text_3
 --- !u!222 &1484582557
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11298,36 +11077,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1484582554}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:14dbc1c820a52814d8364841d953c7cc
-    m_TableEntryReference:
-      m_KeyId: 13087466391293952
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1484582556}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 1
 --- !u!1 &1502927792
 GameObject:
   m_ObjectHideFlags: 0
@@ -11399,7 +11151,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: At least I was not alone!
+  m_Text: fairy_text_4
 --- !u!222 &1502927795
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11417,36 +11169,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1502927792}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:14dbc1c820a52814d8364841d953c7cc
-    m_TableEntryReference:
-      m_KeyId: 13087497223622656
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1502927794}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 1
 --- !u!1 &1518204221
 GameObject:
   m_ObjectHideFlags: 0
@@ -13250,7 +12975,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: She disapeared!?
+  m_Text: fairy_text_10
 --- !u!222 &1736545439
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13268,36 +12993,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1736545436}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:14dbc1c820a52814d8364841d953c7cc
-    m_TableEntryReference:
-      m_KeyId: 13087575774547968
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1736545438}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 1
 --- !u!1 &1748054990 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4356356943675241716, guid: 32536c955df250b49b5af93540beb1d1, type: 3}
@@ -13416,7 +13114,7 @@ GameObject:
   - component: {fileID: 1762426458}
   - component: {fileID: 1762426462}
   - component: {fileID: 1762426461}
-  - component: {fileID: 1762426460}
+  - component: {fileID: 1762426459}
   m_Layer: 5
   m_Name: HelpText
   m_TagString: Untagged
@@ -13443,7 +13141,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 600, y: 50}
   m_Pivot: {x: 0.5, y: -0.00000009685755}
---- !u!114 &1762426460
+--- !u!114 &1762426459
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13452,36 +13150,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1762426457}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:14dbc1c820a52814d8364841d953c7cc
-    m_TableEntryReference:
-      m_KeyId: 4016346870534144
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1762426461}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 1
 --- !u!114 &1762426461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13515,9 +13186,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0439 \u043E\u0433\u043D\u0435\u043D\u043D\u044B\u0439
-    \u0448\u0430\u0440, \u0447\u0442\u043E\u0431\u044B \u0441\u043B\u043E\u043C\u0430\u0442\u044C
-    \u041A\u0440\u0438\u0441\u0442\u0430\u043B"
+  m_Text: level_3_help_text
 --- !u!222 &1762426462
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14149,7 +13818,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: And I am a fairy, as you can see.
+  m_Text: fairy_text_8
 --- !u!222 &1855138997
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14167,36 +13836,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1855138994}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:14dbc1c820a52814d8364841d953c7cc
-    m_TableEntryReference:
-      m_KeyId: 13087549841166336
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1855138996}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 1
 --- !u!1 &1867984264
 GameObject:
   m_ObjectHideFlags: 0
@@ -16314,7 +15956,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Can you help me to find her, please?
+  m_Text: fairy_text_11
 --- !u!222 &2113284682
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16332,36 +15974,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2113284679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:14dbc1c820a52814d8364841d953c7cc
-    m_TableEntryReference:
-      m_KeyId: 13087589838049280
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2113284681}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  references:
-    version: 1
 --- !u!1 &2113652050
 GameObject:
   m_ObjectHideFlags: 0

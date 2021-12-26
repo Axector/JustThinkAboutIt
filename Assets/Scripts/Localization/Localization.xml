@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Keys xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Key Name="lost_woods">
+		<Translates>
+			<en-us>LOST WOODS</en-us>
+			<lv>PAZUDIS MEŽS</lv>
+			<ru>ЗАТЕРЯНЫЙ ЛЕС</ru>
+		</Translates>
+	</Key>
+	<Key Name="abandoned_village">
+		<Translates>
+			<en-us>ABANDONED VILLAGE</en-us>
+			<lv>PAMESTS CIEMS</lv>
+			<ru>БРОШЕННАЯ ДЕРЕВНЯ</ru>
+		</Translates>
+	</Key>
+	<Key Name="fallen_city">
+		<Translates>
+			<en-us>FALLEN CITY</en-us>
+			<lv>KRITUSĪ PILSĒTA</lv>
+			<ru>ПАВШИЙ ГОРОД</ru>
+		</Translates>
+	</Key>
+	<Key Name="pauze">
+		<Translates>
+			<en-us>PAUSE</en-us>
+			<lv>PAUZE</lv>
+			<ru>ПАУЗА</ru>
+		</Translates>
+	</Key>
+	<Key Name="resume">
+		<Translates>
+			<en-us>RESUME</en-us>
+			<lv>TURPINĀT</lv>
+			<ru>ПРОДОЛЖИТЬ</ru>
+		</Translates>
+	</Key>
+	<Key Name="settings">
+		<Translates>
+			<en-us>SETTINGS</en-us>
+			<lv>IESTATĪJUMI</lv>
+			<ru>НАСТРОЙКИ</ru>
+		</Translates>
+	</Key>
+	<Key Name="exit">
+		<Translates>
+			<en-us>EXIT</en-us>
+			<lv>IZIET</lv>
+			<ru>ВЫЙТИ</ru>
+		</Translates>
+	</Key>
+	<Key Name="first_chapter">
+		<Translates>
+			<en-us>FIRST CHAPTER</en-us>
+			<lv>PIRMĀ NODAĻA</lv>
+			<ru>ЧАСТЬ ПЕРВАЯ</ru>
+		</Translates>
+	</Key>
+	<Key Name="second_chapter">
+		<Translates>
+			<en-us>SECOND CHAPTER</en-us>
+			<lv>OTRĀ NODAĻA</lv>
+			<ru>ЧАСТЬ ВТОРАЯ</ru>
+		</Translates>
+	</Key>
+	<Key Name="back">
+		<Translates>
+			<en-us>BACK</en-us>
+			<lv>ATPAKAĻ</lv>
+			<ru>НАЗАД</ru>
+		</Translates>
+	</Key>
+	<Key Name="controls">
+		<Translates>
+			<en-us>Controls layout</en-us>
+			<lv>Kontroles izkārtojums</lv>
+			<ru>Элементы управления</ru>
+		</Translates>
+	</Key>
+	<Key Name="language">
+		<Translates>
+			<en-us>Language</en-us>
+			<lv>Valoda</lv>
+			<ru>Язык</ru>
+		</Translates>
+	</Key>
+	<Key Name="sound_effects">
+		<Translates>
+			<en-us>Sound Effects</en-us>
+			<lv>Skaņas efekti</lv>
+			<ru>Звуковые эффекты</ru>
+		</Translates>
+	</Key>
+	<Key Name="music_volume">
+		<Translates>
+			<en-us>Music</en-us>
+			<lv>Mūzika</lv>
+			<ru>Музыка</ru>
+		</Translates>
+	</Key>
+	<Key Name="go_left">
+		<Translates>
+			<en-us>Go Left</en-us>
+			<lv>Iet pa kreisi</lv>
+			<ru>Идти налево</ru>
+		</Translates>
+	</Key>
+	<Key Name="go_right">
+		<Translates>
+			<en-us>Go Right</en-us>
+			<lv>Iet pa labi</lv>
+			<ru>Идти направо</ru>
+		</Translates>
+	</Key>
+	<Key Name="interact">
+		<Translates>
+			<en-us>Interaction</en-us>
+			<lv>Mijiedarbība</lv>
+			<ru>Взаимодействовие</ru>
+		</Translates>
+	</Key>
+	<Key Name="jump">
+		<Translates>
+			<en-us>Jump</en-us>
+			<lv>Lēciens</lv>
+			<ru>Прыжок</ru>
+		</Translates>
+	</Key>
+	<Key Name="attack_left">
+		<Translates>
+			<en-us>Attack Left</en-us>
+			<lv>Uzbrukt pa kreisi</lv>
+			<ru>Ударить влево</ru>
+		</Translates>
+	</Key>
+	<Key Name="attack_right">
+		<Translates>
+			<en-us>Attack Right</en-us>
+			<lv>Uzbrukt pa labi</lv>
+			<ru>Ударить вправо</ru>
+		</Translates>
+	</Key>
+	<Key Name="attack_up">
+		<Translates>
+			<en-us>Attack Up</en-us>
+			<lv>Uzbrukt uz augšu</lv>
+			<ru>Ударить вверх</ru>
+		</Translates>
+	</Key>
+	<Key Name="attack_down">
+		<Translates>
+			<en-us>Drop Fireball</en-us>
+			<lv>Nomest ugunsbumbu</lv>
+			<ru>Сбросить огненный шар</ru>
+		</Translates>
+	</Key>
+	<Key Name="continue">
+		<Translates>
+			<en-us>CONTINUE</en-us>
+			<lv>TURPINĀT</lv>
+			<ru>ПРОДОЛЖИТЬ</ru>
+		</Translates>
+	</Key>
+	<Key Name="results">
+		<Translates>
+			<en-us>RESULTS</en-us>
+			<lv>REZULTĀTI</lv>
+			<ru>РЕЗУЛЬТАТЫ</ru>
+		</Translates>
+	</Key>
+	<Key Name="current_health">
+		<Translates>
+			<en-us>Current Health</en-us>
+			<lv>Pašreizējā veselība</lv>
+			<ru>Текущее Здоровье</ru>
+		</Translates>
+	</Key>
+	<Key Name="money_earned">
+		<Translates>
+			<en-us>Money Earned</en-us>
+			<lv>Nopelnīta nauda</lv>
+			<ru>Заработанные деньги</ru>
+		</Translates>
+	</Key>
+	<Key Name="boss-1">
+		<Translates>
+			<en-us>MOTHER OF SPHERES</en-us>
+			<lv>SFĒRĀS MĀTE</lv>
+			<ru>МАТЬ СФЕР</ru>
+		</Translates>
+	</Key>
+	<Key Name="boss-2">
+		<Translates>
+			<en-us>MINES TRIPLETS</en-us>
+			<lv>MĪNAS TRĪNĪŠI</lv>
+			<ru>МИНЫ ТРОЙНЯШКИ</ru>
+		</Translates>
+	</Key>
+	<Key Name="boss-3">
+		<Translates>
+			<en-us>THE LAST CRYSTAL</en-us>
+			<lv>PĒDĒJAIS KRISTĀLS</lv>
+			<ru>ПОСЛЕДНИЙ КРИСТАЛ</ru>
+		</Translates>
+	</Key>
+	<Key Name="level_3_help_text">
+		<Translates>
+			<en-us>Use fireball to brake Crystal</en-us>
+			<lv>Izmanto ugunsbumbu, lai salauztu Kristālu</lv>
+			<ru>Используй огненный шар, чтобы сломать Кристал</ru>
+		</Translates>
+	</Key>
+	<Key Name="titles">
+		<Translates>
+			<en-us>Producer
+Chief designer
+Screenwriter
+Development Director
+Technical Director
+Art designer
+Animation Director
+Visual Effects Director
+Head of Translation Department
+Music producer
+Sound Design Director</en-us>
+			<lv>Ražotājs
+Galvenais dizainers
+Scenārists
+Attīstības direktors
+Tehniskais direktors
+Mākslas dizainers
+Animācijas režisors
+Vizuālo efektu režisors
+Tulkošanas nodaļas vadītājs
+Mūzikas producents
+Skaņu dizaina direktors</lv>
+			<ru>Продюсер
+Главный дизайнер
+Сценарист
+Директор разработки
+Технический директор
+Арт-дизайнер
+Директор отдела анимации
+Директор отдела визуальных эффектов
+Глава отдела перевода
+Музыкальный продюсер
+Директор отдела саунд-дизайна</ru>
+		</Translates>
+	</Key>
+	<Key Name="titles_names">
+		<Translates>
+			<en-us>Daniil Leschisin
+Daniil Leschisin
+Daniil Leschisin
+Daniil Leschisin
+Daniil Leschisin
+Daniil Leschisin
+Daniil Leschisin
+Daniil Leschisin
+Daniil Leschisin
+SELDENKOVS
+SELDENKOVS</en-us>
+			<lv>Daniils Leščišins
+Daniils Leščišins
+Daniils Leščišins
+Daniils Leščišins
+Daniils Leščišins
+Daniils Leščišins
+Daniils Leščišins
+Daniils Leščišins
+Daniils Leščišins
+SELDENKOVS
+SELDENKOVS</lv>
+			<ru>Даниил Лещишин
+Даниил Лещишин
+Даниил Лещишин
+Даниил Лещишин
+Даниил Лещишин
+Даниил Лещишин
+Даниил Лещишин
+Даниил Лещишин
+Даниил Лещишин
+SELDENKOVS
+SELDENKOVS</ru>
+		</Translates>
+	</Key>
+	<Key Name="shop">
+		<Translates>
+			<en-us>SHOP</en-us>
+			<lv>VEIKALS</lv>
+			<ru>МАГАЗИН</ru>
+		</Translates>
+	</Key>
+	<Key Name="x2_damage">
+		<Translates>
+			<en-us>X2 Damage</en-us>
+			<lv>X2 Bojājumi</lv>
+			<ru>X2 Урон</ru>
+		</Translates>
+	</Key>
+	<Key Name="x2_health">
+		<Translates>
+			<en-us>X2 Health</en-us>
+			<lv>X2 Veselības</lv>
+			<ru>X2 Здоровья</ru>
+		</Translates>
+	</Key>
+	<Key Name="2 lives">
+		<Translates>
+			<en-us>2 Lives</en-us>
+			<lv>2 Dzīvības</lv>
+			<ru>2 Жизни</ru>
+		</Translates>
+	</Key>
+	<Key Name="value_your_time">
+		<Translates>
+			<en-us>Value your Time</en-us>
+			<lv>Vērtē savu laiku</lv>
+			<ru>Цени своё Время</ru>
+		</Translates>
+	</Key>
+	<Key Name="run">
+		<Translates>
+			<en-us>RUN</en-us>
+			<lv>SKRIEN</lv>
+			<ru>БЕГИ</ru>
+		</Translates>
+	</Key>
+	<Key Name="total_time">
+		<Translates>
+			<en-us>Total time spent</en-us>
+			<lv>Kopējais pavadītais laiks</lv>
+			<ru>Общее потраченное время</ru>
+		</Translates>
+	</Key>
+	<Key Name="current_time">
+		<Translates>
+			<en-us>Current time spent</en-us>
+			<lv>Pašreizējais pavadītais laiks</lv>
+			<ru>Текущее потраченное время</ru>
+		</Translates>
+	</Key>
+	<Key Name="fairy_text_1">
+		<Translates>
+			<en-us>???: Oh, hello!</en-us>
+			<lv>???: Ak, sveiks!</lv>
+			<ru>???: О, привет!</ru>
+		</Translates>
+	</Key>
+	<Key Name="fairy_text_2">
+		<Translates>
+			<en-us>???: Thank you for freeing me from this crystal!</en-us>
+			<lv>???: Paldies, ka atbrīvoji mani no šī kristāla!</lv>
+			<ru>???: Спасибо тебе, что освободил меня из этого кристала!</ru>
+		</Translates>
+	</Key>
+	<Key Name="fairy_text_3">
+		<Translates>
+			<en-us>???: I thought I would stay there forever..</en-us>
+			<lv>???: Es domāju, ka palikšu tur uz visiem laikiem..</lv>
+			<ru>???: Я думала, что останусь там навсегда..</ru>
+		</Translates>
+	</Key>
+	<Key Name="fairy_text_4">
+		<Translates>
+			<en-us>???: At least I was not alone!</en-us>
+			<lv>???: Vismaz es nebiju viena!</lv>
+			<ru>???: По крайней мере, я была не одна!</ru>
+		</Translates>
+	</Key>
+	<Key Name="fairy_text_5">
+		<Translates>
+			<en-us>???: It is my dog - Marusya!</en-us>
+			<lv>???: Tas ir mans suns - Marusja!</lv>
+			<ru>???: Это моя собака - Маруся!</ru>
+		</Translates>
+	</Key>
+	<Key Name="fairy_text_6">
+		<Translates>
+			<en-us>???: Oh, right!</en-us>
+			<lv>???: Ak, pareizi!</lv>
+			<ru>???: Ой, точно!</ru>
+		</Translates>
+	</Key>
+	<Key Name="fairy_text_7">
+		<Translates>
+			<en-us>NASTYA: My name is Nastya!</en-us>
+			<lv>NASTJA: Mani sauc Nastja!</lv>
+			<ru>НАСТЯ: Моё имя Настя!</ru>
+		</Translates>
+	</Key>
+	<Key Name="fairy_text_8">
+		<Translates>
+			<en-us>NASTYA: And I am a fairy, as you can see.</en-us>
+			<lv>NASTJA: Un es esmu feja, kā tu redzi.</lv>
+			<ru>НАСТЯ: И я фея, как ты видишь.</ru>
+		</Translates>
+	</Key>
+	<Key Name="fairy_text_9">
+		<Translates>
+			<en-us>NASTYA: WHERE IS MARUSYA???</en-us>
+			<lv>NASTJA: KUR IR MARUSJA???</lv>
+			<ru>НАСТЯ: ГДЕ МАРУСЯ???</ru>
+		</Translates>
+	</Key>
+	<Key Name="fairy_text_10">
+		<Translates>
+			<en-us>NASTYA: She disappeared!?</en-us>
+			<lv>NASTJA: Viņa pazuda!?</lv>
+			<ru>НАСТЯ: Она пропала!?</ru>
+		</Translates>
+	</Key>
+	<Key Name="fairy_text_11">
+		<Translates>
+			<en-us>NASTYA: Can you help me to find her, please??</en-us>
+			<lv>NASTJA: Vai vari man palīdzēt viņu atrast, lūdzu??</lv>
+			<ru>НАСТЯ: Не мог бы ты помочь мне найти ее??</ru>
+		</Translates>
+	</Key>
+	<Key Name="fairy_text_12">
+		<Translates>
+			<en-us>NASTYA: I cannot leave this world, but you can!</en-us>
+			<lv>NASTJA: Es nevaru atstāt šo pasauli, tomēr tu vari!</lv>
+			<ru>НАСТЯ: Я не могу покидать этот мир, но ты можешь!</ru>
+		</Translates>
+	</Key>
+	<Key Name="fairy_text_13">
+		<Translates>
+			<en-us>NASTYA: Bring her back.</en-us>
+			<lv>NASTJA: Atved viņu atpakaļ.</lv>
+			<ru>НАСТЯ: Верни ее назад.</ru>
+		</Translates>
+	</Key>
+	<Key Name="fairy_text_14">
+		<Translates>
+			<en-us>NASTYA: Please!!</en-us>
+			<lv>NASTJA: Lūdzu!!</lv>
+			<ru>НАСТЯ: Умоляю!!</ru>
+		</Translates>
+	</Key>
+	<Key Name="dog_text_1">
+		<Translates>
+			<en-us>MARUSYA: Woof!</en-us>
+			<lv>MARUSJA: Vau!</lv>
+			<ru>МАРУСЯ: Гав!</ru>
+		</Translates>
+	</Key>
+	<Key Name="buy_10c_10hp">
+		<Translates>
+			<en-us>10 coins = 10 health points</en-us>
+			<lv>10 monētas = 10 veselības punkti </lv>
+			<ru>10 монет = 10 очков здоровья</ru>
+		</Translates>
+	</Key>
+</Keys>
