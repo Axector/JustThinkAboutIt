@@ -1016,7 +1016,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2654725591377870023}
   secondsTillChangeScene: 4
-  sceneIndexToLoad: 3
+  sceneIndexToLoad: 4
   fadeScreen: {fileID: 1162671126}
 --- !u!1 &335346782
 GameObject:

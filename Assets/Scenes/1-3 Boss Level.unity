@@ -11581,7 +11581,7 @@ MonoBehaviour:
   playerController: {fileID: 1748054990}
   cameraController: {fileID: 1576879307}
   cutsceneCamera: {fileID: 169129365}
-  nextLevelIndex: 11
+  nextLevelIndex: 12
   keyObject: {fileID: 1691770336}
   fadingScreen: {fileID: 1220678199}
   fairyToSpawn: {fileID: 686982591}
