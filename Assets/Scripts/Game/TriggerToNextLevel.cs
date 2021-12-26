@@ -15,7 +15,7 @@ public class TriggerToNextLevel : DefaultClass
     private GameObject fadeScreen;
 
     private bool startFading = false;
-    private float fadeInSpeed = 0.003f;
+    private float fadeInSpeed = 0.03f;
     float timeToStartFadeIn = 1f;
     private Image fadeScreenImage;
 
