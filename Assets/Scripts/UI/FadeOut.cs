@@ -34,7 +34,7 @@ public class FadeOut : DefaultClass
         if (startFading) {
             // Decrease alpha to make the object fade out
             Color color = text.color;
-            color.a -= fadeOutSpeed;
+            color.a -= fadeOutSpeed * 3;
             text.color = color;
 
             // Destroy invisible object

@@ -119,7 +119,7 @@ public class MotherOfSpheres : DefaultClass
 
     private IEnumerator StartRandomExplosion()
     {
-        yield return new WaitForSecondsRealtime(10f);
+        yield return new WaitForSeconds(10f);
 
         while (boss.IsAlive) {
             float xPos = Random.Range(-23f, -8f);

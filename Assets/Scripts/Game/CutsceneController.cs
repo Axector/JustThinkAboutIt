@@ -148,7 +148,7 @@ public class CutsceneController : DefaultClass
         // Start to move top and bottom black banners
         moveCutsceneBanners = true;
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSecondsRealtime(3f);
 
         // Set camera size and load game scene
         PlayerPrefs.SetFloat("camera_size", 7f);
@@ -157,7 +157,7 @@ public class CutsceneController : DefaultClass
 
     private IEnumerator StartCutScene()
     {
-        yield return new WaitForSeconds(delayBeforeStart);
+        yield return new WaitForSecondsRealtime(delayBeforeStart);
 
         // Start cutscene animations
         startFading = true;
