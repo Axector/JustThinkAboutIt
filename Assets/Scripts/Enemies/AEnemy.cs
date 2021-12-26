@@ -20,9 +20,9 @@ public abstract class AEnemy : DefaultClass
     [SerializeField]
     protected int maxDropAmount;
     [SerializeField]
-    protected float delayBeforeAttack = 0.5f;
-    [SerializeField]
-    private AudioClip hurtAudio;
+    protected AudioClip hurtAudio;
+
+    public float delayBeforeAttack = 0.5f;
 
     protected Player player;
     protected GameController gameController;

@@ -75,7 +75,6 @@ public class NPC_Fairy : NPC
         }
 
         textBg.SetActive(false);
-        speechEnd = true;
     }
 
     private void DisableOtherTexts()

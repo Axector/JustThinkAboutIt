@@ -12,6 +12,7 @@ public class Timer : DefaultClass
     private GameObject endText;
 
     public bool bTimerEnded = false;
+    public bool bTimerHalf = false;
 
     private void Start()
     {
@@ -35,6 +36,11 @@ public class Timer : DefaultClass
 
         for (int i = 0; i < time; i++) {
             timer.text = TimeToMinutes(time - i);
+
+            // If a half of the time has passed
+            if (time - i < time / 2 && !bTimerHalf) {
+                bTimerHalf = true;
+            }
 
             yield return new WaitForSeconds(0.01f);
         }

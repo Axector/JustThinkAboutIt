@@ -48,6 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c42c08044e66941967d7624d24707d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyTags:
+  - Enemy
+  - Boss
+  - BossMinion
   fallSpeed: 15
   explosion: {fileID: 2410076814042931550, guid: 238da4e1daaf8774a9fd923647d9f001, type: 3}
 --- !u!50 &7368914408365268452
