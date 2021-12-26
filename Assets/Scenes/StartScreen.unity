@@ -680,7 +680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeNextScene: 5
-  nextScene: 0
+  nextScene: 1
   languages:
   - {fileID: 11400000, guid: dd649b149afa9914a89c9ee5c44a74c5, type: 2}
   - {fileID: 11400000, guid: 45782e2185675144686aee3006534551, type: 2}

@@ -5499,7 +5499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac8401fcf6033e49bed0e8c3d6d2830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndexToLoad: 2
+  sceneIndexToLoad: 3
   sceneColor: {r: 0.46666667, g: 1, b: 0.95686275, a: 1}
   player: {fileID: 2097110885}
   cam: {fileID: 1867984266}

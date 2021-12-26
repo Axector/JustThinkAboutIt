@@ -5561,7 +5561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2654725591377870023}
   secondsTillChangeScene: 4
-  sceneIndexToLoad: 10
+  sceneIndexToLoad: 11
   fadeScreen: {fileID: 1267669089}
 --- !u!1 &335346782
 GameObject:
@@ -12288,7 +12288,7 @@ MonoBehaviour:
   cam: {fileID: 395093687}
   cameraController: {fileID: 1576879307}
   exit: {fileID: 326576778}
-  nextLevelIndex: 4
+  nextLevelIndex: 5
 --- !u!1 &788132244
 GameObject:
   m_ObjectHideFlags: 0

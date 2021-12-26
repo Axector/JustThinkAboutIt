@@ -73,7 +73,7 @@ public class QuickMenu : DefaultClass
         PlayerPrefs.SetInt("player_run_money", 0);
 
         Time.timeScale = 1;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     private void SetCoinsShop()

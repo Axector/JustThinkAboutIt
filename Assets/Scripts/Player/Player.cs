@@ -103,7 +103,7 @@ public class Player : DefaultClass
         yield return new WaitForSeconds(delayToRestart);
 
         PlayerPrefs.SetInt("next_level", 0);
-        SceneManager.LoadScene(10);
+        SceneManager.LoadScene(11);
     }
 
     private IEnumerator Revive()
