@@ -448,43 +448,8 @@ SELDENKOVS</ru>
 	<Key Name="buy_10c_10hp">
 		<Translates>
 			<en-us>10 coins = 10 health points</en-us>
-			<lv>10 monētas = 10 veselības punkti</lv>
+			<lv>10 monētas = 10 veselības punkti </lv>
 			<ru>10 монет = 10 очков здоровья</ru>
-		</Translates>
-	</Key>
-	<Key Name="buy_free_10hp">
-		<Translates>
-			<en-us>Free 10 health points</en-us>
-			<lv>Bezmaksas 10 veselības punkti</lv>
-			<ru>Бесплатно 10 очков здоровья</ru>
-		</Translates>
-	</Key>
-	<Key Name="cancel">
-		<Translates>
-			<en-us>Cancel</en-us>
-			<lv>Atcelt</lv>
-			<ru>Отмена</ru>
-		</Translates>
-	</Key>
-	<Key Name="exit_title">
-		<Translates>
-			<en-us>Are you really want to exit?</en-us>
-			<lv>Vai tiešām vēlaties iziet?</lv>
-			<ru>Вы действительно хотите выйти?</ru>
-		</Translates>
-	</Key>
-	<Key Name="exit_warning">
-		<Translates>
-			<en-us>If you exit right now, you will lose every coin earned on this level.</en-us>
-			<lv>Ja iziesiet tūlīt, jūs zaudēsiet katru šajā līmenī nopelnīto monētu.</lv>
-			<ru>Если вы выйдете прямо сейчас, вы потеряете каждую монету, заработанную на этом уровне.</ru>
-		</Translates>
-	</Key>
-	<Key Name="exit_warning_buff">
-		<Translates>
-			<en-us>All buffs will be lost.</en-us>
-			<lv>Visi uzlabojumi tiks zaudēti.</lv>
-			<ru>Все усиления будут утрачены.</ru>
 		</Translates>
 	</Key>
 </Keys>

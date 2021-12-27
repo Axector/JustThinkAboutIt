@@ -5,32 +5,22 @@ public class BuyHealth : DefaultClass
     [SerializeField]
     private GameObject tooltip;
     [SerializeField]
-    private MeshRenderer[] tooltipText;
+    private MeshRenderer tooltipText;
     [SerializeField]
     private GameObject healthDrop;
     [SerializeField]
     private GameObject healthDropPosition;
     [SerializeField]
-    private int[] price;
+    private int price;
 
     private Player player;
     private BoxCollider2D boxCollider;
-    private bool bFirstPurchase = true;
-    private int selectedTooltip = 0;
 
     private void Awake()
     {
         player = FindObjectOfType<Player>();
         boxCollider = FindObjectOfType<BoxCollider2D>();
-
-        // Set order in layer to see text above tooltip
-        foreach (MeshRenderer text in tooltipText) {
-            text.sortingOrder = 7;
-            text.gameObject.SetActive(false);
-        }
-
-        // Set first text visible
-        tooltipText[0].gameObject.SetActive(true);
+        tooltipText.sortingOrder = 7;
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -49,32 +39,15 @@ public class BuyHealth : DefaultClass
 
     private void Update()
     {
-        if (tooltip.activeSelf && Input.GetKeyDown(KeyCode.E)) {
-
+        if (tooltip.activeSelf && Input.GetKeyUp(KeyCode.E)) {
             BuyHealthPoints();
         }
     }
 
     private void BuyHealthPoints()
     {
-        // Get free health points for the first time
-        if (bFirstPurchase) {
-            bFirstPurchase = false;
-
-            // Drop health item
-            Instantiate(
-                healthDrop,
-                healthDropPosition.transform.position,
-                Quaternion.identity
-            );
-
-            // Switch to next tooltip text
-            tooltipText[selectedTooltip].gameObject.SetActive(false);
-            selectedTooltip++;
-            tooltipText[selectedTooltip].gameObject.SetActive(true);
-        }
         // Buy health if player has enough money
-        else if (!bFirstPurchase && player.AddMoney(-price[selectedTooltip])) {
+        if (player.AddMoney(-price)) {
             // Drop health item
             Instantiate(
                 healthDrop,
@@ -82,11 +55,9 @@ public class BuyHealth : DefaultClass
                 Quaternion.identity
             );
 
-            // Amount of bought products is limited
-            if (selectedTooltip + 1 >= tooltipText.Length) {
-                boxCollider.enabled = false;
-                tooltip.SetActive(false);
-            }
+            // Health can be bought only once
+            boxCollider.enabled = false;
+            tooltip.SetActive(false);
         }
     }
 }

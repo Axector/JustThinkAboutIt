@@ -56,13 +56,6 @@ public class TriggerToNextLevel : DefaultClass
         fadeScreen.SetActive(true);
         startFading = true;
 
-        // Add earned on level money to run_money
-        PlayerPrefs.SetInt(
-            "player_run_money", 
-            PlayerPrefs.GetInt("player_run_money", 0) + PlayerPrefs.GetInt("player_money", 0)
-        );
-        PlayerPrefs.SetInt("player_money", 0);
-
         yield return new WaitForSeconds(secondsTillChangeScene - timeToStartFadeIn);
 
         // Set camera size and load game scene
