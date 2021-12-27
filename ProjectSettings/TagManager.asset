@@ -24,8 +24,8 @@ TagManager:
   - Structures
   - BossMinion
   - Boss
-  - 
-  - 
+  - Blocker
+  - Creature
   - 
   - 
   - 
@@ -47,4 +47,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 1756081229
+    locked: 0
+  - name: Creatures
+    uniqueID: 2695371923
     locked: 0
