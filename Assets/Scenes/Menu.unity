@@ -2436,7 +2436,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1134536238}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1134536241
@@ -2472,7 +2472,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: FIRST CHAPTER
+  m_Text: first_chapter
 --- !u!222 &1134536242
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3776,7 +3776,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1874167752}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f058e11965a6bf4f84f507fbd356c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1874167755
@@ -3812,7 +3812,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SECOND CHAPTER
+  m_Text: second_chapter
 --- !u!222 &1874167756
 CanvasRenderer:
   m_ObjectHideFlags: 0
