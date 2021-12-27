@@ -13,10 +13,24 @@ public class QuickMenu : DefaultClass
     [SerializeField]
     private GameObject fadingScreen;
     [SerializeField]
+    private GameObject alertWindow;
+    [SerializeField]
     private Text shopCoins;
 
     public GameObject Menu { get => menu; }
     public Settings SettingsMenu { get => settingsMenu; }
+
+    public void TryToExit()
+    {
+        // Show window with question if player really want to exit
+        alertWindow.SetActive(true);
+    }
+
+    public void CancelExit()
+    {
+        // Show window with question if player really want to exit
+        alertWindow.SetActive(false);
+    }
 
     public void Exit()
     {
@@ -70,10 +84,10 @@ public class QuickMenu : DefaultClass
         PlayerPrefs.SetInt("health_power_up", 0);
         PlayerPrefs.SetInt("lives_power_up", 0);
         PlayerPrefs.SetInt("player_money", 0);
-        PlayerPrefs.SetInt("player_run_money", 0);
 
         Time.timeScale = 1;
-        SceneManager.LoadScene(1);
+        PlayerPrefs.SetInt("next_level", 1);
+        SceneManager.LoadScene(11);
     }
 
     private void SetCoinsShop()
