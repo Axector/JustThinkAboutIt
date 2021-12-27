@@ -25,7 +25,7 @@ public class StartScreenController : DefaultClass
 
         time.text = PlayerPrefs.GetString("total_time", "00:00:00");
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
 
         title.Play("Small Title");
 

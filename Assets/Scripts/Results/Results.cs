@@ -98,9 +98,10 @@ public class Results : DefaultClass
             yield return new WaitForSeconds(delayBetweenResults);
         }
 
-        int nextLevel = PlayerPrefs.GetInt("next_level", 1);
-
-        if (nextLevel == 1 || nextLevel == 12) {
+        if (
+            PlayerPrefs.GetInt("next_level", 0) == 0 ||
+            PlayerPrefs.GetInt("next_level", 0) == 11
+        ) {
             buttonsExitOnly.SetActive(true);
         }
         else {
@@ -132,16 +133,14 @@ public class Results : DefaultClass
     {
         // Enable fading screen
         fadingScreen.SetActive(true);
+        PlayerPrefs.SetInt("player_money", 0);
+        PlayerPrefs.SetInt("player_run_money", 0);
 
         // Save earned money
         if (bSaveMoney == 1) {
             int newMoney = PlayerPrefs.GetInt("all_money", 0) + currentRunMoney;
             PlayerPrefs.SetInt("all_money", newMoney);
         }
-
-        // Remove player info
-        PlayerPrefs.SetInt("player_money", 0);
-        PlayerPrefs.SetInt("player_run_money", 0);
 
         // Reset power-ups
         PlayerPrefs.SetInt("damage_power_up", 0);
