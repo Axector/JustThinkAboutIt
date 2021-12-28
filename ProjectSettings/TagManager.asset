@@ -11,6 +11,7 @@ TagManager:
   - HealthItem
   - PlayerAttack
   - LivesPowerUp
+  - Fighter
   layers:
   - Default
   - TransparentFX
@@ -51,6 +52,15 @@ TagManager:
   - name: Floor
     uniqueID: 1756081229
     locked: 0
+  - name: Interactable
+    uniqueID: 1206909487
+    locked: 0
   - name: Creatures
     uniqueID: 2695371923
+    locked: 0
+  - name: AfterCreature
+    uniqueID: 856873329
+    locked: 0
+  - name: Weapon
+    uniqueID: 4030849677
     locked: 0

@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class DelayToDestroy : MonoBehaviour
+public class DelayToDestroy : DefaultClass
 {
     [SerializeField]
     private float delayBeforeAppear;

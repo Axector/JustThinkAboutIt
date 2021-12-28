@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController_TopDown : MonoBehaviour
+public class CameraController_TopDown : DefaultClass
 {
-    public Transform follow;
-    public float boundX = 0.15f;
-    public float boundY = 0.05f;
+    [SerializeField]
+    private Transform follow;
+    [SerializeField]
+    private float boundX = 0.15f;
+    [SerializeField]
+    private float boundY = 0.05f;
 
     private void LateUpdate()
     {

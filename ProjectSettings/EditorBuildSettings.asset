@@ -47,6 +47,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EndScreen.unity
     guid: 88b818393a921b842bc7832bf47a80db
+  - enabled: 1
+    path: Assets/SecondChapter/Scenes/2-1 Level.unity
+    guid: 08687b1f66c9e2a4a9bc6c1a8c391934
+  - enabled: 1
+    path: Assets/SecondChapter/Scenes/2-2 Level.unity
+    guid: c669b44f5efa86a44bdd8b294388d6f0
+  - enabled: 1
+    path: Assets/SecondChapter/Scenes/2-3 Level.unity
+    guid: 4a84be7e0ff8ee541b8d6ed33f1f5d8e
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: e151fbf55bd00734289b8e0399502b81, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 993fcaeb9d5d8594a8f5b1b1eabcc303, type: 2}

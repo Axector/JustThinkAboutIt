@@ -20,6 +20,28 @@ public class QuickMenu : DefaultClass
     public GameObject Menu { get => menu; }
     public Settings SettingsMenu { get => settingsMenu; }
 
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape)) {
+            // Resume game and close menu
+            if (menu.activeSelf) {
+                Resume();
+            }
+            // Close just controls layout
+            else if (settingsMenu.BOpenControls) {
+                settingsMenu.CloseControls();
+            }
+            // Close just settings menu
+            else if (settingsMenu.gameObject.activeSelf) {
+                CloseSettings();
+            }
+            // Pause game and open menu
+            else {
+                OpenMenu();
+            }
+        }
+    }
+
     public void TryToExit()
     {
         // Show window with question if player really want to exit
@@ -56,7 +78,7 @@ public class QuickMenu : DefaultClass
     {
         Time.timeScale = 0;
         menu.SetActive(true);
-        SetCoinsShop();
+        SetCoinsMenu();
     }
 
     public void CloseSettings()
@@ -90,7 +112,7 @@ public class QuickMenu : DefaultClass
         SceneManager.LoadScene(11);
     }
 
-    private void SetCoinsShop()
+    private void SetCoinsMenu()
     {
         int coins = PlayerPrefs.GetInt("player_run_money", 0) + PlayerPrefs.GetInt("player_money", 0);
         int coinsDigitCount = (int)Math.Floor(Math.Log10(coins)) + 1;

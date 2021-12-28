@@ -487,4 +487,11 @@ SELDENKOVS</ru>
 			<ru>Все усиления будут утрачены.</ru>
 		</Translates>
 	</Key>
+	<Key Name="exit_warning_room">
+		<Translates>
+			<en-us>If you exit right now, you will lose every coin earned in this room.</en-us>
+			<lv>Ja iziesiet tūlīt, jūs zaudēsiet katru šajā telpā nopelnīto monētu.</lv>
+			<ru>Если вы выйдете прямо сейчас, вы потеряете каждую монету, заработанную в этой комнате.</ru>
+		</Translates>
+	</Key>
 </Keys>

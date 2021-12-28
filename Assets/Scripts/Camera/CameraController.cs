@@ -48,18 +48,24 @@ public class CameraController : DefaultClass
         player = FindObjectOfType<Player>();
         activeCamera = GetActiveCamera();
 
-        // Set scene color
-        postProcessing = cameras[selectedCamera].GetComponent<PostProcessVolume>();
-        ColorGrading colorGrading;
-        postProcessing.profile.TryGetSettings(out colorGrading);
-        colorGrading.colorFilter.value = sceneColor;
-
         // Camera settings
-        activeCamera.orthographicSize = PlayerPrefs.GetFloat("camera_size", 7f);
+        if (maxSize != 0) {
+            // Set scene color
+            postProcessing = cameras[selectedCamera].GetComponent<PostProcessVolume>();
+            ColorGrading colorGrading;
+            postProcessing.profile.TryGetSettings(out colorGrading);
+            colorGrading.colorFilter.value = sceneColor;
+
+            activeCamera.orthographicSize = PlayerPrefs.GetFloat("camera_size", 7f);
+        }
     }
 
     private void Update()
     {
+        if (maxSize == 0) {
+            return;
+        }
+
         // Check player position on the viewport
         Vector2 playerPosition = activeCamera.WorldToViewportPoint(player.transform.position);
 

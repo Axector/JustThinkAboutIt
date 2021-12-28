@@ -42,6 +42,7 @@ public class Results : DefaultClass
         currentPlayerMoney = PlayerPrefs.GetInt("player_money", 0);
         currentRunMoney = PlayerPrefs.GetInt("player_run_money", 0);
         bSaveMoney = PlayerPrefs.GetInt("save_money", 0);
+        PlayerPrefs.SetInt("save_money", 0);
 
         if (bSaveMoney == 1) {
             currentRunMoney += currentPlayerMoney;
@@ -148,8 +149,8 @@ public class Results : DefaultClass
         PlayerPrefs.SetInt("health_power_up", 0);
         PlayerPrefs.SetInt("lives_power_up", 0);
 
-        // Return to menu
-        if (PlayerPrefs.GetInt("next_level", 0) == 11) {
+        // Return to menu or titles
+        if (PlayerPrefs.GetInt("next_level", 0) == 12) {
             StartCoroutine(DelayBeforeSwithcScene(12));
         }
         else {
