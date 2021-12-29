@@ -6,6 +6,8 @@ public class Chest : CollectableObject
 {
     [SerializeField]
     private int coinsAmount;
+    [SerializeField]
+    private float percentage = 50f;
 
     private Animator animator;
     private Popup popup;
@@ -23,15 +25,23 @@ public class Chest : CollectableObject
     protected override void OnCollision(Collider2D other)
     {
         // Open full or empty chest and leave it opened
-        if (other.name == "Player" && !bOpened) {
-            bOpened = true;
+        if (other.name == "Player" && !collected) {
+            if (!bOpened) {
+                bOpened = true;
 
-            if (Chance(50)) {
-                animator.Play("ChestOpen_Full");
-                bFull = true;
+                // Chance that chest will be full
+                if (Chance(percentage)) {
+                    animator.Play("ChestOpen_Full");
+                    bFull = true;
+                }
+                else {
+                    animator.Play("ChestOpen_Empty");
+                }
             }
-            else {
-                animator.Play("ChestOpen_Empty");
+
+            // Get coins from chest
+            if (Input.GetKeyDown(KeyCode.E)) {
+                OnCollect();
             }
         }
     }
@@ -45,7 +55,7 @@ public class Chest : CollectableObject
 
             popup.ShowPopup(coinsAmount.ToString(), transform);
 
-            PlayerPrefs.SetInt("player_money", coinsAmount);
+            PlayerPrefs.SetInt("player_money", PlayerPrefs.GetInt("player_money", 0) + coinsAmount);
         }
     }
 }

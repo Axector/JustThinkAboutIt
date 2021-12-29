@@ -19756,7 +19756,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 03:00:00
+  m_Text: 02:00:00
 --- !u!222 &1851047160
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19777,7 +19777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61a7b182a284535499a328fd9d64daa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minutes: 3
+  minutes: 2
   timer: {fileID: 1851047159}
   endText: {fileID: 863781879}
   bTimerEnded: 0

@@ -50,7 +50,6 @@ public class BuyHealth : DefaultClass
     private void Update()
     {
         if (tooltip.activeSelf && Input.GetKeyDown(KeyCode.E)) {
-
             BuyHealthPoints();
         }
     }

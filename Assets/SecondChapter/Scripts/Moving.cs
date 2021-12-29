@@ -23,6 +23,10 @@ public abstract class Moving : Fighter
 
     protected virtual void UpdateMovement(Vector3 input)
     {
+        if (!isAlive) {
+            return;
+        }
+
         deltaMove = new Vector3(input.x * xSpeed, input.y * ySpeed, 0);
 
         FlipSprite();
@@ -40,7 +44,7 @@ public abstract class Moving : Fighter
             0,
             new Vector2(0, deltaMove.y),
             Mathf.Abs(deltaMove.y * Time.fixedDeltaTime),
-            LayerMask.GetMask("Blocker")
+            LayerMask.GetMask("Creature", "Blocker")
         );
 
         // If player is not colliding anything (y axis)
@@ -56,7 +60,7 @@ public abstract class Moving : Fighter
             0,
             new Vector2(deltaMove.x, 0),
             Mathf.Abs(deltaMove.x * Time.fixedDeltaTime),
-            LayerMask.GetMask("Blocker")
+            LayerMask.GetMask("Creature", "Blocker")
         );
 
         // If player is not colliding anything (x axis)

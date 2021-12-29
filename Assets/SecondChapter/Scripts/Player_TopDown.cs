@@ -1,9 +1,13 @@
+using UnityEngine.SceneManagement;
+using System.Collections;
 using UnityEngine;
 
 public class Player_TopDown : Moving
 {
     [SerializeField]
     private PlayerHealth healthBar;
+    [SerializeField]
+    private GameObject fadingScreen;
 
     private Animator animator;
 
@@ -13,10 +17,12 @@ public class Player_TopDown : Moving
 
         //DEBUG
         PlayerPrefs.SetInt("player_money", 0);
+        PlayerPrefs.SetInt("player_run_money", 0);
         PlayerPrefs.SetInt("player_health", maxHealthPoints);
 
         animator = GetComponent<Animator>();
 
+        PlayerPrefs.SetInt("player_max_health", maxHealthPoints);
         healthPoints = PlayerPrefs.GetInt("player_health", maxHealthPoints);
     }
 
@@ -47,5 +53,25 @@ public class Player_TopDown : Moving
         base.GetDamage(damage);
 
         healthBar.CheckHealth();
+    }
+
+    protected override IEnumerator Death()
+    {
+        // To load menu after results page
+        PlayerPrefs.SetInt("next_level", 1);
+        // To not earn money of current room
+        PlayerPrefs.GetInt("save_money", 0);
+        // Animation of player death
+        animator.SetBool("isAlive", isAlive);
+
+        yield return new WaitForSeconds(1f);
+
+        // Fading screen after death
+        fadingScreen.SetActive(true);
+
+        yield return new WaitForSeconds(3f);
+
+        // Load results scene
+        SceneManager.LoadScene(11);
     }
 }

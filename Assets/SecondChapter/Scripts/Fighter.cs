@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Fighter : DefaultClass
@@ -10,6 +9,8 @@ public class Fighter : DefaultClass
 
     [SerializeField]
     protected float immuneTime = 1f;
+    [SerializeField]
+    protected bool bInvincible;
 
     protected float lastImmune;
     protected Vector3 forceDirection;
@@ -24,12 +25,12 @@ public class Fighter : DefaultClass
     protected virtual void GetDamage(DoDamage damage)
     {
         // Creature will receive next damage only after some time
-        if (Time.time - lastImmune > immuneTime && isAlive) {
+        if (Time.time - lastImmune > immuneTime && isAlive && !bInvincible) {
             lastImmune = Time.time;
             healthPoints -= damage.damage;
             forceDirection = (transform.position - damage.position).normalized * damage.attackForce;
 
-            if (damage.damage != 0) {
+            if (damage.damage > 0) {
                 popup.ShowPopup(damage.damage.ToString(), transform);
             }
 
@@ -40,6 +41,12 @@ public class Fighter : DefaultClass
                 StartCoroutine(Death());
             }
 
+            // To limit maximum health points
+            if (healthPoints > maxHealthPoints) {
+                healthPoints = maxHealthPoints;
+            }
+
+            // Save player HP for next rooms
             if (gameObject.name == "Player") {
                 PlayerPrefs.SetInt("player_health", healthPoints);
             }

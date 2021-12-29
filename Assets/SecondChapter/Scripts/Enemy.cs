@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : Moving
@@ -31,6 +30,7 @@ public class Enemy : Moving
 
     private void FixedUpdate()
     {
+        // No follow if dead
         if (!isAlive) {
             // Small down enemy on death
             if (transform.localScale.y > 0) {
@@ -47,7 +47,10 @@ public class Enemy : Moving
         }
 
         // If an enemy see player
-        if (Vector3.Distance(transform.position, startPosition) < maxFollowDistance) { 
+        if (
+            Vector3.Distance(transform.position, startPosition) < maxFollowDistance &&
+            Vector3.Distance(player.position, transform.position) < maxFollowDistance
+        ) { 
             // if an enemy is close enough to the player
             if (Vector3.Distance(player.position, startPosition) < followStartDistance) {
                 bFollowing = true;

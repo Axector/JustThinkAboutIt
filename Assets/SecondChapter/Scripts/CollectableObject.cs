@@ -4,16 +4,7 @@ using UnityEngine;
 
 public class CollectableObject : CollidableObject
 {
-    protected bool collected = true;
-
-    protected override void Update()
-    {
-        base.Update();
-
-        if (Input.GetKeyDown(KeyCode.E)) {
-            OnCollect();
-        }
-    }
+    protected bool collected = false;
 
     protected virtual void OnCollect()
     {

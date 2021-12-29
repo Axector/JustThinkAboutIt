@@ -97,7 +97,7 @@ public class MenuController : DefaultClass
 
     public void StartSecondChapter()
     {
-        StartCoroutine(DelayBeforeSwithcScene(1));
+        StartCoroutine(DelayBeforeSwithcScene(14));
     }
 
     public void EnterSettings()

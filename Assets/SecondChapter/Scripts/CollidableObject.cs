@@ -10,6 +10,8 @@ public abstract class CollidableObject : DefaultClass
     private BoxCollider2D boxCollider;
     private Collider2D[] hits = new Collider2D[10];
 
+    protected bool bCollidingPlayer;
+
     protected virtual void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
@@ -20,10 +22,17 @@ public abstract class CollidableObject : DefaultClass
         // Check collision, if any object is overlapping
         boxCollider.OverlapCollider(filter, hits);
 
+        bCollidingPlayer = false;
+
         // Check each collision hit (max = 10)
         for (int i = 0; i < hits.Length; i++) {
             if (hits[i] == null) {
                 continue;
+            }
+
+            // Check if this object collides player or not
+            if (hits[i].name == "Player") {
+                bCollidingPlayer = true;
             }
 
             OnCollision(hits[i]);

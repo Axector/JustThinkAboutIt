@@ -135,14 +135,13 @@ public class Results : DefaultClass
         fadingScreen.SetActive(true);
 
         // Save earned money
-        if (bSaveMoney == 1) {
-            int newMoney = PlayerPrefs.GetInt("all_money", 0) + currentRunMoney;
-            PlayerPrefs.SetInt("all_money", newMoney);
-        }
+        int newMoney = PlayerPrefs.GetInt("all_money", 0) + currentRunMoney;
+        PlayerPrefs.SetInt("all_money", newMoney);
 
-        // Remove player info
+        // Reset player info
         PlayerPrefs.SetInt("player_money", 0);
         PlayerPrefs.SetInt("player_run_money", 0);
+        PlayerPrefs.SetInt("player_health", playerMaxHealth);
 
         // Reset power-ups
         PlayerPrefs.SetInt("damage_power_up", 0);
