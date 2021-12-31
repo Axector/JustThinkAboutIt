@@ -16,6 +16,7 @@ int damage_power_up 		- Stores boolean to use double damage or not (0 - false, 1
 int health_power_up 		- Stores boolean to use double health or not (0 - false, 1 - true)
 int lives_power_up 			- Stores boolean to use double lives or not (0 - false, 1 - true)
 int first_chapter_beaten	- Stores boolean to show fairy at the end or not (0 - false, 1 - true)
+int second_chapter_beaten	- Stores boolean to show dog at the end or not (0 - false, 1 - true)
 int weapon_level 			- Store the level of the weapon in second chapter
 int room_count 				- Counts rooms before boss
 int boss_room_count 				- Counts visited boss rooms

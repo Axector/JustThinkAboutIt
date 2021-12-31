@@ -445,6 +445,69 @@ SELDENKOVS</ru>
 			<ru>МАРУСЯ: Гав!</ru>
 		</Translates>
 	</Key>
+	<Key Name="dog_text_2">
+		<Translates>
+			<en-us>MARUSYA: Woof!</en-us>
+			<lv>MARUSJA: Vau!</lv>
+			<ru>МАРУСЯ: Гав!
+[Это ты!!!]
+</ru>
+		</Translates>
+	</Key>
+	<Key Name="dog_text_3">
+		<Translates>
+			<en-us>MARUSYA: Woof!</en-us>
+			<lv>MARUSJA: Vau!</lv>
+			<ru>МАРУСЯ: Гав, Гав!
+[Я так рада тебя видеть!]
+</ru>
+		</Translates>
+	</Key>
+	<Key Name="dog_text_4">
+		<Translates>
+			<en-us>MARUSYA: Woof!</en-us>
+			<lv>MARUSJA: Vau!</lv>
+			<ru>МАРУСЯ: Гав, Гав, Гав!
+[Спасибо тебе за то, что спас меня!]
+</ru>
+		</Translates>
+	</Key>
+	<Key Name="dog_text_5">
+		<Translates>
+			<en-us>MARUSYA: Woof!</en-us>
+			<lv>MARUSJA: Vau!</lv>
+			<ru>МАРУСЯ: Гав, Гав, Гав!
+[Наконец я смогу вернуться к своей хозяйке!]
+</ru>
+		</Translates>
+	</Key>
+	<Key Name="dog_text_6">
+		<Translates>
+			<en-us>MARUSYA: Woof!</en-us>
+			<lv>MARUSJA: Vau!</lv>
+			<ru>МАРУСЯ: Гав!
+[Даже не верится!]
+</ru>
+		</Translates>
+	</Key>
+	<Key Name="dog_text_7">
+		<Translates>
+			<en-us>MARUSYA: Woof!</en-us>
+			<lv>MARUSJA: Vau!</lv>
+			<ru>МАРУСЯ: Гав, Гав!
+[Спасибо тебе еще раз!]
+</ru>
+		</Translates>
+	</Key>
+	<Key Name="dog_text_8">
+		<Translates>
+			<en-us>MARUSYA: Woof!</en-us>
+			<lv>MARUSJA: Vau!</lv>
+			<ru>МАРУСЯ: Гав!
+[И удачи!]
+</ru>
+		</Translates>
+	</Key>
 	<Key Name="buy_10c_10hp">
 		<Translates>
 			<en-us>10 coins = 10 health points</en-us>
@@ -499,6 +562,27 @@ SELDENKOVS</ru>
 			<en-us>The Demonic Slime</en-us>
 			<lv>Dēmonisks Gliemezis</lv>
 			<ru>Демонический Слизень</ru>
+		</Translates>
+	</Key>
+	<Key Name="boss-5">
+		<Translates>
+			<en-us>The Devil Flame</en-us>
+			<lv>Velna Liesma</lv>
+			<ru>Пламя Дьявола</ru>
+		</Translates>
+	</Key>
+	<Key Name="boss-6">
+		<Translates>
+			<en-us>The Lord Pigman</en-us>
+			<lv>Kungs Cūkmens</lv>
+			<ru>Лорд Свинолюд</ru>
+		</Translates>
+	</Key>
+	<Key Name="weapon_level_up">
+		<Translates>
+			<en-us>Weapon Level</en-us>
+			<lv>Ieroces Līmenis</lv>
+			<ru>Уровень Оружия</ru>
 		</Translates>
 	</Key>
 </Keys>

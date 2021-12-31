@@ -16592,7 +16592,7 @@ MonoBehaviour:
   - {fileID: -8420670720628680731, guid: b2c3289ab5d0c9a49801d4f55f381d2a, type: 3}
   - {fileID: 8266258911003420344, guid: b2c3289ab5d0c9a49801d4f55f381d2a, type: 3}
   audioClip: {fileID: 8300000, guid: 551a0e8572cc92345b23ae2f49e34359, type: 3}
-  level: 3
+  level: 0
 --- !u!95 &936735358
 Animator:
   serializedVersion: 3

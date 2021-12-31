@@ -5,9 +5,9 @@ using UnityEngine;
 public class EnemyHitBox : CollidableObject
 {
     [SerializeField]
-    private int damage;
+    protected int damage;
     [SerializeField]
-    private float attackForce;
+    protected float attackForce;
     [SerializeField]
     private Animator enemyAnimator;
 
@@ -30,6 +30,7 @@ public class EnemyHitBox : CollidableObject
 
     protected void PlayAttackAnimation()
     {
+        // Play attack animation
         enemyAnimator.Play("Attack");
     }
 }

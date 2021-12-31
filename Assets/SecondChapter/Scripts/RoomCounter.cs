@@ -8,8 +8,5 @@ public class RoomCounter : DefaultClass
     {
         int roomCount = PlayerPrefs.GetInt("room_count", 0);
         PlayerPrefs.SetInt("room_count", roomCount + 1);
-
-        // DEBUG
-        Debug.Log(roomCount);
     }
 }

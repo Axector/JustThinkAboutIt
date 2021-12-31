@@ -18,6 +18,8 @@ public class Enemy : Moving
     private Collider2D[] hits = new Collider2D[10];
     private Animator animator;
 
+    public bool BFollowing { get => bFollowing; }
+
     protected override void Start()
     {
         base.Start();

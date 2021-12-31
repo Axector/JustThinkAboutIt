@@ -15,10 +15,7 @@ public class Weapon : CollidableObject
     [SerializeField]
     private AudioClip audioClip;
 
-    // DEBUG (No need in serialize)
-    [SerializeField]
     private int level;
-
     private SpriteRenderer sprite;
     private Animator animator;
     private AudioSource audioSource;
@@ -31,7 +28,9 @@ public class Weapon : CollidableObject
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-        level = PlayerPrefs.GetInt("weapon_level", level);
+
+        // Set weapon stats
+        level = PlayerPrefs.GetInt("weapon_level", 0);
         sprite.sprite = sprites[level];
         animator.SetFloat("attackSpeed", 1 / attackCooldown[level]);
     }

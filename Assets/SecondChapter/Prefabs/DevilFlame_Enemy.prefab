@@ -84,7 +84,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  damage: 0
+  damage: 7
   attackForce: 3
   enemyAnimator: {fileID: 8717626492718176145}
 --- !u!1 &8717626492718176148
@@ -98,10 +98,11 @@ GameObject:
   - component: {fileID: 8717626492718176146}
   - component: {fileID: 8717626492718176147}
   - component: {fileID: 8717626492718176145}
-  - component: {fileID: 8717626492718176159}
   - component: {fileID: 8717626492718176144}
   - component: {fileID: 8717626492718176158}
   - component: {fileID: 3041660100588499791}
+  - component: {fileID: 781217561998578240}
+  - component: {fileID: 1041217907381321788}
   m_Layer: 13
   m_Name: DevilFlame_Enemy
   m_TagString: Fighter
@@ -194,42 +195,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8717626492718176159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8717626492718176148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7469cf54f7cdbde48b781d9204ff9666, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthPoints: 1000
-  maxHealthPoints: 1000
-  backForceSpeed: 0.2
-  immuneTime: 0.3
-  bInvincible: 0
-  audioClip: {fileID: 8300000, guid: 6eaac42093a97f6469189297a76c2bad, type: 3}
-  ySpeed: 0.75
-  xSpeed: 1
-  followStartDistance: 1
-  maxFollowDistance: 1.5
-  filter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 8192
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
 --- !u!114 &8717626492718176144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,3 +332,57 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &781217561998578240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8717626492718176148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a6f25acb23c7e8418db7195f1d3f6c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 1000
+  maxHealthPoints: 1000
+  backForceSpeed: 0.2
+  immuneTime: 0.3
+  bInvincible: 0
+  audioClip: {fileID: 8300000, guid: 6eaac42093a97f6469189297a76c2bad, type: 3}
+  ySpeed: 0.75
+  xSpeed: 1
+  followStartDistance: 6
+  maxFollowDistance: 6
+  filter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 8192
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  hideOnBossDeath:
+  - {fileID: 0}
+  healthBar: {fileID: 0}
+--- !u!114 &1041217907381321788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8717626492718176148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 134eabdc90d54b24695c508f1aa973ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportPositions: []
+  minion: {fileID: 0}
+  parent: {fileID: 0}

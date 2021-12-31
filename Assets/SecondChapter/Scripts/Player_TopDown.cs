@@ -15,11 +15,6 @@ public class Player_TopDown : Moving
     {
         base.Start();
 
-        //DEBUG
-        PlayerPrefs.SetInt("player_money", 0);
-        PlayerPrefs.SetInt("player_run_money", 0);
-        PlayerPrefs.SetInt("player_health", maxHealthPoints);
-
         animator = GetComponent<Animator>();
 
         PlayerPrefs.SetInt("player_max_health", maxHealthPoints);

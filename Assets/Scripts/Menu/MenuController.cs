@@ -21,9 +21,15 @@ public class MenuController : DefaultClass
     private int coins;
     private bool bNeedMoreMoney = true;
 
+    public bool BNeedMoreMoney { get => bNeedMoreMoney; set => bNeedMoreMoney = value; }
+
     private void Awake()
     {
         bOpenSecondChapter = PlayerPrefs.GetInt("open_second_chapter", 0); // 0 - disabled, 1 - to open, 2 - opened
+
+        // DEBUG
+        PlayerPrefs.SetInt("all_money", 12000);
+        PlayerPrefs.SetInt("open_second_chapter", 2);
 
         // Set coins number to Shop
         coins = PlayerPrefs.GetInt("all_money", 0);
@@ -141,14 +147,14 @@ public class MenuController : DefaultClass
         }
     }
 
-    private void SetCoins(int lost)
+    public void SetCoins(int lost)
     {
         coins -= lost;
         PlayerPrefs.SetInt("all_money", coins);
         SetCoinsShop();
     }
 
-    private IEnumerator NeedMoreMoney()
+    public IEnumerator NeedMoreMoney()
     {
         Color coinsColor = shopCoins.color;
 
