@@ -9,6 +9,12 @@ public class PlayerHealth : DefaultClass
     private Image healthBar;
     [SerializeField]
     private Text healthBartext;
+    [SerializeField]
+    private Color greatColor;
+    [SerializeField]
+    private Color goodColor;
+    [SerializeField]
+    private Color badColor;
 
     private void Start()
     {
@@ -19,5 +25,16 @@ public class PlayerHealth : DefaultClass
     {
         healthBar.fillAmount = (float)player.healthPoints / player.maxHealthPoints;
         healthBartext.text = player.healthPoints.ToString();
+
+
+        if (player.healthPoints < player.maxHealthPoints / 3) {
+            healthBar.color = badColor;
+        }
+        else if (player.healthPoints < player.maxHealthPoints * 2 / 3) {
+            healthBar.color = goodColor;
+        }
+        else {
+            healthBar.color = greatColor;
+        }
     }
 }

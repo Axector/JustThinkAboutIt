@@ -11,15 +11,21 @@ public class Fighter : DefaultClass
     protected float immuneTime = 1f;
     [SerializeField]
     protected bool bInvincible;
+    [SerializeField]
+    protected AudioClip audioClip;
 
     protected float lastImmune;
     protected Vector3 forceDirection;
     protected Popup popup;
     protected bool isAlive = true;
+    protected AudioSource audioSource;
+
+    public bool IsAlive { get => isAlive; }
 
     protected virtual void Awake()
     {
         popup = GetComponent<Popup>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     protected virtual void GetDamage(DoDamage damage)
@@ -29,6 +35,9 @@ public class Fighter : DefaultClass
             lastImmune = Time.time;
             healthPoints -= damage.damage;
             forceDirection = (transform.position - damage.position).normalized * damage.attackForce;
+
+            // Play damage taking sound
+            PlaySound(audioSource, audioClip);
 
             if (damage.damage > 0) {
                 popup.ShowPopup(damage.damage.ToString(), transform);

@@ -10,19 +10,14 @@ public class HealthShop : CollectableObject
     private int[] prices;
     [SerializeField]
     private GameObject tooltip;
-    [SerializeField]
-    private AudioClip audioClip;
 
     private int purchaseIndex = 0;
-
-    private AudioSource audioSource;
     private Popup popup;
 
     protected override void Start()
     {
         base.Start();
 
-        audioSource = GetComponent<AudioSource>();
         popup = GetComponent<Popup>();
 
         // Set order in layer to see text above tooltip
@@ -75,15 +70,20 @@ public class HealthShop : CollectableObject
 
     protected override void OnCollect()
     {
+        // Hide old text and show next if there is next tooltip
+        tooltipText[purchaseIndex].gameObject.SetActive(false);
         purchaseIndex++;
 
         // Play collection sound
         PlaySound(audioSource, audioClip);
 
         // Player can buy limited health amount
-        if (purchaseIndex + 1 >= prices.Length) {
+        if (purchaseIndex >= prices.Length) {
             collected = true;
             tooltip.SetActive(false);
+        }
+        else {
+            tooltipText[purchaseIndex].gameObject.SetActive(true);
         }
     }
 }

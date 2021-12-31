@@ -48,10 +48,12 @@ public class Chest : CollectableObject
 
     protected override void OnCollect()
     {
-        base.OnCollect();
-
         if (bFull) {
+            collected = true;
+
+            // Play collection animation and sound
             animator.Play("ChestOpen_Empty");
+            PlaySound(audioSource, audioClip);
 
             popup.ShowPopup(coinsAmount.ToString(), transform);
 

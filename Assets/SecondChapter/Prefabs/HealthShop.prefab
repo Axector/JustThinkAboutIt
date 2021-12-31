@@ -124,7 +124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4879630251606361776
 Transform:
   m_ObjectHideFlags: 0
@@ -328,7 +328,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4879630252437310342}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.65, y: 3.719, z: -18.271442}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4879630251606361776}
@@ -361,11 +361,11 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  audioClip: {fileID: 8300000, guid: ce597584c415bf84c93a0bd1732ee70e, type: 3}
   tooltipText:
   - {fileID: 4879630250748184792}
   prices: 00000000
   tooltip: {fileID: 4879630251606361777}
-  audioClip: {fileID: 8300000, guid: ce597584c415bf84c93a0bd1732ee70e, type: 3}
 --- !u!61 &4879630252437310363
 BoxCollider2D:
   m_ObjectHideFlags: 0

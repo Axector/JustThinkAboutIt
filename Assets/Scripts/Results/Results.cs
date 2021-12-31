@@ -142,6 +142,8 @@ public class Results : DefaultClass
         PlayerPrefs.SetInt("player_money", 0);
         PlayerPrefs.SetInt("player_run_money", 0);
         PlayerPrefs.SetInt("player_health", playerMaxHealth);
+        PlayerPrefs.SetInt("room_count", 0);
+        PlayerPrefs.SetInt("boss_room_count", 0);
 
         // Reset power-ups
         PlayerPrefs.SetInt("damage_power_up", 0);

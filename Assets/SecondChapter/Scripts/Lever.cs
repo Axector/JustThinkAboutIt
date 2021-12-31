@@ -6,18 +6,14 @@ public class Lever : CollectableObject
 {
     [SerializeField]
     private GameObject objectToDisable;
-    [SerializeField]
-    private AudioClip audioClip;
 
     private Animator animator;
-    private AudioSource audioSource;
 
     protected override void Start()
     {
         base.Start();
 
         animator = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     protected override void OnCollision(Collider2D other)
@@ -37,7 +33,6 @@ public class Lever : CollectableObject
 
         // Play use animation
         animator.Play("UseLever");
-        PlaySound(audioSource, audioClip);
 
         objectToDisable.SetActive(false);
     }

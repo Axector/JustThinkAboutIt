@@ -12,6 +12,8 @@ public class Weapon : CollidableObject
     private float[] attackCooldown;
     [SerializeField]
     private Sprite[] sprites;
+    [SerializeField]
+    private AudioClip audioClip;
 
     // DEBUG (No need in serialize)
     [SerializeField]
@@ -19,6 +21,7 @@ public class Weapon : CollidableObject
 
     private SpriteRenderer sprite;
     private Animator animator;
+    private AudioSource audioSource;
     private float lastSwing;
 
     protected override void Start()
@@ -27,6 +30,7 @@ public class Weapon : CollidableObject
 
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         level = PlayerPrefs.GetInt("weapon_level", level);
         sprite.sprite = sprites[level];
         animator.SetFloat("attackSpeed", 1 / attackCooldown[level]);
@@ -65,6 +69,9 @@ public class Weapon : CollidableObject
 
     private void Swing()
     {
+        // Play swing animation
         animator.Play("Swing");
+        // Play swing sound
+        PlaySound(audioSource, audioClip);
     }
 }

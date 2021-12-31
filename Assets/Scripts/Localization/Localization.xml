@@ -494,4 +494,11 @@ SELDENKOVS</ru>
 			<ru>Если вы выйдете прямо сейчас, вы потеряете каждую монету, заработанную в этой комнате.</ru>
 		</Translates>
 	</Key>
+	<Key Name="boss-4">
+		<Translates>
+			<en-us>The Demonic Slime</en-us>
+			<lv>Dēmonisks Gliemezis</lv>
+			<ru>Демонический Слизень</ru>
+		</Translates>
+	</Key>
 </Keys>
