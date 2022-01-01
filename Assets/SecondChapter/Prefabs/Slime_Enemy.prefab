@@ -352,8 +352,8 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: 6eaac42093a97f6469189297a76c2bad, type: 3}
   ySpeed: 0.2
   xSpeed: 0.3
-  followStartDistance: 2
-  maxFollowDistance: 2
+  followStartDistance: 3
+  maxFollowDistance: 3
   filter:
     useTriggers: 0
     useLayerMask: 0
@@ -370,6 +370,7 @@ MonoBehaviour:
     maxNormalAngle: 0
   hideOnBossDeath:
   - {fileID: 0}
+  healthBar: {fileID: 0}
 --- !u!114 &2746650720447058841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,3 +384,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minions: []
+  minions2: []
