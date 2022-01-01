@@ -16,6 +16,8 @@ public class PlayerController : DefaultClass
     private float rayOffsetRight = 1f;
     [SerializeField]
     private float rayOffsetLeft = 1f;
+    [SerializeField]
+    private Joystick joystick;
     
     private Rigidbody2D pRigidBody2D;   // prefix p means player
     private SpriteRenderer pSpriteRenderer;
@@ -26,6 +28,7 @@ public class PlayerController : DefaultClass
     private float movementSpeed;
     private float jumpForce;
     private bool isGrounded         = false;
+    private bool canAttack          = false;
     private bool canAttackDown      = false;
     private bool isLeftAttacking    = false;
     private bool isRightAttacking   = false;
@@ -46,8 +49,16 @@ public class PlayerController : DefaultClass
 
     private void Update()
     {
-        // Get velocity value from axis
-        velocityX = Input.GetAxis("Horizontal");
+        // Get velocity value from joystick
+        if (joystick.Horizontal >= 0.2f) {
+            velocityX = 1;
+        }
+        else if (joystick.Horizontal <= -0.2f) {
+            velocityX = -1;
+        }
+        else {
+            velocityX = 0;
+        }
 
         bool playerIsCutscene = player.IsCutscene;
 
@@ -59,19 +70,12 @@ public class PlayerController : DefaultClass
             canAttackDown = true;
         }
 
-        // Jump when Space button is pressed and the player is grounded and alive
-        if (
-            Input.GetButtonDown("Jump") && 
-            isGrounded && 
-            player.IsAlive && 
-            !playerIsCutscene
-        ) {
-            Jump(jumpForce);
-        }
+        // Player attack if it is alive and not cutscene
+        canAttack = player.IsAlive && !playerIsCutscene;
 
-        // Player attack if is alive
-        if (player.IsAlive && !playerIsCutscene) {
-            Attack();
+        // Play specific animaion if player is attacking
+        if (isLeftAttacking || isRightAttacking) {
+            pAnimator.Play((velocityX != 0) ? "Player_RunAttack" : "Player_Attack_2");
         }
     }
 
@@ -88,36 +92,6 @@ public class PlayerController : DefaultClass
         else if (player.IsAlive) {
             pTransform.position += new Vector3(movementSpeed * Time.fixedDeltaTime, 0, 0);
             pSpriteRenderer.flipX = false;
-        }
-    }
-
-    private void Attack()
-    {
-        HorizontalAttack();
-
-        // PLayer attack up
-        if (Input.GetKeyDown(KeyCode.UpArrow) && !isWaitingForAttack) {
-            isWaitingForAttack = true;
-            pAnimator.Play("Player_Attack_Up");
-
-
-            StartCoroutine(WaitForAttack());
-        }
-
-        // PLayer attack down
-        if (Input.GetKeyDown(KeyCode.DownArrow) && canAttackDown) {
-            pAnimator.Play("Player_Flip");
-            canAttackDown = false;
-
-            // Attack down needs a leap
-            float jumpForceValue = jumpForce / 2;
-
-            // Jump forward
-            Jump(jumpForceValue);
-            pRigidBody2D.AddForce(
-                (pSpriteRenderer.flipX ? Vector2.left : Vector2.right) * jumpForceValue / 2,
-                ForceMode2D.Impulse
-            );
         }
     }
 
@@ -149,11 +123,6 @@ public class PlayerController : DefaultClass
             Input.GetKey(KeyCode.RightArrow) || 
             Input.GetKey(KeyCode.LeftArrow)
         );
-
-        // Play specific animaion if player is attacking
-        if (isLeftAttacking || isRightAttacking) {
-            pAnimator.Play((velocityX != 0) ? "Player_RunAttack" : "Player_Attack_2");
-        }
     }
 
     private void SetIsGrounded()
@@ -232,8 +201,66 @@ public class PlayerController : DefaultClass
 
     private IEnumerator WaitForAttack()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.3f);
 
         isWaitingForAttack = false;
+    }
+
+    public void JumpButton()
+    {
+        // Jump when Space button is pressed and the player is grounded and alive
+        if (
+            isGrounded &&
+            player.IsAlive &&
+            !player.IsCutscene
+        ) {
+            Jump(jumpForce);
+        }
+    }
+
+    public void AttackUp()
+    {
+        if (!canAttack || isWaitingForAttack) {
+            return;
+        }
+
+        isWaitingForAttack = true;
+        pAnimator.Play("Player_Attack_Up");
+
+        StartCoroutine(WaitForAttack());
+    }
+
+    public void AttackDown()
+    {
+        if (!canAttackDown) {
+            return;
+        }
+
+        pAnimator.Play("Player_Flip");
+        canAttackDown = false;
+
+        // Attack down needs a leap
+        float jumpForceValue = jumpForce / 2;
+
+        // Jump a bit forward
+        Jump(jumpForceValue);
+        pRigidBody2D.AddForce(
+            (pSpriteRenderer.flipX ? Vector2.left : Vector2.right) * jumpForceValue / 2,
+            ForceMode2D.Impulse
+        );
+    }
+
+     public void AttackLeft()
+    {
+        if (!canAttack) {
+            return;
+        }
+    }
+
+    public void AttackRight()
+    {
+        if (!canAttack) {
+            return;
+        }
     }
 }

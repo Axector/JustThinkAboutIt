@@ -8,6 +8,8 @@ public class Player_TopDown : Moving
     private PlayerHealth healthBar;
     [SerializeField]
     private GameObject fadingScreen;
+    [SerializeField]
+    private Joystick joystick;
 
     private Animator animator;
 
@@ -31,8 +33,24 @@ public class Player_TopDown : Moving
 
     private void FixedUpdate()
     {
-        float xVelocity = Input.GetAxisRaw("Horizontal");
-        float yVelocity = Input.GetAxisRaw("Vertical");
+        float xVelocity; 
+        float yVelocity;
+
+        // Horizontal movement values from joystick
+        if (joystick.Horizontal >= -0.2f && joystick.Horizontal <= 0.2f) {
+            xVelocity = 0;
+        }
+        else {
+            xVelocity = joystick.Horizontal;
+        }
+
+        // Vertical movement values from joystick
+        if (joystick.Vertical >= -0.2f && joystick.Vertical <= 0.2f) {
+            yVelocity = 0;
+        }
+        else {
+            yVelocity = joystick.Vertical;
+        }
 
         UpdateMovement(new Vector3(xVelocity, yVelocity, 0));
 
