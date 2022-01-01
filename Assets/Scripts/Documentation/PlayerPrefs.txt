@@ -14,12 +14,16 @@ int save_money				- Stores boolean to save player money or not	(0 - false, 1 - t
 int open_second_chapter 	- Stores boolean to open second chapter or not  (0 - disabled, 1 - to open, 2 - opened)
 int damage_power_up 		- Stores boolean to use double damage or not (0 - false, 1 - true)
 int health_power_up 		- Stores boolean to use double health or not (0 - false, 1 - true)
+int health_power_up_2 		- Stores boolean to use double health in second chapter or not (0 - false, 1 - true)
 int lives_power_up 			- Stores boolean to use double lives or not (0 - false, 1 - true)
+int lives_power_up_2 		- Stores boolean to use double lives in second chapter or not (0 - false, 1 - true)
 int first_chapter_beaten	- Stores boolean to show fairy at the end or not (0 - false, 1 - true)
 int second_chapter_beaten	- Stores boolean to show dog at the end or not (0 - false, 1 - true)
 int weapon_level 			- Store the level of the weapon in second chapter
 int room_count 				- Counts rooms before boss
-int boss_room_count 				- Counts visited boss rooms
+int boss_room_count 		- Counts visited boss rooms
+int went_to_first_chapter	- Stores boolean to check if player entered first chapter (0 - false, 1 - true)
+int went_to_second_chapter	- Stores boolean to check if player entered second chapter (0 - false, 1 - true)
 
 string total_time			- Stores total time spent on playing the game
 string current_date			- Stores last time entered into the game

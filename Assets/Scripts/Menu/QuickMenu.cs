@@ -22,7 +22,7 @@ public class QuickMenu : DefaultClass
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
             // Resume game and close menu
             if (menu.activeSelf) {
                 Resume();
@@ -101,11 +101,9 @@ public class QuickMenu : DefaultClass
 
         yield return new WaitForSecondsRealtime(3f);
 
-        // Reset power-ups
-        PlayerPrefs.SetInt("damage_power_up", 0);
-        PlayerPrefs.SetInt("health_power_up", 0);
-        PlayerPrefs.SetInt("lives_power_up", 0);
-        PlayerPrefs.SetInt("player_money", 0);
+        if (PlayerPrefs.GetInt("went_to_second_chapter", 0) == 1) {
+            PlayerPrefs.SetInt("save_money", 0);
+        }
 
         Time.timeScale = 1;
         PlayerPrefs.SetInt("next_level", 1);

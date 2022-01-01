@@ -112,6 +112,27 @@
 			<ru>Идти направо</ru>
 		</Translates>
 	</Key>
+	<Key Name="go_up">
+		<Translates>
+			<en-us>Go Up</en-us>
+			<lv>Iet uz augšu</lv>
+			<ru>Идти верх</ru>
+		</Translates>
+	</Key>
+	<Key Name="go_down">
+		<Translates>
+			<en-us>Go Down</en-us>
+			<lv>Iet uz lēju</lv>
+			<ru>Идти вниз</ru>
+		</Translates>
+	</Key>
+	<Key Name="attack">
+		<Translates>
+			<en-us>Attack</en-us>
+			<lv>Uzbrukt</lv>
+			<ru>Ударить</ru>
+		</Translates>
+	</Key>
 	<Key Name="interact">
 		<Translates>
 			<en-us>Interaction</en-us>

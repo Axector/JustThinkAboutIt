@@ -27,12 +27,6 @@ public class WeaponLevelUp : DefaultClass
         UpdatePlayerStats();
     }
 
-    private void Update()
-    {
-        // DEBUG
-        Debug.Log(level);
-    }
-
     public void BuyLevelUp()
     {
         if (coins >= prices[level]) {

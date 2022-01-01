@@ -141,14 +141,26 @@ public class Results : DefaultClass
         // Reset player info
         PlayerPrefs.SetInt("player_money", 0);
         PlayerPrefs.SetInt("player_run_money", 0);
-        PlayerPrefs.SetInt("player_health", playerMaxHealth);
+        PlayerPrefs.DeleteKey("player_health");
         PlayerPrefs.SetInt("room_count", 0);
         PlayerPrefs.SetInt("boss_room_count", 0);
 
         // Reset power-ups
-        PlayerPrefs.SetInt("damage_power_up", 0);
-        PlayerPrefs.SetInt("health_power_up", 0);
-        PlayerPrefs.SetInt("lives_power_up", 0);
+        if (PlayerPrefs.GetInt("went_to_first_chapter", 0) == 1) {
+            PlayerPrefs.SetInt("went_to_first_chapter", 0);
+
+            PlayerPrefs.SetInt("damage_power_up", 0);
+            PlayerPrefs.SetInt("health_power_up", 0);
+            PlayerPrefs.SetInt("lives_power_up", 0);
+        }
+
+        // Reset power-ups for second chapter if player played second chapter
+        if (PlayerPrefs.GetInt("went_to_second_chapter", 0) == 1) {
+            PlayerPrefs.SetInt("went_to_second_chapter", 0);
+
+            PlayerPrefs.SetInt("health_power_up_2", 0);
+            PlayerPrefs.SetInt("lives_power_up_2", 0);
+        }
 
         // Return to menu or titles
         if (PlayerPrefs.GetInt("next_level", 0) == 12) {

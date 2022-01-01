@@ -17,8 +17,16 @@ public class Player_TopDown : Moving
 
         animator = GetComponent<Animator>();
 
+        // Apply health power up
+        if (PlayerPrefs.GetInt("health_power_up_2", 0) == 1) { 
+            healthPoints *= 2;
+            maxHealthPoints *= 2;
+        }
+
         PlayerPrefs.SetInt("player_max_health", maxHealthPoints);
         healthPoints = PlayerPrefs.GetInt("player_health", maxHealthPoints);
+
+        healthBar.CheckHealth();
     }
 
     private void FixedUpdate()
@@ -52,21 +60,37 @@ public class Player_TopDown : Moving
 
     protected override IEnumerator Death()
     {
-        // To load menu after results page
-        PlayerPrefs.SetInt("next_level", 1);
-        // To not earn money of current room
-        PlayerPrefs.GetInt("save_money", 0);
         // Animation of player death
         animator.SetBool("isAlive", isAlive);
 
-        yield return new WaitForSeconds(1f);
+        // Apply second live power up
+        if (PlayerPrefs.GetInt("lives_power_up_2", 0) == 1) {
+            yield return new WaitForSeconds(2f);
 
-        // Fading screen after death
-        fadingScreen.SetActive(true);
+            isAlive = true;
+            healthPoints = maxHealthPoints;
+            animator.SetBool("isAlive", isAlive);
 
-        yield return new WaitForSeconds(3f);
+            PlayerPrefs.SetInt("lives_power_up_2", 0);
+            PlayerPrefs.SetInt("player_health", healthPoints);
 
-        // Load results scene
-        SceneManager.LoadScene(11);
+            Destroy(GameObject.FindGameObjectWithTag("LivesPowerUp"));
+        }
+        else {
+            // To load menu after results page
+            PlayerPrefs.SetInt("next_level", 1);
+            // To not earn money of current room
+            PlayerPrefs.GetInt("save_money", 0);
+
+            yield return new WaitForSeconds(1f);
+
+            // Fading screen after death
+            fadingScreen.SetActive(true);
+
+            yield return new WaitForSeconds(3f);
+
+            // Load results scene
+            SceneManager.LoadScene(11);
+        }
     }
 }

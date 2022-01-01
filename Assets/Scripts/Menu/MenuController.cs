@@ -25,11 +25,10 @@ public class MenuController : DefaultClass
 
     private void Awake()
     {
-        bOpenSecondChapter = PlayerPrefs.GetInt("open_second_chapter", 0); // 0 - disabled, 1 - to open, 2 - opened
-
         // DEBUG
-        PlayerPrefs.SetInt("all_money", 12000);
         PlayerPrefs.SetInt("open_second_chapter", 2);
+
+        bOpenSecondChapter = PlayerPrefs.GetInt("open_second_chapter", 0); // 0 - disabled, 1 - to open, 2 - opened
 
         // Set coins number to Shop
         coins = PlayerPrefs.GetInt("all_money", 0);
@@ -98,11 +97,17 @@ public class MenuController : DefaultClass
 
     public void StartFirstChapter()
     {
+        // Mark that player started first chapter
+        PlayerPrefs.SetInt("went_to_first_chapter", 1);
+
         StartCoroutine(DelayBeforeSwithcScene(2));
     }
 
     public void StartSecondChapter()
     {
+        // Mark that player started second chapter
+        PlayerPrefs.SetInt("went_to_second_chapter", 1);
+
         StartCoroutine(DelayBeforeSwithcScene(14));
     }
 

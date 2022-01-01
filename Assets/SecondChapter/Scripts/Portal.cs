@@ -16,12 +16,17 @@ public class Portal : CollidableObject
     [SerializeField]
     private bool lastRoom;
 
+    private bool playerEntered = false;
+
     protected override void OnCollision(Collider2D other)
     {
-        if (other.name == "Player") {
+        if (other.name == "Player" && !playerEntered) {
+            playerEntered = true;
+
             // To save money on results page
             PlayerPrefs.SetInt("player_run_money", PlayerPrefs.GetInt("player_run_money", 0) + PlayerPrefs.GetInt("player_money", 0));
-            PlayerPrefs.GetInt("save_money", 1);
+            PlayerPrefs.SetInt("player_money", 0);
+            PlayerPrefs.SetInt("save_money", 1);
 
             StartCoroutine(LoadSceneAfterDelay());
         }

@@ -36,28 +36,6 @@ public class GameController : DefaultClass
         ResetPlayerStats();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.Escape)) {
-            // Resume game and close menu
-            if (quickMenu.Menu.activeSelf) {
-                quickMenu.Resume();
-            }
-            // Close just controls layout
-            else if (quickMenu.SettingsMenu.BOpenControls) {
-                quickMenu.SettingsMenu.CloseControls();
-            }
-            // Close just settings menu
-            else if (quickMenu.SettingsMenu.gameObject.activeSelf) {
-                quickMenu.CloseSettings();
-            }
-            // Pause game and open menu
-            else {
-                quickMenu.OpenMenu();
-            }
-        }
-    }
-
     private void ResetPlayerStats()
     {
         if (bFirstLevel) {
