@@ -15,13 +15,6 @@ public class Titles : DefaultClass
         PlayerPrefs.SetInt("open_second_chapter", 1);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.Escape)) {
-            StartCoroutine(EndScene());
-        }
-    }
-
     private IEnumerator StartTitles()
     {
         yield return new WaitForSeconds(30f);

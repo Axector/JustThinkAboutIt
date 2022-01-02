@@ -47,13 +47,6 @@ public class BuyHealth : DefaultClass
         }
     }
 
-    private void Update()
-    {
-        if (tooltip.activeSelf && Input.GetKeyDown(KeyCode.E)) {
-            BuyHealthPoints();
-        }
-    }
-
     private void BuyHealthPoints()
     {
         // Get free health points for the first time
@@ -86,6 +79,13 @@ public class BuyHealth : DefaultClass
                 boxCollider.enabled = false;
                 tooltip.SetActive(false);
             }
+        }
+    }
+
+    public void InteractWithButton()
+    {
+        if (tooltip.activeSelf) {
+            BuyHealthPoints();
         }
     }
 }

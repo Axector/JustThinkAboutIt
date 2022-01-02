@@ -15,7 +15,7 @@ public class CollectableObject : CollidableObject
         audioSource = GetComponent<AudioSource>();
     }
 
-    protected virtual void OnCollect()
+    public virtual void OnCollect(Collider2D other)
     {
         if (!collected) {
             collected = true;

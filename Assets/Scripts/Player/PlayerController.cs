@@ -50,14 +50,11 @@ public class PlayerController : DefaultClass
     private void Update()
     {
         // Get velocity value from joystick
-        if (joystick.Horizontal >= 0.2f) {
-            velocityX = 1;
-        }
-        else if (joystick.Horizontal <= -0.2f) {
-            velocityX = -1;
+        if (joystick.Horizontal >= -0.2f && joystick.Horizontal <= 0.2f) {
+            velocityX = 0;
         }
         else {
-            velocityX = 0;
+            velocityX = joystick.Horizontal;
         }
 
         bool playerIsCutscene = player.IsCutscene;
@@ -76,6 +73,11 @@ public class PlayerController : DefaultClass
         // Play specific animaion if player is attacking
         if (isLeftAttacking || isRightAttacking) {
             pAnimator.Play((velocityX != 0) ? "Player_RunAttack" : "Player_Attack_2");
+            // PLayer long horizontal attack
+            pAnimator.SetBool("longAttack", true);
+        }
+        else {
+            pAnimator.SetBool("longAttack", false);
         }
     }
 
@@ -93,36 +95,6 @@ public class PlayerController : DefaultClass
             pTransform.position += new Vector3(movementSpeed * Time.fixedDeltaTime, 0, 0);
             pSpriteRenderer.flipX = false;
         }
-    }
-
-    private void HorizontalAttack()
-    {
-        // PLayer attack left
-        if (Input.GetKeyDown(KeyCode.LeftArrow)) {
-            isLeftAttacking = true;
-        }
-
-        // Stop to attack left
-        if (Input.GetKeyUp(KeyCode.LeftArrow)) {
-            isLeftAttacking = false;
-        }
-
-        // PLayer attack right
-        if (Input.GetKeyDown(KeyCode.RightArrow)) {
-            isRightAttacking = true;
-        }
-
-        // Stop to attack right
-        if (Input.GetKeyUp(KeyCode.RightArrow)) {
-            isRightAttacking = false;
-        }
-
-        // PLayer long horizontal attack
-        pAnimator.SetBool(
-            "longAttack",
-            Input.GetKey(KeyCode.RightArrow) || 
-            Input.GetKey(KeyCode.LeftArrow)
-        );
     }
 
     private void SetIsGrounded()
@@ -250,17 +222,31 @@ public class PlayerController : DefaultClass
         );
     }
 
-     public void AttackLeft()
+     public void AttackLeftDown()
     {
         if (!canAttack) {
             return;
         }
+
+        isLeftAttacking = true;
     }
 
-    public void AttackRight()
+     public void AttackLeftUp()
+    {
+        isLeftAttacking = false;
+    }
+
+    public void AttackRightDown()
     {
         if (!canAttack) {
             return;
         }
+
+        isRightAttacking = true;
+    }
+
+    public void AttackRightUp()
+    {
+        isRightAttacking = false;
     }
 }

@@ -38,17 +38,12 @@ public class Chest : CollectableObject
                     animator.Play("ChestOpen_Empty");
                 }
             }
-
-            // Get coins from chest
-            if (Input.GetKeyDown(KeyCode.E)) {
-                OnCollect();
-            }
         }
     }
 
-    protected override void OnCollect()
+    public override void OnCollect(Collider2D other)
     {
-        if (bFull) {
+        if (bFull && !collected) {
             collected = true;
 
             // Play collection animation and sound

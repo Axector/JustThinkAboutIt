@@ -39,15 +39,14 @@ public class HealthShop : CollectableObject
         tooltip.SetActive(bCollidingPlayer && !collected);
     }
 
-    protected override void OnCollision(Collider2D other)
+    public override void OnCollect(Collider2D other)
     {
-        if (other.name == "Player" && !collected) {
+        if (!collected) {
             int playerHealth = PlayerPrefs.GetInt("player_health", 0);
             int playerMaxHealth = PlayerPrefs.GetInt("player_max_health", 0);
             int playerMoney = PlayerPrefs.GetInt("player_run_money", 0) + PlayerPrefs.GetInt("player_money", 0);
 
             if (
-                Input.GetKeyDown(KeyCode.E) && 
                 playerMoney >= prices[purchaseIndex] &&
                 playerHealth != playerMaxHealth
             ) {
@@ -63,27 +62,22 @@ public class HealthShop : CollectableObject
 
                 other.SendMessage("GetDamage", giveHealth);
 
-                OnCollect();
+                // Hide old text and show next if there is next tooltip
+                tooltipText[purchaseIndex].gameObject.SetActive(false);
+                purchaseIndex++;
+
+                // Play collection sound
+                PlaySound(audioSource, audioClip);
+
+                // Player can buy limited health amount
+                if (purchaseIndex >= prices.Length) {
+                    collected = true;
+                    tooltip.SetActive(false);
+                }
+                else {
+                    tooltipText[purchaseIndex].gameObject.SetActive(true);
+                }
             }
-        }
-    }
-
-    protected override void OnCollect()
-    {
-        // Hide old text and show next if there is next tooltip
-        tooltipText[purchaseIndex].gameObject.SetActive(false);
-        purchaseIndex++;
-
-        // Play collection sound
-        PlaySound(audioSource, audioClip);
-
-        // Player can buy limited health amount
-        if (purchaseIndex >= prices.Length) {
-            collected = true;
-            tooltip.SetActive(false);
-        }
-        else {
-            tooltipText[purchaseIndex].gameObject.SetActive(true);
         }
     }
 }

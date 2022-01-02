@@ -31,8 +31,6 @@ public class CameraController : DefaultClass
     private bool right;
     private bool up;
     private bool down;
-    private bool upCameraSize;
-    private bool downCameraSize;
     private PostProcessVolume postProcessing;
 
     public Color SceneColor { get => sceneColor; }
@@ -75,10 +73,6 @@ public class CameraController : DefaultClass
         up = playerPosition.y > upEdge;
         down = playerPosition.y < downEdge;
 
-        // Check to change camera size or not
-        upCameraSize = (Input.GetKey(KeyCode.Plus) || Input.GetKey(KeyCode.Equals));
-        downCameraSize = Input.GetKey(KeyCode.Minus);
-
         // To always see player additional speed is needed
         bonusSpeed = (
             playerPosition.x > 0.9f ||
@@ -92,15 +86,10 @@ public class CameraController : DefaultClass
 
     private void FixedUpdate()
     {
-        checkMoveCamera();
-
-        // If any of resize buttons is pressed
-        if (upCameraSize || downCameraSize) { 
-            ChangeCameraSize();
-        }
+        CheckMoveCamera();
     }
 
-    private void checkMoveCamera()
+    private void CheckMoveCamera()
     {
         // Camera movement if player is near the edge of specific area
         if (right) {
@@ -133,26 +122,6 @@ public class CameraController : DefaultClass
         foreach (GameObject camera in cameras) {
             camera.SetActive(false);
         }
-    }
-
-    private void ChangeCameraSize()
-    {
-        // Get current camera size
-        float size = activeCamera.orthographicSize;
-
-        // Increase camera size
-        if (downCameraSize && size <= maxSize) {
-            size += cameraSizeChangeSpeed;
-        }
-
-        // Reduce camera size
-        if (upCameraSize && size >= minSize) {
-            size -= cameraSizeChangeSpeed;
-        }
-
-        // Set camera size
-        activeCamera.orthographicSize = size;
-        PlayerPrefs.SetFloat("camera_size", size);
     }
 
     public void SelectNextCamera()

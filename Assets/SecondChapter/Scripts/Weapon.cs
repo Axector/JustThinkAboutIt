@@ -35,19 +35,6 @@ public class Weapon : CollidableObject
         animator.SetFloat("attackSpeed", 1 / attackCooldown[level]);
     }
 
-    protected override void Update()
-    {
-        base.Update();
-
-        // Next attack can be done only after some time
-        if (Input.GetKeyDown(KeyCode.Space)) { 
-            if (Time.time - lastSwing > attackCooldown[level]) {
-                lastSwing = Time.time;
-                Swing();
-            }
-        }
-    }
-
     protected override void OnCollision(Collider2D other)
     {
         if (other.gameObject.tag == "Fighter") { 
@@ -72,5 +59,14 @@ public class Weapon : CollidableObject
         animator.Play("Swing");
         // Play swing sound
         PlaySound(audioSource, audioClip);
+    }
+
+    public void Attack()
+    {
+        // Next attack can be done only after some time
+        if (Time.time - lastSwing > attackCooldown[level]) {
+            lastSwing = Time.time;
+            Swing();
+        }
     }
 }

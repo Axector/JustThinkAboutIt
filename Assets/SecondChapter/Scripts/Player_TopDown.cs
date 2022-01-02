@@ -9,9 +9,12 @@ public class Player_TopDown : Moving
     [SerializeField]
     private GameObject fadingScreen;
     [SerializeField]
+    private ContactFilter2D filter;
+    [SerializeField]
     private Joystick joystick;
 
     private Animator animator;
+    private Collider2D[] hits = new Collider2D[10];
 
     protected override void Start()
     {
@@ -109,6 +112,26 @@ public class Player_TopDown : Moving
 
             // Load results scene
             SceneManager.LoadScene(11);
+        }
+    }
+
+    public void Interact()
+    {
+        boxCollider.OverlapCollider(filter, hits);
+
+        // Check each collision hit (max = 10)
+        for (int i = 0; i < hits.Length; i++) {
+            if (hits[i] == null) {
+                continue;
+            }
+
+            // Check if collectible is of type CollectableObject
+            CollectableObject collectable = hits[i].GetComponent<CollectableObject>();
+            if (collectable != null) {
+                collectable.OnCollect(boxCollider);
+            }
+
+            hits[i] = null;
         }
     }
 }
