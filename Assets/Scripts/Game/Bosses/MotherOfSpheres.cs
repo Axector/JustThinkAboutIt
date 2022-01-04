@@ -20,6 +20,8 @@ public class MotherOfSpheres : DefaultClass
     [SerializeField]
     private Animator[] topClouds;
     [SerializeField]
+    private BoxCollider2D player;
+    [SerializeField]
     private GameObject playerController;
     [SerializeField]
     private BoxCollider2D blocker;
@@ -110,6 +112,8 @@ public class MotherOfSpheres : DefaultClass
         // Resume the game
         cameraController.SelectNextCamera();
         playerController.SetActive(true);
+        player.enabled = true;
+        player.GetComponent<Rigidbody2D>().gravityScale = 1;
 
         // Begin boss attacks
         agressionArea.SetActive(true);
