@@ -5520,7 +5520,7 @@ MonoBehaviour:
   healthPoints: 100
   maxHealthPoints: 100
   backForceSpeed: 0.2
-  immuneTime: 0.3
+  immuneTime: 0.5
   bInvincible: 0
   audioClip: {fileID: 8300000, guid: 33d43c76cab336e46b65baaa1152a792, type: 3}
   ySpeed: 1

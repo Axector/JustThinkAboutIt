@@ -1041,7 +1041,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 100
+        scalar: 50
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -5122,8 +5122,8 @@ MonoBehaviour:
   - {fileID: 1189067204292691992, guid: b2b87ab0f6fa58749a10cb7c47b47402, type: 3}
   dropPercent: 100
   maxDropAmount: 10
-  delayBeforeAttack: 5
   hurtAudio: {fileID: 8300000, guid: 6eaac42093a97f6469189297a76c2bad, type: 3}
+  delayBeforeAttack: 6
   delayBeforeMove: 1
   patrolPositions: []
   distanceToBecomeTrigger: 100

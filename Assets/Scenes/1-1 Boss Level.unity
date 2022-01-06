@@ -18343,18 +18343,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 573573208}
     m_Modifications:
-    - target: {fileID: 646510696869077319, guid: 7769f2b4fd2a85e429787de2298b73a0, type: 3}
-      propertyPath: speed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 646510696869077319, guid: 7769f2b4fd2a85e429787de2298b73a0, type: 3}
-      propertyPath: targetPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 646510696869077319, guid: 7769f2b4fd2a85e429787de2298b73a0, type: 3}
-      propertyPath: targetPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7498566897361137452, guid: 7769f2b4fd2a85e429787de2298b73a0, type: 3}
       propertyPath: m_Name
       value: Boss Health Bar
@@ -18460,7 +18448,7 @@ PrefabInstance:
       value: 0.47058824
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 646510696869077319, guid: 7769f2b4fd2a85e429787de2298b73a0, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 7769f2b4fd2a85e429787de2298b73a0, type: 3}
 --- !u!224 &1903479896 stripped
 RectTransform:
@@ -19604,14 +19592,6 @@ PrefabInstance:
     - target: {fileID: 7498566897361137455, guid: 7769f2b4fd2a85e429787de2298b73a0, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7498566897361137455, guid: 7769f2b4fd2a85e429787de2298b73a0, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -135
-      objectReference: {fileID: 0}
-    - target: {fileID: 7498566897361137455, guid: 7769f2b4fd2a85e429787de2298b73a0, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 36
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7769f2b4fd2a85e429787de2298b73a0, type: 3}

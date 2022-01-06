@@ -99,10 +99,10 @@ public class Player : DefaultClass
 
     private IEnumerator EndGame()
     {
-        PlayerPrefs.SetInt("player_health", 0);
         yield return new WaitForSeconds(delayToRestart);
 
-        PlayerPrefs.SetInt("next_level", 0);
+        PlayerPrefs.SetInt("player_health", maxHealth);
+        PlayerPrefs.SetInt("next_level", 1);
         SceneManager.LoadScene(11);
     }
 

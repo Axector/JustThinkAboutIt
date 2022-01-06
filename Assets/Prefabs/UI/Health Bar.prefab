@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7498566897361137455}
   - component: {fileID: 7498566897361137457}
   - component: {fileID: 7498566897361137454}
-  - component: {fileID: 646510696869077319}
   m_Layer: 5
   m_Name: Health Bar
   m_TagString: Untagged
@@ -37,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -190, y: -50}
+  m_AnchoredPosition: {x: -160, y: -50}
   m_SizeDelta: {x: 300, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7498566897361137457
@@ -78,20 +77,6 @@ MonoBehaviour:
   m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &646510696869077319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7498566897361137452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be852460dfdab0448a44f4bd5ea244ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPosition: {x: 317, y: 225, z: 0}
-  speed: 100
 --- !u!1 &7498566897654789623
 GameObject:
   m_ObjectHideFlags: 0
