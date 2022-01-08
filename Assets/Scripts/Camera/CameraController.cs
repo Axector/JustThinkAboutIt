@@ -17,10 +17,6 @@ public class CameraController : DefaultClass
     private float downEdge;
     [SerializeField]
     private float maxSize = 9f;
-    [SerializeField]
-    private float minSize = 5f;
-    [SerializeField]
-    private float cameraSizeChangeSpeed = 0.1f;
 
     private Player player;
     private Camera activeCamera;
