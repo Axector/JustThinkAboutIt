@@ -67,7 +67,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8410244885873840919}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd6f6875b79f5d64a8259a4e702cab6d, type: 3}
+  m_Script: {fileID: 11500000, guid: df77bc514db12e14db44c0781205df10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   filter:
@@ -341,7 +341,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8410244886591086929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a6f25acb23c7e8418db7195f1d3f6c3, type: 3}
+  m_Script: {fileID: 11500000, guid: 4fa7757fc63c14d448ccb7c8dad60ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 500
@@ -380,7 +380,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8410244886591086929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 484b31773367edd4cb5d83c0e9f3325e, type: 3}
+  m_Script: {fileID: 11500000, guid: ff99f0692dc61a14089101006a03cc44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   minions: []

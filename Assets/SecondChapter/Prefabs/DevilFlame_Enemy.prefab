@@ -67,7 +67,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8717626491185100549}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd6f6875b79f5d64a8259a4e702cab6d, type: 3}
+  m_Script: {fileID: 11500000, guid: df77bc514db12e14db44c0781205df10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   filter:
@@ -341,7 +341,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 8717626492718176148}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a6f25acb23c7e8418db7195f1d3f6c3, type: 3}
+  m_Script: {fileID: 11500000, guid: e005e2906049ab3498b29d7014973334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportPositions: []
+  minion: {fileID: 0}
+  parent: {fileID: 0}
+--- !u!114 &1041217907381321788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8717626492718176148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fa7757fc63c14d448ccb7c8dad60ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 1000
@@ -371,18 +386,3 @@ MonoBehaviour:
   hideOnBossDeath:
   - {fileID: 0}
   healthBar: {fileID: 0}
---- !u!114 &1041217907381321788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8717626492718176148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 134eabdc90d54b24695c508f1aa973ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  teleportPositions: []
-  minion: {fileID: 0}
-  parent: {fileID: 0}

@@ -92,7 +92,7 @@ public class CameraController : DefaultClass
 
     private void FixedUpdate()
     {
-        checkMoveCamera();
+        CheckMoveCamera();
 
         // If any of resize buttons is pressed
         if (upCameraSize || downCameraSize) { 
@@ -100,7 +100,7 @@ public class CameraController : DefaultClass
         }
     }
 
-    private void checkMoveCamera()
+    private void CheckMoveCamera()
     {
         // Camera movement if player is near the edge of specific area
         if (right) {

@@ -200,7 +200,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8410244885873840919}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14a69bdb38956354fa54c52b960821b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 132095425444f1d468d322350a04ff0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   filter:
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 8410244886591086940}
   - component: {fileID: 8410244886591086939}
   - component: {fileID: 5047610824285858466}
-  - component: {fileID: 4630977219312947629}
+  - component: {fileID: 3308343374666308204}
   m_Layer: 13
   m_Name: Pigman_Boss
   m_TagString: Fighter
@@ -467,7 +467,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4630977219312947629
+--- !u!114 &3308343374666308204
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -476,7 +476,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8410244886591086929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a6f25acb23c7e8418db7195f1d3f6c3, type: 3}
+  m_Script: {fileID: 11500000, guid: 4fa7757fc63c14d448ccb7c8dad60ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 3000
@@ -498,7 +498,7 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 8192
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0

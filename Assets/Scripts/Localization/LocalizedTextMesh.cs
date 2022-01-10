@@ -39,6 +39,7 @@ public class LocalizedTextMesh : MonoBehaviour
             key = localizeKey;
         }
 
+        // Get the translation if it is founded
         text.text = LocalizationController.GetTranslation(key);
     }
 }
