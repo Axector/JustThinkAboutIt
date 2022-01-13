@@ -242,12 +242,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7348669932479184694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a24d26305fbe5a94a940c0f671e3febc, type: 3}
+  m_Script: {fileID: 11500000, guid: 534bf678909ccf647825195ddd0a2ded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   healthBar: {fileID: 7348669931178829283}
-  healthBartext: {fileID: 7348669931550533541}
+  healthBarText: {fileID: 7348669931550533541}
   greatColor: {r: 0.5882353, g: 0, b: 0, a: 0.47058824}
   goodColor: {r: 0.5882353, g: 0, b: 0, a: 0.47058824}
   badColor: {r: 0.5882353, g: 0, b: 0, a: 0.47058824}

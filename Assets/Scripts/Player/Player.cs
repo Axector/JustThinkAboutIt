@@ -207,8 +207,8 @@ public class Player : DefaultClass
 
         // Create attack particles
         InstatiateAttackParticles(
-            (spriteRenderer.flipX) 
-                ? fireLeftParticles 
+            (spriteRenderer.flipX)
+                ? fireLeftParticles
                 : fireRightParticles,
             isStanding
                 ? offset

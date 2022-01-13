@@ -75,7 +75,7 @@ public class CameraController : DefaultClass
             playerPosition.x < 0.1f ||
             playerPosition.y > 0.9f ||
             playerPosition.y < 0.1f
-        ) 
+        )
             ? 3f
             : 1f;
     }
@@ -108,7 +108,7 @@ public class CameraController : DefaultClass
     private void MoveCamera(Vector3 direction)
     {
         // Move only if player is alive
-        if (player.IsAlive) { 
+        if (player.IsAlive) {
             activeCamera.transform.position += direction * player.PlayerSpeed * bonusSpeed * Time.fixedDeltaTime;
         }
     }
@@ -127,7 +127,7 @@ public class CameraController : DefaultClass
         {
             // Disable current camera
             cameras[selectedCamera].SetActive(false);
-            
+
             // Increase index to select next camera
             selectedCamera++;
 
