@@ -16,15 +16,24 @@ public class Lever : CollectableObject
         animator = GetComponent<Animator>();
     }
 
-    public override void OnCollect(Collider2D other)
+    protected override void OnCollision(Collider2D other)
     {
-        if (!collected) { 
-            base.OnCollect(other);
-
-            // Play use animation
-            animator.Play("UseLever");
-
-            objectToDisable.SetActive(false);            
+        // Lever can be used only by player and only once
+        if (other.name == "Player" && !collected) {
+            // Use lever
+            if (Input.GetKeyDown(KeyCode.E)) {
+                OnCollect();
+            }
         }
+    }
+
+    protected override void OnCollect()
+    {
+        base.OnCollect();
+
+        // Play use animation
+        animator.Play("UseLever");
+
+        objectToDisable.SetActive(false);
     }
 }

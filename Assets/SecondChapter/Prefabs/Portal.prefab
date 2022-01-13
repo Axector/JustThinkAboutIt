@@ -67,7 +67,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8199956393386825509}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f7011c1d496ae74c9330ac0f096bb93, type: 3}
+  m_Script: {fileID: 11500000, guid: 614f92cb0fb31fc4aac85f348091bed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   filter:
@@ -79,10 +79,13 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 8192
+      m_Bits: 0
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  sceneIndexes: 
+  randomSceneIndexes: 
+  bossSceneIndexes: {x: 0, y: 0}
   fadingScreen: {fileID: 0}
+  bBossRoom: 0
+  lastRoom: 0

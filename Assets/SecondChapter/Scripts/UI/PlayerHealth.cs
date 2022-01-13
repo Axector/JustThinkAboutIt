@@ -8,7 +8,7 @@ public class PlayerHealth : DefaultClass
     [SerializeField]
     private Image healthBar;
     [SerializeField]
-    private Text healthBartext;
+    private Text healthBarText;
     [SerializeField]
     private Color greatColor;
     [SerializeField]
@@ -24,7 +24,7 @@ public class PlayerHealth : DefaultClass
     public void CheckHealth()
     {
         healthBar.fillAmount = (float)player.healthPoints / player.maxHealthPoints;
-        healthBartext.text = player.healthPoints.ToString();
+        healthBarText.text = player.healthPoints.ToString();
 
 
         if (player.healthPoints < player.maxHealthPoints / 3) {

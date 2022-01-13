@@ -7,10 +7,10 @@ public class LocalizationController : MonoBehaviour
     private static int selectedLanguage;
     private static Dictionary<string, List<string>> localizationDict;
 
-    public static int SelectedLanguage { get => selectedLanguage; }
-
     public static event LanguageChange OnLanguageChange;
     public delegate void LanguageChange();
+
+    public static int SelectedLanguage { get => selectedLanguage; }
 
     [SerializeField]
     private TextAsset textFile;
